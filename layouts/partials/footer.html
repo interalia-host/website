@@ -7,7 +7,7 @@
             </a>
 
             <h2 id="newsletter-signup" class="mt-10 text-2xl">{{ i18n "strings.join_newsletter" }}</h2>
-            <form aria-labelledby="newsletter-signup" class="mt-4 lg:w-lg flex items-center border-b border-gray-400" method="POST" action="#">
+            <form aria-labelledby="newsletter-signup" class="mt-4 lg:w-lg flex items-center border-b border-gray-400" method="post" action="https://buttondown.com/api/emails/embed-subscribe/interalia" target="popupwindow" onsubmit="window.open('https://buttondown.com/interalia', 'popupwindow')">
                 <label for="newsletter-email" class="sr-only">{{ i18n "strings.email_address" }}</label>
                 <input
                     id="newsletter-email"
