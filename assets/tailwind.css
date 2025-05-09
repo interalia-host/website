@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+@theme {
+  --font-*: initial;
+  --font-serif: Platypi Variable, sans-serif;
+  --font-sans: DM Sans Variable, sans-serif;
+  --font-magnet: Magnet, sans-serif;
+  --font-magnet-headline: MagnetHeadline, sans-serif;
+
+  --color-green-25: #f6fef9;
+  --color-green-50: #edfcf2;
+  --color-green-100: #d3f8df;
+  --color-green-200: #aaf0c4;
+  --color-green-300: #73e2a3;
+  --color-green-400: #3ccb7f;
+  --color-green-500: #16b364;
+  --color-green-600: #099250;
+  --color-green-700: #087443;
+  --color-green-800: #095c37;
+  --color-green-900: #084c2e;
+  --color-green-950: #052e1c;
+
+  --color-orange-25: #fefaf5;
+  --color-orange-50: #fef6ee;
+  --color-orange-100: #fdead7;
+  --color-orange-200: #f9dbaf;
+  --color-orange-300: #f7b27a;
+  --color-orange-400: #f38744;
+  --color-orange-500: #ef6820;
+  --color-orange-600: #e04f16;
+  --color-orange-700: #b93815;
+  --color-orange-800: #932f19;
+  --color-orange-900: #772917;
+  --color-orange-950: #511c10;
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer base {
+  :root {
+    font-family: "DM Sans Variable", sans-serif;
+  }
+
+  @supports (font-variation-settings: normal) {
+    :root {
+      font-family: "DM Sans Variable", sans-serif;
+      font-optical-sizing: auto;
+    }
+  }
+
+  @font-face {
+    font-family: "DM Sans Variable";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/dmsans/dm-sans-latin-wght-normal.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "DM Sans Variable";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/dmsans/dm-sans-latin-wght-italic.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Platypi Variable";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/platypi/platypi-latin-wght-normal.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "Platypi Variable";
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("/fonts/platypi/platypi-latin-wght-italic.woff2") format("woff2");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+
+  ::file-selector-button {
+    @apply hidden;
+  }
+}
+
+.mix-blend-container {
+  @apply relative;
+}
+
+.mix-blend {
+  @apply mix-blend-multiply;
+}
+
+[x-cloak] {
+  @apply hidden!;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+
+}

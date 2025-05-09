@@ -1,0 +1,59 @@
+<footer class="relative bg-[#FCFCF0] py-8">
+    <div class="container mx-auto flex flex-col items-start justify-between space-y-6 px-8 md:flex-row md:space-y-0">
+        
+        <section class="flex flex-col items-start">
+            <a href="{{ .Site.Home.Permalink }}" aria-label="Go to homepage">
+                <img class="h-16 w-auto" src="{{ .Site.BaseURL}}/media/logos/interalia-icon-logo.svg" alt="interalia logo icon">
+            </a>
+
+            <h2 id="newsletter-signup" class="mt-10 text-2xl">{{ i18n "strings.join_newsletter" }}</h2>
+            <form aria-labelledby="newsletter-signup" class="mt-4 lg:w-lg flex items-center border-b border-gray-400" method="POST" action="#">
+                <label for="newsletter-email" class="sr-only">{{ i18n "strings.email_address" }}</label>
+                <input
+                    id="newsletter-email"
+                    name="email"
+                    type="email"
+                    placeholder="{{ i18n "strings.email" }}"
+                    class="w-full px-2 py-2 bg-transparent outline-none text-gray-700 border-none ring-0"
+                    required
+                    aria-required="true"
+                    autocomplete="email"
+                />
+                <button type="submit" class="ms-4 px-6 py-2 rounded-full bg-rose-100 text-gray-800 shadow-sm mb-2 focus:outline-none focus:ring-2 focus:ring-[#2C1B1B]">
+                    {{ i18n "strings.submit" }}
+                </button>
+                <span id="newsletter-feedback" class="sr-only" aria-live="polite"></span>
+            </form>
+        </section>
+
+        <section aria-labelledby="footer-social-links" class="flex flex-row space-y-4 space-x-20 lg:w-auto w-full lg:pt-0 pt-10">
+
+            <nav aria-labelledby="footer-primary-menu" class="">
+                <h2 id="footer-primary-menu" class="sr-only">{{ i18n "strings.footer_primary_nav" }}</h2>
+                <ul class="grid grid-flow-row space-y-4 font-light">
+                    {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
+                        <li><a href="{{ .RelPermalink }}" class="lowercase hover:underline">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+
+            <h2 id="footer-social-links" class="sr-only">{{ i18n "strings.footer_social_legal" }}</h2>
+
+            <nav aria-labelledby="footer-secondary-menu">
+                <h2 id="footer-secondary-menu" class="sr-only">{{ i18n "strings.footer_secondary_nav" }}</h2>
+                <ul class="grid grid-flow-row space-y-4 font-light">
+                    {{ range sort (where .Site.RegularPages "Params.footer" true) "Params.weight" "asc" }}
+                        <li><a href="{{ .RelPermalink }}" class="lowercase hover:underline">{{ .Title }}</a></li>
+                    {{ end }}
+                {{- with .Site.Params.social }}
+                {{- range . }}
+                    <li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name | humanize }}" aria-label="Interalia on {{ .name | humanize }}" class="lowercase hover:underline">
+                        {{ .name }}
+                    </a></li>
+                {{- end }}
+                {{- end -}}                
+                </ul>
+            </nav>
+        </section>
+    </div>
+</footer>

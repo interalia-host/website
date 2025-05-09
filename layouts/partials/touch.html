@@ -1,0 +1,85 @@
+<section class="relative bg-[#F5D9CC] py-16 px-8 md:px-12">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 bg-no-repeat bg-contain bg-right md:opacity-80 opacity-0" style="background-image: url('/media/images/pattern-2.svg');"></div>
+  
+    <div class="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Contact Form Section -->
+      <div>
+        <h2 class="text-lg">{{ i18n "strings.project_help" }}</h2>
+        <h1 class="mt-2 text-3xl md:text-5xl text-gray-900 leading-tight">
+          {{ i18n "strings.get_in_touch" }}
+        </h1>
+  
+        <form id="contact-form" class="mt-8 space-y-6">
+          <!-- Company / Organization -->
+          <label for="company">{{ i18n "strings.company_org" }}</label>
+          <input type="text" id="company" name="company" placeholder="{{ i18n "strings.company_org_placeholder" }}"
+                 class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none"
+                 required aria-required="true">
+  
+          <!-- Name -->
+          <label for="name">{{ i18n "strings.name" }}</label>
+          <input type="text" id="name" name="name" placeholder="{{ i18n "strings.name" }}"
+                 class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none"
+                 required aria-required="true">
+  
+          <!-- Email -->
+          <label for="email">{{ i18n "strings.email" }}</label>
+          <input type="email" id="email" name="email" placeholder="{{ i18n "strings.email" }}"
+                 class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none"
+                 required aria-required="true" autocomplete="email">
+  
+          <!-- Message -->
+          <label for="message">{{ i18n "strings.message" }}</label>
+          <textarea id="message" name="message" placeholder="{{ i18n "strings.message" }}"
+                    class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none"
+                    required aria-required="true"></textarea>
+  
+          <!-- Location Selection -->
+          <fieldset class="mt-4">
+            <legend class="text-gray-900 font-medium">{{ i18n "strings.location" }}</legend>
+            <div class="mt-2 space-y-2">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="location" value="Germany" class="text-gray-900 focus:ring-2 focus:ring-gray-900" required aria-required="true">
+                <span>{{ i18n "strings.germany" }}</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="location" value="Europe" class="text-gray-900 focus:ring-2 focus:ring-gray-900">
+                <span>{{ i18n "strings.europe" }}</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="location" value="Other" class="text-gray-900 focus:ring-2 focus:ring-gray-900">
+                <span>{{ i18n "strings.other" }}</span>
+              </label>
+            </div>
+          </fieldset>
+  
+          <!-- Submit Button -->
+          <button type="submit"
+                  class="mt-4 px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] cursor-pointer text-white rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-gray-700">
+            {{ i18n "strings.submit" }}
+          </button>
+          <span id="contact-feedback" class="sr-only" aria-live="polite"></span>
+        </form>
+        <script>
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const company = document.getElementById('company').value;
+          const name = document.getElementById('name').value;
+          const email = document.getElementById('email').value;
+          const message = document.getElementById('message').value;
+          const location = document.querySelector('input[name="location"]:checked')?.value || '';
+          const subject = 'Inquiry';
+          const body =
+            `Company / Organization: ${company}\n` +
+            `Name: ${name}\n` +
+            `Email: ${email}\n` +
+            `Location: ${location}\n` +
+            `Message: ${message}`;
+          const mailto = `mailto:info@interalia.host?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          window.location.href = mailto;
+        });
+        </script>
+      </div>
+    </div>
+</section>

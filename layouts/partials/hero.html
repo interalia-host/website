@@ -1,0 +1,29 @@
+<header>
+    <section class="relative lg:py-36 py-16 flex items-center justify-center px-8 md:px-12">
+      <div class="md:max-w-5xl text-center relative z-10">
+        {{ $dataFile := printf "hero.%s" .Lang }}
+        {{ $data := index .Site.Data $dataFile }}
+        <h1 class="text-5xl md:text-[90px] text-gray-900 leading-tight">
+          {{ $data.title | safeHTML }}
+        </h1>
+    
+        <p class="mt-4 font-serif text-xl text-gray-700">
+          {{ $data.subtitle | safeHTML }}
+        </p>
+    
+        <!-- CTA Buttons -->
+        <div class="mt-6 flex justify-center gap-4">
+          <a href="mailto:info@interalia.host"
+             class="px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full text-lg focus:outline-none transition"
+             aria-label="{{ i18n "strings.hero_cta_contact_aria" }}">
+            {{ i18n "strings.hero_cta_contact" }}
+          </a>
+          <a href="#mission" 
+             class="px-6 py-3 bg-[#FBEBDF] hover:bg-[#F5D9CC] text-gray-800 rounded-full text-lg focus:outline-none transition"
+             aria-label="{{ i18n "strings.hero_cta_mission_aria" }}">
+            {{ i18n "strings.hero_cta_mission" }}
+          </a>
+        </div>
+      </div>
+    </section>
+</header>

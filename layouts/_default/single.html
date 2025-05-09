@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" dir="{{ .Site.Language.Params.direction }}" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body class="bg-[#FCFCF0]">
+    <a class="sr-only focus:not-sr-only" href="#content">Skip to content</a>
+
+    {{ partial "nav.html" . }}
+
+    <main id="content" class="content px-8 py-16">
+        <section class="container mx-auto max-w-7xl">
+            
+            <article class="prose mx-auto w-full prose-p:text-gray-900">
+                <h1>{{ .Title }}</h1>
+                {{ .Content | markdownify }}
+            </article>
+        </section>
+    </main>
+
+    {{ block "footer" . }}
+    {{ partial "footer.html" . }}
+    {{ end }}
+
+    {{ partial "javascript.html" . }}
+
+</body>

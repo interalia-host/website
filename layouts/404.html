@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    {{ partial "head.html" . }}
+</head>
+
+<body class="flex min-h-screen flex-col bg-gray-50">
+    <a class="sr-only focus:not-sr-only" href="#content">Skip to content</a>
+
+    {{ partial "nav.html" . }}
+
+    <main id="content" class="grid grow items-center px-8 py-16">
+        <section class="container mx-auto max-w-7xl text-center">
+            <img src="/media/images/404.svg" alt="{{ i18n "strings.404_alt" }}" class="mx-auto my-8 w-1/2">
+            <p>{{ i18n "strings.sorry_not_found" }}</p>
+            <p><a class="underline hover:no-underline" href="/">{{ i18n "strings.return_homepage" }}</a></p>
+        </section>
+    </main>
+
+    {{ partial "footer.html" . }}
+    {{ partial "javascript.html" . }}
+</body>
+</html>

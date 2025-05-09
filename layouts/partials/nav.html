@@ -1,0 +1,102 @@
+<div x-data="navbar()" class="bg-[#FCFCF0]">
+  <div class="relative mx-auto flex items-center justify-around">
+      <button @click="toggleMobileMenu()" 
+              :aria-expanded="mobileMenuOpen.toString()"
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
+              tabindex="0"
+              @keydown.enter.prevent="toggleMobileMenu()"
+              @keydown.space.prevent="toggleMobileMenu()"
+              class="absolute left-8 text-black focus:outline-none focus:ring-2 focus:ring-[#2C1B1B] lg:hidden">
+        <span x-show="!mobileMenuOpen" x-cloak class="text-3xl">☰</span>
+        <span x-show="mobileMenuOpen" x-cloak class="text-3xl">✕</span>
+      </button>
+
+      <a href="{{ .Site.Home.Permalink }}" 
+          class="group p-4">
+            <span class="sr-only">{{ i18n "strings.interalia" }}</span>
+              <div class="h-12 w-48">
+                <img src="{{ .Site.BaseURL}}/media/logos/interalia-horizontal-logo.svg" alt="{{ i18n "strings.interalia" }} logo" class="h-full w-full">
+              </div>
+      </a>
+
+      <nav class="align-center hidden space-x-8 lg:flex"
+      role="navigation" aria-label="Main Menu">
+      
+          {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
+            {{ $parentPermalink := .Permalink }} 
+            <a href="{{ $parentPermalink }}" 
+              class="py-3 lowercase">
+                {{ .Title }}
+            </a>
+          {{ end }}
+
+          {{ if hugo.IsMultilingual }}
+          <div class="inline-flex gap-4 items-center pointer-events-auto" role="group" aria-label="Language Switcher">
+            {{ range .AllTranslations }}
+              <a href="{{ .Permalink }}"
+                class="text-sm font-medium transition-colors duration-200 py-3 {{ if eq .Lang $.Lang }}text-zinc-900{{ else }}text-zinc-400 hover:text-zinc-600{{ end }}"
+                {{ if eq .Lang $.Lang }}aria-current="page"{{ end }}
+                tabindex="0">
+                {{ upper .Lang }}
+              </a>
+            {{ end }}
+          </div>
+          {{ end }}
+          
+          <!-- Donate Button -->
+          <a href="mailto:info@interalia.host" role="menuitem"
+            class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
+              {{ i18n "strings.contact_us" }}
+          </a>
+      </nav>
+  </div>
+
+  <div x-show="mobileMenuOpen" 
+         x-transition 
+         id="mobile-menu"
+         role="menu"
+         aria-label="Mobile Menu"
+         class="lg:hidden">
+      <nav class="flex flex-col space-y-2 px-8 py-4">
+          {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
+          {{ $parentPermalink := .Permalink }} 
+          {{ $parentTitle := .Title }}
+          
+          <div x-data="{ mobileDropdownOpen: false }">
+              <a href="{{ $parentPermalink }}" 
+                class="block py-2 font-sans lowercase">
+                  {{ .Title }}
+              </a>
+          </div>
+          {{ end }}
+
+          <!-- Donate Button -->
+          <a href="mailto:info@interalia.host" role="menuitem"
+            class="inline w-max pt-1">
+              {{ i18n "strings.contact_us" }}
+          </a>
+      </nav>
+  </div>
+</div>
+
+<script>
+  function navbar() {
+      return {
+          mobileMenuOpen: false,
+          activeDropdown: null,
+
+          toggleMobileMenu() {
+              this.mobileMenuOpen = !this.mobileMenuOpen;
+          },
+
+          openDropdown(title) {
+              this.activeDropdown = title;
+          },
+
+          closeDropdown() {
+              this.activeDropdown = null;
+          }
+      }
+  }
+</script>

@@ -1,0 +1,79 @@
+strings:
+  - id: contact_us
+    translation: "Contact us"
+  - id: our_mission
+    translation: "Our mission"
+  - id: submit
+    translation: "Submit"
+  - id: sorry_not_found
+    translation: "Sorry, we couldn't find the page you're looking for."
+  - id: return_homepage
+    translation: "Return to homepage"
+  - id: project_help
+    translation: "Do you have a project that we can help?"
+  - id: get_in_touch
+    translation: "Get in touch today"
+  - id: company_org
+    translation: "Company / Organization"
+  - id: company_org_placeholder
+    translation: "company / organisation"
+  - id: name
+    translation: "Name"
+  - id: email
+    translation: "Email"
+  - id: message
+    translation: "Message"
+  - id: location
+    translation: "Location"
+  - id: germany
+    translation: "Germany"
+  - id: europe
+    translation: "Europe"
+  - id: other
+    translation: "Other"
+  - id: our_team
+    translation: "Our team"
+  - id: join_newsletter
+    translation: "Join our newsletter"
+  - id: email_address
+    translation: "Email address"
+  - id: interalia
+    translation: "Interalia"
+  - id: hero_cta_contact
+    translation: "Contact us"
+  - id: hero_cta_mission
+    translation: "Our mission"
+  - id: hero_cta_contact_aria
+    translation: "Contact us"
+  - id: hero_cta_mission_aria
+    translation: "Learn about our mission"
+  - id: team_intro_title
+    translation: "The change we want to see"
+  - id: team_intro_text
+    translation: "We work to support the tech and society ecosystem, understood as anyone working on topics related to the impact of technology and data on our society, in the broadest sense. We see an urgent need for more joined-up operational infrastructure across civil society, and we dream of a network of fiscal hosts, providing a shared infrastructure of operational support, knowledge and resources, which strengthens the resilience of the civil society ecosystem, transforming our relationships with each other to be centred around care instead of competition."
+  - id: team_intro_button
+    translation: "Contact us"
+  - id: team_intro_button_aria
+    translation: "Contact us"
+  - id: footer_primary_nav
+    translation: "Primary Navigation"
+  - id: footer_secondary_nav
+    translation: "Secondary Navigation"
+  - id: footer_social_legal
+    translation: "Social Media & Legal Links"
+  - id: skip_to_content
+    translation: "Skip to content"
+  - id: 404_alt
+    translation: "404 - Page Not Found"
+  - id: illustration_alt
+    translation: "Illustration"
+  - id: service_leaf_alt
+    translation: "Service leaf illustration"
+  - id: mission_flower_alt
+    translation: "Mission flower illustration"
+  - id: what_we_do_flower_alt
+    translation: "What we do illustration"
+  - id: who_we_work_with_flower_alt
+    translation: "Who we work with illustration"
+  - id: linkedin_profile_aria
+    translation: "LinkedIn profile of" 

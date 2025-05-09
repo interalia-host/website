@@ -1,0 +1,12 @@
+{{ $collapse := resources.Get "js/collapse.min.js" }}
+{{ $collapsed := slice $collapse | resources.Concat "collapse.js" | resources.Minify }}
+<script defer src="{{ $collapsed.RelPermalink }}"></script>
+
+{{ $main := resources.Get "js/main.js" }}
+{{ $alpine := resources.Get "js/alpine.min.js" }}
+{{ $secureJS := slice $main $alpine | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint "sha256" }}
+<script defer src="{{ $secureJS.RelPermalink }}" integrity="{{ $secureJS.Data.Integrity }}"></script>
+
+{{ $instant := resources.Get "js/instantpage.js" }}
+{{ $instantpage := slice $instant | resources.Concat "instant.js" | resources.Minify }}
+<script type="module" defer src="{{ $instantpage.RelPermalink }}"></script>

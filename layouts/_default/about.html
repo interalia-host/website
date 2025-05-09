@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+<section class="py-16 px-8 md:px-12 text-center">
+    <div class="max-w-5xl mx-auto">
+        <h2 class="text-lg">{{ .Title | lower }}</h2>
+        <h1 class="mt-2 max-w-3xl mx-auto text-4xl lg:text-6xl font-light text-gray-900 leading-tight">
+          {{ .Page.Params.subtitle }}
+        </h1>
+        <p class="mt-4 font-serif mx-auto text-lg text-gray-700">
+          {{ .Page.Params.description }}
+        </p>
+    </div>
+
+    {{ partial "about-mission.html" . }}
+</section>
+
+{{ partial "who-we-work-with.html" . }}
+  
+{{ partial "team.html" . }}
+
+{{ end }}

@@ -1,0 +1,371 @@
+locale: "en"
+logo_url: ./cms-logo.svg
+
+site_url: https://interalia.host
+display_url: https://interalia.host
+
+backend:
+  name: github
+  repo: interalia-host/website
+  branch: main
+  site_domain: interalia.host
+  app_id: #
+  use_graphql: true
+  squash_merges: true
+
+local_backend: true
+
+publish_mode: editorial_workflow
+media_folder: static/media/uploads
+public_folder: /media/uploads
+
+i18n:
+  # Required and can be one of multiple_folders, multiple_files or single_file
+  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
+  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
+  # single_file - persists a single file in `<folder>/<slug>.<extension>`
+  structure: multiple_files
+
+  # Required - a list of locales to show in the editor UI
+  locales: ["en", "de"]
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    description: "Manage general website settings."
+    files:
+      - name: "site"
+        label: "Site Metadata"
+        file: "config/_default/params.yml"
+        format: "yml"
+        fields:
+          - { label: "Site Description", name: "description", widget: "string", hint: "Description used in the page head and when sharing." }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated list of keywords." }
+          - label: "Sharing image"
+            name: "images"
+            widget: "list"
+            field:
+              label: "Image Path"
+              name: "image"
+              widget: "image"
+              media_library:
+                config:
+                  multiple: false
+          - label: "Favicon Colors"
+            name: "favicon"
+            widget: "object"
+            fields:
+              - label: "Mask Color"
+                name: "color.mask"
+                widget: "color"
+                default: "#ED1B34"
+                required: false
+              - label: "MS Application Color"
+                name: "color.msapplication"
+                widget: "color"
+                default: "#ED1B34"
+                required: false
+          - label: "Social Media Links"
+            name: "social"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "name", widget: "string", hint: "FontAwesome brand name." }
+              - { label: "URL", name: "url", widget: "string" }
+          - label: "Contact Information"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Organization name", name: "name", widget: "string" }
+              - { label: "Address", name: "address", widget: "string" }
+              - { label: "City, State, ZIP", name: "city_state_zip", widget: "string" }
+              - label: "Emails"
+                name: "emails"
+                widget: "list"
+                fields:
+                  - { label: "Email Address", name: "address", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+              - label: "Phone"
+                name: "phone"
+                widget: "object"
+                fields:
+                  - { label: "Phone Number", name: "number", widget: "string" }
+                  - { label: "Label", name: "label", widget: "string" }
+
+  - name: "i18n"
+    label: "Translations"
+    label_singular: "Translation File"
+    description: "Edit all user-facing strings for localization."
+    files:
+      - name: "en"
+        label: "English Strings"
+        file: "i18n/en.yaml"
+        format: "yaml"
+        fields:
+          - label: "Strings"
+            name: "strings"
+            widget: "list"
+            summary: "{{fields.id}}: {{fields.translation}}"
+            fields:
+              - { label: "Key", name: "id", widget: "string" }
+              - { label: "Translation", name: "translation", widget: "string" }
+      - name: "de"
+        label: "German Strings"
+        file: "i18n/de.yaml"
+        format: "yaml"
+        fields:
+          - label: "Strings"
+            name: "strings"
+            widget: "list"
+            summary: "{{fields.id}}: {{fields.translation}}"
+            fields:
+              - { label: "Key", name: "id", widget: "string" }
+              - { label: "Translation", name: "translation", widget: "string" }
+
+  - name: "page"
+    label: "Single Pages"
+    label_singular: "Single Page"
+    folder: "content"
+    description: "Manage content for single pages. Edit both English and Deutsch side by side."
+    create: true
+    delete: true
+    i18n: true
+    locales: ["en", "de"]
+    fields:
+      - { name: "title", label: "Title", widget: "string", i18n: true, hint: "Page title." }
+      - { name: "weight", label: "Order", widget: "number", required: false, i18n: duplicate, hint: "Order in navigation." }
+      - { name: "cover", label: "Cover Image", widget: "image", required: false, hint: "Main image for the page." }
+      - { name: "navbar", label: "Show in Top Navigation?", widget: "boolean", default: false, required: false, i18n: duplicate }
+      - { name: "footer", label: "Show in Footer Navigation?", widget: "boolean", default: false, required: false, i18n: duplicate }
+      - { name: "description", label: "Description", widget: "markdown", required: false, i18n: true, hint: "Short summary for SEO and sharing." }
+      - { name: "body", label: "Body", widget: "markdown", required: false, i18n: true, hint: "Main content of the page." }
+
+  - name: "about-mission"
+    label: "About Mission Section"
+    label_singular: "About Mission"
+    files:
+      - name: "about-mission-en"
+        label: "About Mission (English)"
+        file: "data/about-mission.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+      - name: "about-mission-de"
+        label: "About Mission (Deutsch)"
+        file: "data/about-mission.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+
+  - name: "team"
+    label: "Team Members"
+    label_singular: "Team Member"
+    folder: "data/team"
+    description: "Edit team members for both languages. Each team member is a separate file."
+    create: true
+    format: "yml"
+    extension: "yml"
+    i18n: true
+    locales: ["en", "de"]
+    slug: "{{name | slugify}}"
+    fields:
+      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
+      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the team member." }
+      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
+      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
+      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
+      - { name: "social", label: "Social Link", widget: "string", i18n: duplicate, required: false, hint: "Link to social profile (e.g. LinkedIn)." }
+      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
+
+  - name: "board"
+    label: "Board Members"
+    label_singular: "Board Member"
+    folder: "data/board"
+    description: "Edit board members for both languages. Each board member is a separate file."
+    create: true
+    format: "yml"
+    extension: "yml"
+    i18n: true
+    locales: ["en", "de"]
+    slug: "{{name | slugify}}"
+    fields:
+      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
+      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the board member." }
+      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
+      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
+      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
+      - { name: "social", label: "Social Link", widget: "string", i18n: duplicate, required: false, hint: "Link to social profile (e.g. LinkedIn)." }
+      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
+
+  - name: "reports"
+    label: "Reports"
+    label_singular: "Report"
+    folder: "data/reports"
+    description: "Edit reports for both languages."
+    create: true
+    format: "yml"
+    extension: "yml"
+    i18n: true
+    locales: ["en", "de"]
+    fields:
+      - { name: "year", label: "Year", widget: "number", i18n: duplicate, hint: "Year of the report." }
+      - { name: "title", label: "Title", widget: "string", i18n: true }
+      - { name: "image", label: "Image", widget: "image", hint: "Report cover image." }
+      - { name: "download", label: "PDF File", widget: "file", hint: "Upload the report PDF." }
+
+  - name: "services"
+    label: "Services"
+    label_singular: "Service"
+    files:
+      - name: "service-en"
+        label: "Services (English)"
+        file: "data/service-card.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "description", label: "Description", widget: "text" }
+          - { name: "icon", label: "Icon", widget: "string", required: false }
+      - name: "service-de"
+        label: "Services (Deutsch)"
+        file: "data/service-card.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "description", label: "Beschreibung", widget: "text" }
+          - { name: "icon", label: "Icon", widget: "string", required: false }
+
+  - name: "our-service"
+    label: "Our Service"
+    label_singular: "Our Service"
+    files:
+      - name: "our-service-en"
+        label: "Our Service (English)"
+        file: "data/our-service.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "text", required: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "image", label: "Image", widget: "image", required: false }
+      - name: "our-service-de"
+        label: "Unser Service (Deutsch)"
+        file: "data/our-service.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "subtitle", label: "Untertitel", widget: "text", required: false }
+          - label: "Elemente"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "description", label: "Beschreibung", widget: "text" }
+              - { name: "image", label: "Bild", widget: "image", required: false }
+
+  - name: "what-we-do"
+    label: "What We Do"
+    label_singular: "What We Do"
+    files:
+      - name: "what-we-do-en"
+        label: "What We Do (English)"
+        file: "data/what-we-do.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "text", required: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "image", label: "Image", widget: "image", required: false }
+      - name: "what-we-do-de"
+        label: "Was wir tun (Deutsch)"
+        file: "data/what-we-do.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "subtitle", label: "Untertitel", widget: "text", required: false }
+          - label: "Elemente"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "description", label: "Beschreibung", widget: "text" }
+              - { name: "image", label: "Bild", widget: "image", required: false }
+
+  - name: "methodology"
+    label: "Methodology"
+    label_singular: "Methodology"
+    files:
+      - name: "methodology-en"
+        label: "Methodology (English)"
+        file: "data/methodology.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string", hint: "Section title." }
+          - { name: "subtitle", label: "Subtitle", widget: "text", required: false, hint: "Section subtitle." }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "image", label: "Image", widget: "image", required: false }
+      - name: "methodology-de"
+        label: "Methodology (Deutsch)"
+        file: "data/methodology.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string", hint: "Abschnittstitel." }
+          - { name: "subtitle", label: "Untertitel", widget: "text", required: false, hint: "Abschnittsuntertitel." }
+          - label: "Elemente"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "description", label: "Beschreibung", widget: "text" }
+              - { name: "image", label: "Bild", widget: "image", required: false }
+
+  - name: "who-we-work-with"
+    label: "Who We Work With"
+    label_singular: "Who We Work With"
+    files:
+      - name: "who-we-work-with-en"
+        label: "Who We Work With (English)"
+        file: "data/who-we-work-with.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "description", label: "Description", widget: "text", required: false }
+              - { name: "logo", label: "Logo", widget: "image", required: false }
+      - name: "who-we-work-with-de"
+        label: "Mit wem wir arbeiten (Deutsch)"
+        file: "data/who-we-work-with.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - label: "Elemente"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Name", widget: "string" }
+              - { name: "description", label: "Beschreibung", widget: "text", required: false }
+              - { name: "logo", label: "Logo", widget: "image", required: false }

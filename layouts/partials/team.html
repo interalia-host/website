@@ -1,0 +1,92 @@
+<section class="relative py-16 px-8 md:px-12 md:mt-[70rem] mt-[10rem]">
+  <div class="absolute md:-top-[70rem] -top-[10rem] bottom-0 left-0 right-0 bg-[url('/media/images/bp.svg')] bg-cover bg-no-repeat bg-top z-10"></div>
+
+  <div class="xl:absolute relative md:max-w-3xl max-w-7xl mx-auto z-20 text-center md:-top-[54rem] xl:left-1/2 xl:-translate-x-1/2 -mt-24 mb-48 md:mt-0 md:mb-0">
+    <h2 class="md:text-6xl text-4xl">{{ i18n "strings.team_intro_title" }}</h2>
+    <p class="mt-4 mb-10 mx-auto text-lg">
+      {{ i18n "strings.team_intro_text" }}
+    </p>
+    <a href="mailto:info@interalia.host"
+      class="px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-gray-500 transition"
+      aria-label="{{ i18n "strings.team_intro_button_aria" }}">
+      {{ i18n "strings.team_intro_button" }}
+    </a>
+  </div>
+</section>
+
+<section class="relative py-16 px-8 md:px-12 md:-mt-[25rem]">
+  <div class="absolute -top-[10rem] bottom-0 left-0 right-0 bg-[url('/media/images/bk.svg')] bg-cover bg-no-repeat bg-top z-10"></div>
+
+  <!-- Main Content -->
+  <div class="relative max-w-3xl mx-auto text-center z-20 text-white">
+    <h2 class="text-3xl">{{ i18n "strings.our_team" }}</h2>
+  </div>
+
+  <!-- Team Section Layout -->
+  <div class="mt-12 max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-12 z-20 text-white">
+    {{ $lang := .Site.Language.Lang }}
+    {{ $team := slice }}
+    {{ range $k, $v := .Site.Data.team }}
+      {{ if hasSuffix $k (print "." $lang) }}
+        {{ $team = $team | append $v }}
+      {{ end }}
+    {{ end }}
+    {{ range sort $team "order" }}
+    <div class="z-20">
+      <!-- Name & Role -->
+      <h3 class="mt-4 text-xl">{{ .name }}</h3>
+      {{ if .pronoun }}
+      <span class="block text-xs text-gray-200 mt-1">{{ .pronoun }}</span>
+      {{ end }}
+      <p class="text-sm text-gray-100">{{ .role }}</p>
+      <hr class="my-2 border-gray-200" />
+
+      <!-- Social Link -->
+      {{ if .social }}
+      <a href="{{ .social }}" target="_blank" rel="noopener" 
+         class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400"
+         aria-label="{{ i18n "strings.linkedin_profile_aria" }} {{ .name }}">
+        in
+      </a>
+      {{ end }}
+
+      <hr class="my-2 border-gray-200" />
+
+      <!-- Bio -->
+      <p class="mt-2 text-gray-100 text-sm">{{ .bio }}</p>
+    </div>
+    {{ end }}
+  </div>
+  <!-- Board Members Section -->  
+  <div class="mt-12 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-12 z-20 text-white">
+    {{ $lang := .Site.Language.Lang }}
+    {{ $board := slice }}
+    {{ range $k, $v := .Site.Data.board }}
+      {{ if hasSuffix $k (print "." $lang) }}
+        {{ $board = $board | append $v }}
+      {{ end }}
+    {{ end }}
+    {{ range sort $board "order" }}
+    <div class="z-20">
+      <!-- Name & Role -->
+      <h3 class="mt-4 text-xl">{{ .name }}</h3>
+      {{ if .pronoun }}
+      <span class="block text-xs text-gray-200 mt-1">{{ .pronoun }}</span>
+      {{ end }}
+      <p class="text-sm text-gray-100">{{ .role }}</p>
+      <hr class="my-2 border-gray-200" />
+      <!-- Social Link -->
+      {{ if .social }}
+      <a href="{{ .social }}" target="_blank" rel="noopener" 
+        class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400"
+        aria-label="{{ i18n "strings.linkedin_profile_aria" }} {{ .name }}">
+        in
+      </a>
+      {{ end }}
+      <hr class="my-2 border-gray-200" />
+      <!-- Bio -->
+      <p class="mt-2 text-gray-100 text-sm">{{ .bio }}</p>
+    </div>
+    {{ end }}
+  </div>
+</section>

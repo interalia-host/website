@@ -1,0 +1,23 @@
+<section class="py-16 px-8 md:px-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="relative bg-[#ECEBC9] p-8 md:p-12 rounded-2xl">
+        <div class="absolute inset-0 bg-no-repeat bg-contain opacity-10 lg:opacity-100" style="background-image: url('/media/images/service-leaf.png');"></div>
+        {{ $dataFile := printf "service-card.%s" .Lang }}
+        {{ $data := index .Site.Data $dataFile }}
+        <div class="relative z-10 lg:ms-65">
+          <h2 class="text-4xl md:text-5xl text-gray-900">{{ $data.title }}</h2>
+          <p class="mt-4 text-gray-800">
+          {{ $data.subtitle }}
+          </p>
+  
+          <div class="mt-6 flex justify-end">
+            <a href="{{ $data.link }}" 
+               class="px-6 py-3 bg-[#FBEBDF] hover:bg-[#F5D9CC] text-gray-800 rounded-full text-lg focus:outline-none"
+               aria-label="{{ $data.label }}">
+               {{ $data.button }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

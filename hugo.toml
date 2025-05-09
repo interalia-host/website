@@ -1,0 +1,79 @@
+title = "Interalia"
+baseURL = "https://interalia-demo.netlify.app/"
+
+defaultContentLanguage = "en"
+languageCode = "en-us"
+defaultContentLanguageInSubdir = true
+
+rssLimit  = 300
+
+archetypeDir = "archetypes"
+contentDir   = "content"
+dataDir      = "data"
+layoutDir    = "layouts"
+publishDir   = "public"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = true
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = true
+
+pluralizeListTitles = false
+
+[permalinks]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+    [markup.tableOfContents]
+      startLevel = 2
+      endLevel = 4
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+  [languages.en.params]
+    languageName = "English"
+    direction = "ltr"
+
+  [languages.de]
+    languageName = "Deutsch"
+    weight = 2
+  [languages.de.params]
+    languageName = "Deutsch"
+    direction = "ltr"
+
+[privacy]
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.x]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = false
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true

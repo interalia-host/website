@@ -1,0 +1,23 @@
+<section class="py-16 px-8 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+        {{ $dataFile := printf "what-we-do.%s" .Lang }}
+        {{ $data := index .Site.Data $dataFile }}
+
+        <div class="grid place-items-start md:col-span-5">
+            <h2 class="text-3xl md:text-5xl text-gray-900">{{ $data.title }}</h2>
+            <p class="mt-4 text-gray-700">{{ $data.subtitle }}</p>
+            <img src="{{ .Site.BaseURL}}/media/images/what-we-do-flower.png" alt="Illustration" class="max-w-3xs mx-auto mt-10">
+        </div>
+
+        <div class="hidden md:block md:col-span-1"></div>
+
+        <div class="space-y-8 md:col-span-6">
+            {{ range $data.items }}
+            <div>
+                <h3 class="text-2xl font-bold mb-2">{{ .title }}</h3>
+                <p class="text-gray-700">{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

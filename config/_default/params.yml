@@ -1,0 +1,21 @@
+description: Breaking down barriers for civil society
+keywords: ""
+images:
+  - /media/uploads/about-hero.webp
+favicon:
+  color:
+    mask: "#E28389"
+    msapplication: "#E28389"
+social:
+  - name: linkedin
+    url: https://www.linkedin.com/company/interalia.host/
+contact:
+  name: 
+  address: 
+  city_state_zip: 
+  emails:
+    - address: info@interalia.host
+      label: for general inquiries, press, and other information
+  phone:
+    number: 
+    label: office number

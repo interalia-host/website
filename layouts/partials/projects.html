@@ -1,0 +1,22 @@
+<section class="relative py-16 px-8 md:px-12 my-16">
+    <!-- Curved Background Shape -->
+    <div class="absolute top-0 left-0 w-full h-1/2 bg-[#F5D9CC] rounded-t-[30%]"></div>
+  
+    <div class="relative max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl text-gray-900 mb-16">Projects</h2>
+  
+      <!-- Project Grid -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 relative z-10">
+        {{ range .Site.Data.projects }}
+        <div class="relative group">
+          <img src="{{ .image }}" alt="{{ .title }}" class="w-full h-100 object-cover rounded-lg shadow-md" />
+          
+          <!-- Overlay for Hover Effect -->
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-60 transition-opacity">
+            <p class="text-white text-lg font-semibold">{{ .title }}</p>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section class="py-12 px-8 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div class="max-w-sm">
+        {{ $dataFile := printf "methodology.%s" .Lang }}
+        {{ $data := index .Site.Data $dataFile }}
+        <h2 class="text-3xl md:text-5xl text-gray-900">{{ $data.title }}</h2>
+        <p class="mt-4 text-gray-700">
+          {{ $data.subtitle }}
+        </p>
+      </div>
+      {{ range $data.items }}
+      <div class="px-8 py-12 rounded-4xl {{ if mod .order 2 }}bg-[#F5D9CC]{{ else }}bg-[#ECEBC9]{{ end }}">
+        {{ if .image }}
+          <img src="{{ .image }}" alt="{{ .title }}" class="mb-4" />
+        {{ end }}
+        <h3 class="text-3xl font-bold text-gray-900">{{ .title }}</h3>
+        <p class="mt-2 text-gray-700">{{ .description }}</p>
+      </div>
+      {{ end }}
+    </div>
+</section>

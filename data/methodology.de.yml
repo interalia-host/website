@@ -1,0 +1,18 @@
+title: "Wie wir arbeiten"
+subtitle: "Unser Ansatz für das Fiscal Hosting basiert auf Vertrauen, Zusammenarbeit und Anpassungsfähigkeit. Wir sind stolz darauf, die einzigartigen Bedürfnisse jedes von uns unterstützten Projekts zu verstehen und sicherzustellen, dass unsere Methoden ebenso effektiv wie mitfühlend sind."
+items:
+  - title: "Zuverlässig"
+    description: "Mit jahrelanger Erfahrung in Operations und Finanzen bieten wir zuverlässige Unterstützung, immer dann, wenn du sie brauchst. Uns ist wichtig, dass du dich auf uns verlassen kannst."
+    image: /media/images/reliable.png
+  - title: "Kreativ"
+    description: "Bürokratische Herausforderungen sind für uns eine Chance, kreative Lösungen zu finden. Wir arbeiten eng mit dir zusammen, um auch schwierige Probleme zu lösen."
+    image: /media/images/creative.png
+  - title: "Kooperativ"
+    description: "Wir glauben, dass jede Zusammenarbeit einzigartig ist. Jede:r hat unterschiedliche Bedürfnisse. Deshalb hören wir zu und arbeiten gemeinsam an Lösungen, damit du wirksam arbeiten kannst."
+    image: /media/images/caring.png
+  - title: "Unterstützend"
+    description: "Wir wissen, dass Verwaltung und Bürokratie oft überwältigend wirken. Wir sind hier, um dir zu helfen und unterstützen dich bei allen Fragen und Anliegen."
+    image: /media/images/collaborative.png
+  - title: "Verbindlich"
+    description: "Dein Feedback zählt! Es hilft uns, dazuzulernen und uns weiterzuentwickeln.Du hast verschiedene Möglichkeiten, uns Rückmeldung zu geben – und uns so auch zur Rechenschaft zu ziehen."
+    image: /media/images/accountable.png
