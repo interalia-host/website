@@ -1,25 +1,51 @@
-title: "Unsere Services"
-subtitle: "interalia bietet eine Reihe von Services an. Üblicherweise berechnen wir eine Pauschale von 10% auf eingeworbene Mittel. Wir haben unseren Sitz in Deutschland und arbeiten weltweit – wenn es die politische Lage und unsere Kapazitäten erlauben."
-additional: "Zusätzlich bieten wir auf Anfrage folgende Services an. Bitte beachtet, dass dies zusätzliche Kosten verursachen kann:"
+title: Unsere Services
+subtitle: interalia bietet Unterstützung in verschiedenen Bereichen an.
+  Üblicherweise berechnen wir eine Pauschale von 10 % auf eingeworbene Mittel.
+  Wir haben unseren Sitz in Deutschland und arbeiten weltweit – wenn es die
+  politische Lage und unsere Kapazitäten erlauben.
+additional: "Zusätzlich bieten wir auf Anfrage folgende Services an. Bitte
+  beachtet, dass dies zusätzliche Kosten verursachen kann:"
 items:
-  - title: "Gemeinnützigkeit"
-    description: "interalia ist in Deutschland als gGmbH und in den USA als 501(c)(3) anerkannt. So können unsere Projektpartner*innen Fördermittel von Stiftungen und steuerlich absetzbare Spenden erhalten."
-  - title: "Personalmanagement"
-    description: "Projektpartner:innen mit Sitz in Deutschland können über uns angestellt werden. Für alle anderen können wir die Vertragsgestaltung übernehmen. Dabei achten wir darauf, faire Arbeitsbedingungen zu schaffen."
-  - title: "Fördermittelverwaltung"
-    description: "Wir übernehmen die Verwaltung von Fördermitteln und unterstützen dich bei den Budgets und der Berichterstattung."
-  - title: "Finanzmanagement"
-    description: "Ihr habt jederzeit Zugriff auf euer Budget – unsere Grundregel: Keine Überweisung ohne euer Okay. Ihr gebt grünes Licht, wir setzen um. So bleibt alles nachvollziehbar und in eurer Hand. Wir erstellen monatliche Finanzberichte und stellen Richtlinien bereit – damit ihr jederzeit den Überblick behaltet."
-  - title: "Riskomanagement"
-    description: "Wir helfen dir,  Risiken zu erkennen und zu minimieren. Zudem führen wir jährliche Finanz-Audits durch und haben klare Richtlinien zum Datenschutz und zur Datensicherheit."
-  - title: "Verwaltung eines gemeinsamen Fonds"
-    description: "Wenn mehrere Stiftungen zusammen an einem gemeinsamen Fonds arbeiten möchten, übernehmen wir die Verwaltung und Weiterleitung der Mittel."
-  - title: "Ad-hoc-Unterstützung"
-    description: "Wir bieten Menschen aus der Zivilgesellschaft, die mit administrativen oder bürokratischen Hürden kämpfen, ein offenes Ohr, um Herausforderungen gemeinsam zu besprechen – unabhängig davon, ob ihr bei uns gehostet seid oder nicht."
+  - title: Gemeinnützigkeit
+    description: interalia übernimmt als sogenannter Fiscal Host die
+      Mittelverwaltung für euer Projekt, das (noch) keine eigene Rechtsform hat.
+      Wir sind in Deutschland als gGmbH registriert und in den USA als 501(c)(3)
+      anerkannt - und können somit auch Fördermittel aus den USA annehmen.
+  - title: Personalmanagement
+    description: Menschen aus eurem Team mit Sitz in Deutschland können über uns
+      angestellt werden. Dabei achten wir darauf, faire Arbeitsbedingungen zu
+      schaffen.
+  - title: Fördermittelverwaltung
+    description: Wir übernehmen die Verwaltung von Fördermitteln und unterstützen
+      euch bei den Budgets und der Berichterstattung. Die Verträge werden mit
+      interalia geschlossen. Deshalb tragen wir die Verantwortung – und haben
+      selbst ein großes Interesse daran, dass alles richtig läuft.
+  - title: Finanzmanagement
+    description: "Ihr habt jederzeit Zugriff auf euer Budget – unsere Grundregel:
+      Keine Überweisung ohne euer Okay. Ihr gebt grünes Licht, wir setzen um. So
+      bleibt alles nachvollziehbar und in eurer Hand. Wir erstellen monatliche
+      Finanzberichte und stellen Richtlinien bereit – damit ihr jederzeit den
+      Überblick behaltet."
+  - title: Riskomanagement
+    description: Wir helfen euch,  Risiken zu erkennen und zu minimieren. Zudem
+      führen wir jährliche Finanz-Audits durch und haben klare Richtlinien zum
+      Datenschutz und zur Datensicherheit.
+  - title: Verwaltung eines gemeinsamen Fonds
+    description: Wenn mehrere Stiftungen zusammen an einem gemeinsamen Fonds
+      arbeiten möchten, übernehmen wir die Verteilung bzw. Weiterleitung der
+      Fördermittel als ausführende Instanz.
+  - title: Ad-hoc-Unterstützung
+    description: Wir bieten Menschen aus der Zivilgesellschaft, die mit
+      administrativen oder bürokratischen Hürden kämpfen, ein offenes Ohr, um
+      Herausforderungen gemeinsam zu besprechen – unabhängig davon, ob ihr bei
+      uns gehostet seid oder nicht.
     request: true
-  - title: "Geteilte technische Infrastruktur"
-    description: "Wir bieten E-Mail, Cloud-Speicher, Videokonferenz-Software, asynchrone Chat-Software und Website-Hosting an, ebenso wie einen gemeinsamen Passwort-Manager und VPN. Und das Beste daran: (Fast) alles ist Open Source! (Wir arbeiten an dem 'fast'.)"
+  - title: Geteilte technische Infrastruktur
+    description: 'Wir bieten E-Mail, Cloud-Speicher und Videokonferenz-Software an,
+      ebenso wie einen gemeinsamen Passwort-Manager und VPN. Und das Beste
+      daran: (Fast) alles ist Open Source! (Wir arbeiten an dem "fast".)'
     request: true
-  - title: "Finanzstrategische Beratung"
-    description: "Wir unterstützen dich mit unserer Erfahrung, um deine Strategie oder Vorgehensweise zu besprechen."
+  - title: Finanzstrategische Beratung
+    description: Wir bringen unsere Erfahrung ein, um mit euch über nachhaltige
+      Budgetstrategien nachzudenken und neue Wege zu finden.
     request: true
