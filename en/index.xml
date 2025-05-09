@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Interalia</title>
-    <link>https://interalia-demo.netlify.app/en/</link>
+    <link>https://interalia.host/en/</link>
     <description>Recent content on Interalia</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://interalia-demo.netlify.app/en/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://interalia.host/en/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://interalia-demo.netlify.app/en/about/</link>
+      <link>https://interalia.host/en/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://interalia-demo.netlify.app/en/about/</guid>
+      <guid>https://interalia.host/en/about/</guid>
       <description></description>
     </item>
     <item>
       <title>Imprint</title>
-      <link>https://interalia-demo.netlify.app/en/imprint/</link>
+      <link>https://interalia.host/en/imprint/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://interalia-demo.netlify.app/en/imprint/</guid>
+      <guid>https://interalia.host/en/imprint/</guid>
       <description>&lt;h2 id=&#34;address&#34;&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;Address&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;interalia gGmbH&#xA;Rehlingstraße 9&#xA;79100 Freiburg i. Brsg.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:hello@interalia.host&#34; &gt;hello@interalia.host&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Registery No.:&lt;/strong&gt; HRB 731271, Amtsgericht Freiburg im Breisgau&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;CEO&lt;/strong&gt;: Stefanie Kristina Klein, Paula Grünwald&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;&lt;strong&gt;Technical&lt;/strong&gt;: Hugo Static Site Generator with DecapCMS&lt;/p&gt;&#xA;&lt;h2 id=&#34;exclusion-of-liability&#34;&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;Exclusion of liability&lt;/h2&gt;&#xA;&lt;p&gt;Responsible for the context of this website in accordance with § 55 section 2 RStV is the respective author.&lt;/p&gt;&#xA;&lt;h2 id=&#34;content-liability&#34;&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;Content liability&lt;/h2&gt;&#xA;&lt;p&gt;The contents of our website were created with the utmost care. However, we cannot guarantee the accuracy, completeness and timeliness of the content. As a service provider, we are responsible for our own content on our website in accordance with § 7 para.1 TMG under the general laws. According to § 8 to 10 TMG, we are not obligated to monitor transmitted or stored information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information according to general laws remain unaffected. However, liability in this regard is only possible from the point in time at which a concrete infringement of the law becomes known. If we become aware of such infringements, we will remove this content immediately.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Privacy Policy</title>
-      <link>https://interalia-demo.netlify.app/en/privacy/</link>
+      <link>https://interalia.host/en/privacy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://interalia-demo.netlify.app/en/privacy/</guid>
+      <guid>https://interalia.host/en/privacy/</guid>
       <description>&lt;p&gt;interalia operates the website accessible on the Internet at &lt;a href=&#34;https://interalia.host/&#34; target=&#34;_blank&#34; &gt;https://interalia.host&lt;/a&gt; and its respective subdirectories (hereinafter “interalia.host” or the “Website”).&lt;/p&gt;&#xA;&lt;p&gt;With this privacy policy, interalia would like to explain to you which data is processed in which form when you visit our website. This also fulfills our obligation to inform you in accordance with Article 13 of the General Data Protection Regulation (GDPR).&lt;/p&gt;&#xA;&lt;p&gt;I. Personal data, purposes and legal basis of data processing&lt;/p&gt;</description>
     </item>
     <item>
       <title>Services</title>
-      <link>https://interalia-demo.netlify.app/en/service/</link>
+      <link>https://interalia.host/en/service/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://interalia-demo.netlify.app/en/service/</guid>
+      <guid>https://interalia.host/en/service/</guid>
       <description></description>
     </item>
   </channel>

@@ -2,88 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://interalia-demo.netlify.app/en/about/</loc>
+    <loc>https://interalia.host/en/about/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/about/"
+                href="https://interalia.host/de/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/about/"
+                href="https://interalia.host/en/about/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/imprint/</loc>
+    <loc>https://interalia.host/en/imprint/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/imprint/"
+                href="https://interalia.host/de/imprint/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/imprint/"
+                href="https://interalia.host/en/imprint/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/privacy/</loc>
+    <loc>https://interalia.host/en/privacy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/privacy/"
+                href="https://interalia.host/de/privacy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/privacy/"
+                href="https://interalia.host/en/privacy/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/service/</loc>
+    <loc>https://interalia.host/en/service/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/service/"
+                href="https://interalia.host/de/service/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/service/"
+                href="https://interalia.host/en/service/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/categories/</loc>
+    <loc>https://interalia.host/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/categories/"
+                href="https://interalia.host/de/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/categories/"
+                href="https://interalia.host/en/categories/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/</loc>
+    <loc>https://interalia.host/en/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/"
+                href="https://interalia.host/de/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/"
+                href="https://interalia.host/en/"
                 />
   </url><url>
-    <loc>https://interalia-demo.netlify.app/en/tags/</loc>
+    <loc>https://interalia.host/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
-                href="https://interalia-demo.netlify.app/de/tags/"
+                href="https://interalia.host/de/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://interalia-demo.netlify.app/en/tags/"
+                href="https://interalia.host/en/tags/"
                 />
   </url>
 </urlset>
