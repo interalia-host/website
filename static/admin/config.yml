@@ -203,6 +203,29 @@ collections:
       - { name: "social", label: "Social Link", widget: "string", i18n: duplicate, required: false, hint: "Link to social profile (e.g. LinkedIn)." }
       - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
 
+  - name: "blog-posts"
+    label: "Blog Posts"
+    label_singular: "Blog Post"
+    folder: "content/reports"
+    description: "Manage blog posts and research articles. Edit both English and Deutsch side by side."
+    create: true
+    delete: true
+    i18n: true
+    locales: ["en", "de"]
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    filter:
+      exclude: "^_index\\..*\\.md$"
+    fields:
+      - { name: "title", label: "Title", widget: "string", i18n: true, hint: "Post title." }
+      - { name: "date", label: "Date", widget: "datetime", i18n: duplicate, hint: "Date of publication." }
+      - { name: "author", label: "Author", widget: "string", i18n: true, required: false, hint: "Author name." }
+      - { name: "type", label: "Type", widget: "string", i18n: true, required: false, default: "blog", hint: "Type of post (e.g. blog, research report)." }
+      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Main image for the post." }
+      - { name: "description", label: "Description", widget: "text", i18n: true, required: false, hint: "Short summary for SEO and sharing." }
+      - { name: "body", label: "Body", widget: "markdown", i18n: true, hint: "Main content of the post." }
+
   - name: "reports"
     label: "Reports"
     label_singular: "Report"

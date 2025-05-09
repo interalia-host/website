@@ -1,0 +1,35 @@
+<article class="flex flex-col md:flex-row items-start md:items-center py-8 border-b border-gray-200" aria-labelledby="resource-title-{{ if eq .type "report" }}{{ .item.title | urlize }}{{ else }}{{ .item.Title | urlize }}{{ end }}">
+  <div class="flex-1 min-w-0 prose prose-neutral">
+    <p class="text-xs text-gray-500 mb-2">
+      {{ if eq .type "report" }}
+        {{ .item.year }}
+      {{ else }}
+        {{ .item.Date.Format "02.01.2006" }}
+      {{ end }}
+    </p>
+    <h2 id="resource-title-{{ if eq .type "report" }}{{ .item.title | urlize }}{{ else }}{{ .item.Title | urlize }}{{ end }}" class="text-xl font-serif font-semibold mb-1">
+      {{ if eq .type "report" }}
+        {{ .item.title }}
+      {{ else }}
+        <a href="{{ .item.RelPermalink }}" class="hover:underline">{{ .item.Title }}</a>
+      {{ end }}
+    </h2>
+    <p class="text-sm text-gray-600 mb-2">
+      {{ if eq .type "report" }}
+        {{ i18n "strings.research_report" }}
+      {{ else }}
+        {{ with .item.Params.author }}{{ . }}{{ end }}{{ if .item.Params.author }} &ndash; {{ end }}{{ .item.Params.type | default "blog" }}
+      {{ end }}
+    </p>
+    {{ if eq .type "report" }}
+      <a href="{{ .item.download }}" class="inline-block mt-2 text-rose-700 underline" aria-label="{{ i18n "strings.download_report" }}: {{ .item.title }}">{{ i18n "strings.download_report" }}</a>
+    {{ end }}
+  </div>
+  <div class="ml-auto w-full md:w-64 h-32 flex-shrink-0 bg-gray-200 flex items-center justify-center relative mt-4 md:mt-0" aria-hidden="true">
+    {{ if eq .type "report" }}
+      {{ if .item.image }}<img src="{{ .item.image }}" alt="" class="object-contain w-full h-full opacity-60" />{{ end }}
+    {{ else }}
+      {{ with .item.Params.image }}<img src="{{ . }}" alt="" class="object-contain w-full h-full opacity-60" />{{ end }}
+    {{ end }}
+  </div>
+</article> 
