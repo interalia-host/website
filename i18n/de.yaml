@@ -1,6 +1,6 @@
 strings:
   - id: contact_us
-    translation: Kontaktiere uns
+    translation: Kontakt
   - id: our_mission
     translation: Unsere Mission
   - id: submit
@@ -48,7 +48,7 @@ strings:
   - id: hero_cta_mission_aria
     translation: Erfahre mehr über unsere Mission
   - id: team_intro_title
-    translation: Die Veränderung, die wir sehen wollen
+    translation: Was wir erreichen wollen
   - id: team_intro_text
     translation: "Wir setzen uns für eine vielfältige und starke Zivilgesellschaft
       ein. Sie soll wachsen, Machtverhältnisse kritisch hinterfragen,
@@ -60,9 +60,9 @@ strings:
       das legt, was wirklich zählt – Solidarität, Vertrauen und langfristige
       Stabilität."
   - id: team_intro_button
-    translation: Kontaktiere uns
+    translation: Kontakt
   - id: team_intro_button_aria
-    translation: Kontaktiere uns
+    translation: Kontakt
   - id: footer_primary_nav
     translation: Hauptnavigation
   - id: footer_secondary_nav
