@@ -76,4 +76,6 @@ strings:
   - id: who_we_work_with_flower_alt
     translation: "Who we work with illustration"
   - id: linkedin_profile_aria
-    translation: "LinkedIn profile of" 
+    translation: "LinkedIn profile of"
+  - id: advisory_council
+    translation: "Advisory council" 
