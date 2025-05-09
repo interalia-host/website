@@ -1,25 +1,43 @@
-title: "Our service"
-subtitle: "We offer the following core services as a fiscal host, and we typically take a 10% overhead to cover our time on these services. We are registered in Germany (beginning in 2024) but able to work worldwide, subject to political context and availability."
+title: Our services
+subtitle: We offer the following core services as a fiscal host, and we
+  typically take a 10% overhead to cover our time on these services. We are
+  registered in Germany (beginning in 2024) but able to work worldwide, subject
+  to political context and availability.
 additional: "In addition, upon request and subject to available funds, we can offer:"
 items:
-  - title: "Non-profit status"
-    description: "interalia is registered as a gGmbH in Germany, with 501(c)3 equivalency in the United States, which allows hosted projects to access funds from foundations and donations."
-  - title: "Human resources Management"
-    description: "We can offer employment to project members based in Germany, and we take care of contracting for project members based elsewhere. We offer a range of values-aligned HR policies to choose from based on your project and team."
-  - title: "Grant Management"
-    description: "We administer all grant agreements and support you with reporting."
-  - title: "Financial Accounting"
-    description: "We track and monitor revenues and expenditures, provide regular financial reporting and offer policies and practices to ensure projects have solid oversight over their financial health."
-  - title: "Risk and Compliance"
-    description: "We can help you understand what kinds of insurance make sense for different projects, and help you assess activities from a risk mitigation lens."
-  - title: "Hosting for Pooled Funds"
-    description: "In situations where various philanthropies want to work together on a pooled fund, we are able to host and redistribute funds."
-  - title: "AD HOC Support for Individuals"
-    description: "For people facing administrative or bureaucratic hurdles, we aim to provide a friendly ear to talk through problems, whether or not you’re hosted with us."
+  - title: Non-profit status
+    description: interalia is registered as a gGmbH in Germany, with 501(c)3
+      equivalency in the United States, which allows hosted projects to access
+      funds from foundations and donations.
+  - title: Human resources Management
+    description: We can offer employment to project members based in Germany, and we
+      take care of contracting for project members based elsewhere. We offer a
+      range of values-aligned HR policies to choose from based on your project
+      and team.
+  - title: Grant Management
+    description: We administer all grant agreements and support you with reporting.
+  - title: Financial Accounting
+    description: We track and monitor revenues and expenditures, provide regular
+      financial reporting and offer policies and practices to ensure projects
+      have solid oversight over their financial health.
+  - title: Risk and Compliance
+    description: We can help you understand what kinds of insurance make sense for
+      different projects, and help you assess activities from a risk mitigation
+      lens.
+  - title: Hosting for Pooled Funds
+    description: In situations where various philanthropies want to work together on
+      a pooled fund, we are able to host and redistribute funds.
+  - title: AD HOC Support for Individuals
+    description: For people facing administrative or bureaucratic hurdles, we aim to
+      provide a friendly ear to talk through problems, whether or not you’re
+      hosted with us.
     request: true
-  - title: "Shared Tech Infrastructure"
-    description: "We can offer email, file storage, video conferencing software, and asynchronous chat software,, and website hosting, as well as a shared password manager and VPN."
+  - title: Shared Tech Infrastructure
+    description: We can offer email, file storage, video conferencing software, and
+      asynchronous chat software,, and website hosting, as well as a shared
+      password manager and VPN.
     request: true
-  - title: "Strategic advice"
-    description: "Depending on the topic or focus of your work, we might have the in-house experience to be able to talk through your strategy and approach."
+  - title: Strategic advice
+    description: Depending on the topic or focus of your work, we might have the
+      in-house experience to be able to talk through your strategy and approach.
     request: true
