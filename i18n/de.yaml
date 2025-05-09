@@ -1,89 +1,98 @@
 strings:
   - id: contact_us
-    translation: "Kontaktiere uns"
+    translation: Kontaktiere uns
   - id: our_mission
-    translation: "Unsere Mission"
+    translation: Unsere Mission
   - id: submit
-    translation: "Absenden"
+    translation: Absenden
   - id: sorry_not_found
-    translation: "Entschuldigung, wir konnten die gesuchte Seite nicht finden."
+    translation: Entschuldigung, wir konnten die gesuchte Seite nicht finden.
   - id: return_homepage
-    translation: "Zurück zur Startseite"
+    translation: Zurück zur Startseite
   - id: project_help
-    translation: "Hast du ein Projekt, bei dem wir helfen können?"
+    translation: Hast du ein Projekt, bei dem wir helfen können?
   - id: get_in_touch
-    translation: "Kontaktiere uns heute"
+    translation: Kontaktiere uns heute
   - id: company_org
-    translation: "Firma / Organisation"
+    translation: Firma / Organisation
   - id: company_org_placeholder
-    translation: "Firma / Organisation"
+    translation: Firma / Organisation
   - id: name
-    translation: "Name"
+    translation: Name
   - id: email
-    translation: "E-Mail"
+    translation: E-Mail
   - id: message
-    translation: "Nachricht"
+    translation: Nachricht
   - id: location
-    translation: "Standort"
+    translation: Standort
   - id: germany
-    translation: "Deutschland"
+    translation: Deutschland
   - id: europe
-    translation: "Europa"
+    translation: Europa
   - id: other
-    translation: "Andere"
+    translation: Andere
   - id: our_team
-    translation: "Unser Team"
+    translation: Unser Team
   - id: join_newsletter
-    translation: "Abonniere unseren Newsletter"
+    translation: Abonniere unseren Newsletter
   - id: email_address
-    translation: "E-Mail-Adresse"
+    translation: E-Mail-Adresse
   - id: interalia
-    translation: "Interalia"
+    translation: interalia
   - id: hero_cta_contact
-    translation: "Kontaktiere uns"
+    translation: Kontakt
   - id: hero_cta_mission
-    translation: "Unsere Mission"
+    translation: Unsere Mission
   - id: hero_cta_contact_aria
-    translation: "Kontaktiere uns"
+    translation: Kontakt
   - id: hero_cta_mission_aria
-    translation: "Erfahre mehr über unsere Mission"
+    translation: Erfahre mehr über unsere Mission
   - id: team_intro_title
-    translation: "Die Veränderung, die wir sehen wollen"
+    translation: Die Veränderung, die wir sehen wollen
   - id: team_intro_text
-    translation: "Wir arbeiten daran, das Tech- und Gesellschaftsökosystem zu unterstützen, verstanden als alle, die sich mit Themen rund um die Auswirkungen von Technologie und Daten auf unsere Gesellschaft beschäftigen, im weitesten Sinne. Wir sehen einen dringenden Bedarf an besser vernetzter operativer Infrastruktur in der Zivilgesellschaft, und wir träumen von einem Netzwerk von Fiscal Hosts, das eine gemeinsame Infrastruktur für operative Unterstützung, Wissen und Ressourcen bereitstellt, die die Widerstandsfähigkeit des zivilgesellschaftlichen Ökosystems stärkt und unsere Beziehungen zueinander so transformiert, dass sie auf Fürsorge statt auf Wettbewerb ausgerichtet sind."
+    translation: Wir arbeiten daran, das Tech- und Gesellschaftsökosystem zu
+      unterstützen, verstanden als alle, die sich mit Themen rund um die
+      Auswirkungen von Technologie und Daten auf unsere Gesellschaft
+      beschäftigen, im weitesten Sinne. Wir sehen einen dringenden Bedarf an
+      besser vernetzter operativer Infrastruktur in der Zivilgesellschaft, und
+      wir träumen von einem Netzwerk von Fiscal Hosts, das eine gemeinsame
+      Infrastruktur für operative Unterstützung, Wissen und Ressourcen
+      bereitstellt, die die Widerstandsfähigkeit des zivilgesellschaftlichen
+      Ökosystems stärkt und unsere Beziehungen zueinander so transformiert, dass
+      sie auf Fürsorge statt auf Wettbewerb ausgerichtet sind.
   - id: team_intro_button
-    translation: "Kontaktiere uns"
+    translation: Kontaktiere uns
   - id: team_intro_button_aria
-    translation: "Kontaktiere uns"
+    translation: Kontaktiere uns
   - id: footer_primary_nav
-    translation: "Hauptnavigation"
+    translation: Hauptnavigation
   - id: footer_secondary_nav
-    translation: "Sekundäre Navigation"
+    translation: Sekundäre Navigation
   - id: footer_social_legal
-    translation: "Social Media & Rechtliche Links"
+    translation: Social Media & Rechtliche Links
   - id: skip_to_content
-    translation: "Zum Inhalt springen"
+    translation: Zum Inhalt springen
   - id: 404_alt
-    translation: "404 - Seite nicht gefunden"
+    translation: 404 - Seite nicht gefunden
   - id: illustration_alt
-    translation: "Illustration"
+    translation: Illustration
   - id: service_leaf_alt
-    translation: "Serviceblatt-Illustration"
+    translation: Serviceblatt-Illustration
   - id: mission_flower_alt
-    translation: "Missionsblumen-Illustration"
+    translation: Missionsblumen-Illustration
   - id: what_we_do_flower_alt
-    translation: "Was wir tun Illustration"
+    translation: Was wir tun Illustration
   - id: who_we_work_with_flower_alt
-    translation: "Mit wem wir arbeiten Illustration"
+    translation: Mit wem wir arbeiten Illustration
   - id: linkedin_profile_aria
-    translation: "LinkedIn-Profil von"
+    translation: LinkedIn-Profil von
   - id: advisory_council
-    translation: "Beirat"
+    translation: Beirat
   - id: reports
-    translation: "Berichte"
+    translation: Berichte
   - id: blog_posts
-    translation: "Blogbeiträge"
+    translation: Blogbeiträge
   - id: download_report
-    translation: "Bericht herunterladen"
+    translation: Bericht herunterladen
   - id: read_more
-    translation: "Weiterlesen" 
+    translation: Weiterlesen
