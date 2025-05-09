@@ -12,7 +12,7 @@ strings:
   - id: project_help
     translation: Hast du ein Projekt, bei dem wir helfen können?
   - id: get_in_touch
-    translation: Kontaktiere uns heute
+    translation: Kontaktiere uns
   - id: company_org
     translation: Firma / Organisation
   - id: company_org_placeholder
