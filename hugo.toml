@@ -1,5 +1,5 @@
 title = "Interalia"
-baseURL = "https://interalia-demo.netlify.app/"
+baseURL = "https://interalia.host"
 
 defaultContentLanguage = "en"
 languageCode = "en-us"
