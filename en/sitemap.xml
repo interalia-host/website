@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://interalia.host/en/</loc>
-    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"
@@ -75,8 +75,21 @@
                 href="https://interalia.host/en/"
                 />
   </url><url>
+    <loc>https://interalia.host/en/reports/interalia-strategy/</loc>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/reports/interalia-strategy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/reports/interalia-strategy/"
+                />
+  </url><url>
     <loc>https://interalia.host/en/reports/</loc>
-    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="de"

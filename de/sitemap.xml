@@ -63,7 +63,7 @@
                 />
   </url><url>
     <loc>https://interalia.host/de/reports/</loc>
-    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -76,7 +76,7 @@
                 />
   </url><url>
     <loc>https://interalia.host/de/</loc>
-    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -86,6 +86,19 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://interalia.host/de/"
+                />
+  </url><url>
+    <loc>https://interalia.host/de/reports/interalia-strategy/</loc>
+    <lastmod>2025-05-09T14:22:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/reports/interalia-strategy/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/reports/interalia-strategy/"
                 />
   </url><url>
     <loc>https://interalia.host/de/reports/what-is-fiscal-hosting/</loc>
