@@ -8,14 +8,14 @@ favicon:
     msapplication: "#E28389"
 social:
   - name: linkedin
-    url: https://www.linkedin.com/company/interalia.host/
+    url: https://www.linkedin.com/company/interalia-host/about/
 contact:
-  name: 
-  address: 
-  city_state_zip: 
+  name: interalia gGmbH
+  address: Rehlingstraße 9
+  city_state_zip: 79100 Freiburg im Breisgau, Germany
   emails:
-    - address: info@interalia.host
+    - address: hello@interalia.host
       label: for general inquiries, press, and other information
   phone:
-    number: 
+    number: +49 155 63208494
     label: office number
