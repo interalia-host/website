@@ -50,8 +50,8 @@ jobs:
     - name: Build Hugo site
       run: ./hugo -d public
 
-    # - name: Create CNAME file
-    #   run: echo 'interalia.host' > public/CNAME
+    - name: Create CNAME file
+      run: echo 'interalia.host' > public/CNAME
 
     - name: Beautify HTML files
       run: find public/ -type f -name "*.html" -exec js-beautify --html -r -m 1 "{}" \;
