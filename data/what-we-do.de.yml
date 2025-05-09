@@ -1,13 +1,31 @@
-title: "Was wir machen"
-subtitle: "Du hast eine großartige Idee für ein gemeinnütziges Projekt oder eine Stiftung möchte dir finanzielle Unterstützung zukommen lassen – aber dir fehlt die Zeit oder das Wissen, um einen eigenen Verein oder eine gGmbH zu gründen? interalia übernimmt als gemeinnützige Organisation die rechtliche und finanzielle Abwicklung."
+title: Was wir machen
+subtitle: Ihr habt eine großartige Idee für ein gemeinnütziges Projekt oder
+  jemand möchte euch finanzielle Unterstützung zukommen lassen – aber euch fehlt
+  die Zeit oder das Wissen, um einen eigenen Verein oder eine gGmbH zu gründen?
+  interalia übernimmt die rechtliche und finanzielle Abwicklung eurer Vorhaben.
+  und ihr bleibt für die Inhalte und Vision verantwortlich.
 items:
-  - title: "Gemeinnützigkeit"
-    description: "Du kannst Fördergelder beantragen, Spenden annehmen und Rechnungen bezahlen – ganz ohne eigene Rechtsform. So können unsere Projektpartner:innen Fördermittel von Stiftungen und steuerlich absetzbare Spenden erhalten. interalia ist in Deutschland als gGmbH und in den USA als 501(c)(3) anerkannt."
-  - title: "Finanzmanagement"
-    description: "Ihr habt jederzeit Zugriff auf euer Budget – unsere Grundregel: Keine Überweisung ohne euer Okay. Ihr gebt grünes Licht, wir setzen um. So bleibt alles transparent, nachvollziehbar und in eurer Hand. Wir erstellen monatliche Finanzberichte und stellen klare Richtlinien bereit."
-  - title: "Personalmanagement"
-    description: "Projektpartner:innen mit Sitz in Deutschland können über uns angestellt werden. Für alle anderen übernehmen wir die Vertragsgestaltung. Dabei achten wir besonders darauf, faire Arbeitsbedingungen zu schaffen."
-  - title: "Fördermittelverwaltung"
-    description: "Wir übernehmen die Verwaltung aller Fördermittelverträge und unterstützen euch bei Bedarf bei der Erstellung von Budgets und Berichten – damit ihr euch auf die inhaltliche Arbeit konzentrieren könnt."
-  - title: "Infrastruktur"
-    description: "Wir teilen, was funktioniert - Wir stellen hilfreiche Grundlagen wie Richtlinien, Vorlagen und bewährte Ansätze zur Verfügung – damit ihr nicht bei null anfangen müsst. Das spart Zeit, Nerven und ist ressourcenschonend für alle."
+  - title: Gemeinnützigkeit
+    description: interalia übernimmt als sogenannter Fiscal Host das
+      Fördermittelmanagement für Projekte, die (noch) keine eigene Rechtsform
+      haben. Wir sind in Deutschland als gGmbH registriert und in den USA als
+      501(c)(3) anerkannt - und können somit auch Fördermittel aus den USA
+      annehmen.
+  - title: Finanzmanagement
+    description: "Ihr habt jederzeit Zugriff auf euer Budget – unsere Grundregel:
+      Keine Überweisung ohne euer Okay. Ihr gebt grünes Licht, wir setzen um. So
+      bleibt alles transparent, nachvollziehbar und in eurer Hand. Wir erstellen
+      monatliche Finanzberichte und stellen klare Richtlinien bereit."
+  - title: Personalmanagement
+    description: Menschen aus eurem Team mit Sitz in Deutschland können über uns
+      angestellt werden. Dabei achten wir besonders darauf, faire
+      Arbeitsbedingungen zu schaffen.
+  - title: Fördermittelverwaltung
+    description: Wir übernehmen die Verwaltung aller Fördermittelverträge und
+      unterstützen euch bei Bedarf bei der Erstellung von Budgets und Berichten
+      – damit ihr euch auf die inhaltliche Arbeit konzentrieren könnt.
+  - title: Infrastruktur
+    description: "Wir teilen, was funktioniert - Wir stellen hilfreiche Grundlagen
+      wie Richtlinien, Vorlagen und bewährte Ansätze zur Verfügung – damit ihr
+      nicht bei null anfangen müsst. Das spart Zeit, Nerven und ist
+      ressourcenschonend für alle. "
