@@ -50,6 +50,70 @@
                 href="https://interalia.host/de/service/"
                 />
   </url><url>
+    <loc>https://interalia.host/de/resources/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/resources/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/resources/"
+                />
+  </url><url>
+    <loc>https://interalia.host/de/reports/</loc>
+    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/reports/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/reports/"
+                />
+  </url><url>
+    <loc>https://interalia.host/de/</loc>
+    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/"
+                />
+  </url><url>
+    <loc>https://interalia.host/de/reports/what-is-fiscal-hosting/</loc>
+    <lastmod>2025-05-09T12:16:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/reports/what-is-fiscal-hosting/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/reports/what-is-fiscal-hosting/"
+                />
+  </url><url>
+    <loc>https://interalia.host/de/reports/hello-world/</loc>
+    <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/reports/hello-world/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/reports/hello-world/"
+                />
+  </url><url>
     <loc>https://interalia.host/de/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -60,18 +124,6 @@
                 rel="alternate"
                 hreflang="de"
                 href="https://interalia.host/de/categories/"
-                />
-  </url><url>
-    <loc>https://interalia.host/de/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://interalia.host/en/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="de"
-                href="https://interalia.host/de/"
                 />
   </url><url>
     <loc>https://interalia.host/de/tags/</loc>

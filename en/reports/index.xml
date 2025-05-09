@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reports on Interalia</title>
+    <link>https://interalia.host/en/reports/</link>
+    <description>Recent content in Reports on Interalia</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 09 May 2025 12:16:00 +0000</lastBuildDate>
+    <atom:link href="https://interalia.host/en/reports/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is fiscal hosting?</title>
+      <link>https://interalia.host/en/reports/what-is-fiscal-hosting/</link>
+      <pubDate>Fri, 09 May 2025 12:16:00 +0000</pubDate>
+      <guid>https://interalia.host/en/reports/what-is-fiscal-hosting/</guid>
+      <description>&lt;p&gt;Fiscal hosting, or fiscal sponsorship, is where a legally registered organisation (the host, or sponsor) holds and manages funds on behalf of someone else. By doing so they take fiscal responsibility (and often legal responsibility) for what happens with those funds.&lt;/p&gt;&#xA;&lt;p&gt;In the United States, people typically say ‘fiscal sponsorship’; in other parts of the world, ‘fiscal host’ seems to be more common. We at interalia generally say ‘fiscal hosting’.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello world!</title>
+      <link>https://interalia.host/en/reports/hello-world/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://interalia.host/en/reports/hello-world/</guid>
+      <description>&lt;p&gt;We’re interalia –a new fiscal host, registered as a non-profit (gGmbH) in Germany. We’re focused on supporting the broad ecosystem of civil society working at the intersection of tech and social justice, by taking care of their operations and finances as they evolve.&lt;/p&gt;&#xA;&lt;p&gt;We were founded in mid-2024 by Paula Grünwald, Kristina Klein and Zara Rahman, and after almost a year of behind-the-scenes setting up our infrastructure, developing our strategy and building out our processes, we’re excited to launch publicly today.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

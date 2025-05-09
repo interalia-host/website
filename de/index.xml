@@ -6,6 +6,7 @@
     <description>Recent content on Interalia</description>
     <generator>Hugo</generator>
     <language>de</language>
+    <lastBuildDate>Fri, 09 May 2025 12:16:00 +0000</lastBuildDate>
     <atom:link href="https://interalia.host/de/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Datenschutz</title>
@@ -34,6 +35,27 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://interalia.host/de/service/</guid>
       <description></description>
+    </item>
+    <item>
+      <title>Ressourcen</title>
+      <link>https://interalia.host/de/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://interalia.host/de/resources/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Was ist Fiscal Hosting</title>
+      <link>https://interalia.host/de/reports/what-is-fiscal-hosting/</link>
+      <pubDate>Fri, 09 May 2025 12:16:00 +0000</pubDate>
+      <guid>https://interalia.host/de/reports/what-is-fiscal-hosting/</guid>
+      <description>&lt;p&gt;Beim Fiscal Hosting (oft auch Fiscal Sponsorship genannt) nimmt eine in der Regel gemeinnützige Organisation (der Host oder Sponsor) Gelder im Namen eines Projekts oder einer Initiative entgegen und verwaltet sie. Damit übernimmt der Fiscal Host die steuerliche und oft auch rechtliche Verantwortung für das, was mit diesen Geldern geschieht.&lt;/p&gt;&#xA;&lt;p&gt;Fiscal Hosting/Sponsorship ist vor allem in den USA verbreitet, inzwischen aber auch in anderen Regionen der Welt angekommen - hier zum Beispiel ein Verzeichnis afrikanischer Fiscal Hosts. In den USA spricht man in der Regel von ‚fiscal sponsorship‘; während in anderen Teilen der Welt eher der Begriff ‚fiscal host‘ verwendet wird. Wir bei interalia sprechen in der Regel von ‚fiscal hosting‘.&#xA;Da wir oft von Menschen angesprochen werden, die bisher wenig oder keine Erfahrung mit Fiscal Hosting haben, haben wir einige gängige Fragen gesammelt und beantwortet.&#xA;Wann macht Fiscal Hosting Sinn?&#xA;Es gibt sehr viele unterschiedliche Gründe, warum Fiscal Hosting für euch in Frage kommen könnte:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hallo Welt!</title>
+      <link>https://interalia.host/de/reports/hello-world/</link>
+      <pubDate>Mon, 10 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://interalia.host/de/reports/hello-world/</guid>
+      <description>&lt;p&gt;Wir sind interalia (gGmbH) – ein neuer gemeinnütziger Fiscal Host mit Sitz in Deutschland. Wir unterstützen zivilgesellschaftliche Initiativen an der Schnittstelle von Technologie und sozialer Gerechtigkeit, damit sie ihre Vision vorantreiben können. Wir kümmern uns um ihre Finanzen und Administration während sie wachsen und wirken.&lt;/p&gt;&#xA;&lt;p&gt;Gegründet wurde interalia im Sommer 2024 von Paula Grünwald, Kristina Klein und Zara Rahman. Nachdem wir nun fast ein Jahr hinter den Kulissen an unserer Infrastruktur, unserer Strategie und unseren Prozessen gearbeitet haben – gehen wir heute ganz offiziell an den Start!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
