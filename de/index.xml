@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Interalia</title>
+    <link>https://interalia-demo.netlify.app/de/</link>
+    <description>Recent content on Interalia</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <atom:link href="https://interalia-demo.netlify.app/de/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Datenschutz</title>
+      <link>https://interalia-demo.netlify.app/de/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://interalia-demo.netlify.app/de/privacy/</guid>
+      <description>&lt;p&gt;Die interalia gGmbH betreibt die im Internet unter&#xA;&lt;a href=&#34;https://interalia.host/&#34; target=&#34;_blank&#34; &gt;https://interalia.host&lt;/a&gt; zugängliche Website&#xA;und ihre jeweiligen Unterverzeichnisse (im Folgenden „interalia.host&amp;quot;&#xA;oder die „Webseite&amp;quot;).&lt;/p&gt;&#xA;&lt;p&gt;Mit dieser Datenschutzerklärung möchte die interalia gGmbH Ihnen&#xA;erläutern, welche Daten in welcher Form verarbeitet werden, wenn Sie&#xA;unsere Website besuchen. Damit kommen wir auch unserer&#xA;Informationspflicht gemäß Artikel 13 der Datenschutz-Grundverordnung&#xA;(DS-GVO) nach.&lt;/p&gt;&#xA;&lt;p&gt;I. Personenbezogene Daten, Zwecke und Rechtsgrundlage der&#xA;Datenverarbeitung&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;Personenbezogene Daten&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Nach der DS-GVO sind personenbezogene Daten „alle Informationen über&#xA;eine bestimmte oder bestimmbare natürliche Person (‚betroffene Person&amp;rsquo;);&#xA;als bestimmbar wird eine natürliche Person angesehen, die direkt oder&#xA;indirekt identifiziert werden kann, insbesondere durch Zuordnung zu&#xA;einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu&#xA;einer Online-Kennung oder zu einem oder mehreren besonderen Merkmalen,&#xA;die Ausdruck der physischen, physiologischen, genetischen, psychischen,&#xA;wirtschaftlichen, kulturellen oder sozialen Identität dieser natürlichen&#xA;Person sind.&amp;quot;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Impressum</title>
+      <link>https://interalia-demo.netlify.app/de/imprint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://interalia-demo.netlify.app/de/imprint/</guid>
+      <description>&lt;h2 id=&#34;betreiberin-und-herausgeberin-dieser-website-ist&#34;&gt;&lt;strong&gt;Betreiberin und Herausgeberin dieser Website ist:&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;interalia gGmbH&#xA;Rehlingstraße 9&#xA;79100 Freiburg i. Brsg.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a href=&#34;mailto:hello@interalia.host&#34; &gt;hello@interalia.host&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;&#34; &gt;&lt;/a&gt;&lt;strong&gt;Registernummer:&lt;/strong&gt; HRB 731271, Amtsgericht Freiburg im Breisgau&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Vertreten durch die Geschäftsführerinnen:&lt;/strong&gt; Paula Grünwald und Stefanie Kristina Klein&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Technisch:&lt;/strong&gt; Hugo Static Site Generator mit DecapCMS&lt;/p&gt;&#xA;&lt;h2 id=&#34;haftungsausschluss&#34;&gt;&lt;strong&gt;Haftungsausschluss&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Verantwortlich für den Inhalt dieser Website gemäß § 55 Abs. 2 RStV ist Die:der jeweilige Autor:in.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;inhaltliche-verantwortung&#34;&gt;&lt;strong&gt;Inhaltliche Verantwortung&lt;/strong&gt;&lt;/h2&gt;&#xA;&lt;p&gt;Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Anbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf unseren Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Anbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Über uns</title>
+      <link>https://interalia-demo.netlify.app/de/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://interalia-demo.netlify.app/de/about/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Services</title>
+      <link>https://interalia-demo.netlify.app/de/service/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://interalia-demo.netlify.app/de/service/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

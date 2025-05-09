@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/WebPage">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta charset="UTF-8" />
+    <meta name="author" content="" />
+    <meta name="description" content="Breaking down barriers for civil society" />
+    <meta name="keywords" content="" />
+    <meta name="robots" content="noodp" />
+    <meta name="theme-color" content="#000" />
+    <link rel="canonical" href="https://interalia-demo.netlify.app/en/service/" />
+
+    <link rel="preload" href="https://interalia-demo.netlify.app//fonts/platypi/platypi-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="preload" href="https://interalia-demo.netlify.app//fonts/dmsans/dm-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="alternate" hreflang="de" href="https://interalia-demo.netlify.app/de/service/" title="Deutsch">
+
+    <title>
+        Services :: Interalia
+    </title>
+
+    <link rel="stylesheet" href="https://interalia-demo.netlify.app/style.2603ed33c9da35327527182264d5ccabe005e872d5e84f155f0602116172693e.css" />
+
+    <link rel="apple-touch-icon" href="https://interalia-demo.netlify.app/favicons/apple-touch-icon.png">
+    <link rel="mask-icon" href="https://interalia-demo.netlify.app/favicons/safari-pinned-tab.svg" color="#E28389">
+    <link rel="icon" type="image/svg+xml" href="https://interalia-demo.netlify.app/favicons/favicon.svg">
+    <link rel="shortcut icon" href="https://interalia-demo.netlify.app/favicons/favicon.ico" />
+    <meta name="apple-mobile-web-app-title" content="MoWorkers" />
+    <link rel="manifest" href="https://interalia-demo.netlify.app/favicons/site.webmanifest" />
+
+    <meta itemprop="name" content="Services">
+    <meta itemprop="description" content="Breaking down barriers for civil society">
+    <meta itemprop="image" content="https://interalia-demo.netlify.app/media/uploads/about-hero.webp">
+    <meta property="og:url" content="https://interalia-demo.netlify.app/en/service/">
+    <meta property="og:site_name" content="Interalia">
+    <meta property="og:title" content="Services">
+    <meta property="og:description" content="Breaking down barriers for civil society">
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://interalia-demo.netlify.app/media/uploads/about-hero.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://interalia-demo.netlify.app/media/uploads/about-hero.webp">
+    <meta name="twitter:title" content="Services">
+    <meta name="twitter:description" content="Breaking down barriers for civil society">
+
+</head>
+
+<body class="bg-[#FCFCF0]">
+    <a class="sr-only focus:not-sr-only" href="#content">[i18n] skip_to_content</a>
+
+    <div x-data="navbar()" class="bg-[#FCFCF0]">
+        <div class="relative mx-auto flex items-center justify-around">
+            <button @click="toggleMobileMenu()" :aria-expanded="mobileMenuOpen.toString()" aria-controls="mobile-menu" aria-label="Toggle navigation menu" tabindex="0" @keydown.enter.prevent="toggleMobileMenu()" @keydown.space.prevent="toggleMobileMenu()" class="absolute left-8 text-black focus:outline-none focus:ring-2 focus:ring-[#2C1B1B] lg:hidden">
+                <span x-show="!mobileMenuOpen" x-cloak class="text-3xl">☰</span>
+                <span x-show="mobileMenuOpen" x-cloak class="text-3xl">✕</span>
+            </button>
+
+            <a href="https://interalia-demo.netlify.app/en/" class="group p-4">
+                <span class="sr-only">Interalia</span>
+                <div class="h-12 w-48">
+                    <img src="https://interalia-demo.netlify.app//media/logos/interalia-horizontal-logo.svg" alt="Interalia logo" class="h-full w-full">
+                </div>
+            </a>
+
+            <nav class="align-center hidden space-x-8 lg:flex" role="navigation" aria-label="Main Menu">
+
+                <a href="https://interalia-demo.netlify.app/en/about/" class="py-3 lowercase">
+                    About
+                </a>
+
+                <a href="https://interalia-demo.netlify.app/en/service/" class="py-3 lowercase">
+                    Services
+                </a>
+
+                <div class="inline-flex gap-4 items-center pointer-events-auto" role="group" aria-label="Language Switcher">
+
+                    <a href="https://interalia-demo.netlify.app/en/service/" class="text-sm font-medium transition-colors duration-200 py-3 text-zinc-900" aria-current="page" tabindex="0">
+                        EN
+                    </a>
+
+                    <a href="https://interalia-demo.netlify.app/de/service/" class="text-sm font-medium transition-colors duration-200 py-3 text-zinc-400 hover:text-zinc-600" tabindex="0">
+                        DE
+                    </a>
+
+                </div>
+
+                <a href="mailto:info@interalia.host" role="menuitem" class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
+                    Contact us
+                </a>
+            </nav>
+        </div>
+
+        <div x-show="mobileMenuOpen" x-transition id="mobile-menu" role="menu" aria-label="Mobile Menu" class="lg:hidden">
+            <nav class="flex flex-col space-y-2 px-8 py-4">
+
+                <div x-data="{ mobileDropdownOpen: false }">
+                    <a href="https://interalia-demo.netlify.app/en/about/" class="block py-2 font-sans lowercase">
+                        About
+                    </a>
+                </div>
+
+                <div x-data="{ mobileDropdownOpen: false }">
+                    <a href="https://interalia-demo.netlify.app/en/service/" class="block py-2 font-sans lowercase">
+                        Services
+                    </a>
+                </div>
+
+                <a href="mailto:info@interalia.host" role="menuitem" class="inline w-max pt-1">
+                    Contact us
+                </a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        function navbar() {
+            return {
+                mobileMenuOpen: false,
+                activeDropdown: null,
+                toggleMobileMenu() {
+                    this.mobileMenuOpen = !this.mobileMenuOpen;
+                },
+                openDropdown(title) {
+                    this.activeDropdown = title;
+                },
+                closeDropdown() {
+                    this.activeDropdown = null;
+                }
+            }
+        }
+    </script>
+
+    <main id="content" class="content">
+
+        <section class="container mx-auto py-16 px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <div class="grid place-items-start lg:col-span-5">
+                    <div>
+                        <h2 class="text-4xl lg:text-6xl text-gray-900 mb-6">Our service</h2>
+                        <p class="text-gray-700">We offer the following core services as a fiscal host, and we typically take a 10% overhead to cover our time on these services. We are registered in Germany (beginning in 2024) but able to work worldwide, subject to political context and availability.</p>
+                    </div>
+                    <img src="https://interalia-demo.netlify.app//media/images/service-flower.png" alt="Illustration" class="max-w-sm mx-auto mt-10">
+                </div>
+
+                <div class="hidden lg:block lg:col-span-1"></div>
+
+                <div class="space-y-8 lg:col-span-6">
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Non-profit status</h3>
+                        <p class="text-gray-700">interalia is registered as a gGmbH in Germany, with 501(c)3 equivalency in the United States, which allows hosted projects to access funds from foundations and donations.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Human resources Management</h3>
+                        <p class="text-gray-700">We can offer employment to project members based in Germany, and we take care of contracting for project members based elsewhere. We offer a range of values-aligned HR policies to choose from based on your project and team.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Grant Management</h3>
+                        <p class="text-gray-700">We administer all grant agreements and support you with reporting.</p>
+                    </div>
+
+                    <div class="h-4"></div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Financial Accounting</h3>
+                        <p class="text-gray-700">We track and monitor revenues and expenditures, provide regular financial reporting and offer policies and practices to ensure projects have solid oversight over their financial health.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Risk and Compliance</h3>
+                        <p class="text-gray-700">We can help you understand what kinds of insurance make sense for different projects, and help you assess activities from a risk mitigation lens.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Hosting for Pooled Funds</h3>
+                        <p class="text-gray-700">In situations where various philanthropies want to work together on a pooled fund, we are able to host and redistribute funds.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <hr class="my-20 h-[2px] border-0 bg-[#E1E3A2]">
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
+                <div class="grid place-items-start lg:col-span-5">
+                    <h2 class="text-2xl lg:text-3xl text-gray-900">In addition, upon request and subject to available funds, we can offer:</h2>
+                </div>
+
+                <div class="hidden lg:block lg:col-span-1"></div>
+
+                <div class="space-y-8 lg:col-span-6">
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">AD HOC Support for Individuals</h3>
+                        <p class="text-gray-700">For people facing administrative or bureaucratic hurdles, we aim to provide a friendly ear to talk through problems, whether or not you’re hosted with us.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Shared Tech Infrastructure</h3>
+                        <p class="text-gray-700">We can offer email, file storage, video conferencing software, and asynchronous chat software,, and website hosting, as well as a shared password manager and VPN.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="lg:text-4xl text-2xl mb-3">Strategic advice</h3>
+                        <p class="text-gray-700">Depending on the topic or focus of your work, we might have the in-house experience to be able to talk through your strategy and approach.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="relative bg-[#F5D9CC] py-16 px-8 md:px-12">
+
+            <div class="absolute inset-0 bg-no-repeat bg-contain bg-right md:opacity-80 opacity-0" style="background-image: url('/media/images/pattern-2.svg');"></div>
+
+            <div class="relative max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <div>
+                    <h2 class="text-lg">Do you have a project that we can help?</h2>
+                    <h1 class="mt-2 text-3xl md:text-5xl text-gray-900 leading-tight">
+                        Get in touch today
+                    </h1>
+
+                    <form id="contact-form" class="mt-8 space-y-6">
+
+                        <label for="company">Company / Organization</label>
+                        <input type="text" id="company" name="company" placeholder="company / organisation" class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none" required aria-required="true">
+
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Name" class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none" required aria-required="true">
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none" required aria-required="true" autocomplete="email">
+
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Message" class="w-full border-b border-t-0 border-l-0 border-r-0 border-gray-900 bg-transparent focus:outline-none py-2 text-gray-900 placeholder-gray-800 appearance-none" required aria-required="true"></textarea>
+
+                        <fieldset class="mt-4">
+                            <legend class="text-gray-900 font-medium">Location</legend>
+                            <div class="mt-2 space-y-2">
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="location" value="Germany" class="text-gray-900 focus:ring-2 focus:ring-gray-900" required aria-required="true">
+                                    <span>Germany</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="location" value="Europe" class="text-gray-900 focus:ring-2 focus:ring-gray-900">
+                                    <span>Europe</span>
+                                </label>
+                                <label class="flex items-center space-x-2">
+                                    <input type="radio" name="location" value="Other" class="text-gray-900 focus:ring-2 focus:ring-gray-900">
+                                    <span>Other</span>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <button type="submit" class="mt-4 px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] cursor-pointer text-white rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-gray-700">
+                            Submit
+                        </button>
+                        <span id="contact-feedback" class="sr-only" aria-live="polite"></span>
+                    </form>
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            const company = document.getElementById('company').value;
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const message = document.getElementById('message').value;
+                            const location = document.querySelector('input[name="location"]:checked')?.value || '';
+                            const subject = 'Inquiry';
+                            const body =
+                                `Company / Organization: ${company}\n` +
+                                `Name: ${name}\n` +
+                                `Email: ${email}\n` +
+                                `Location: ${location}\n` +
+                                `Message: ${message}`;
+                            const mailto = `mailto:info@interalia.host?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                            window.location.href = mailto;
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="relative bg-[#FCFCF0] py-8">
+        <div class="container mx-auto flex flex-col items-start justify-between space-y-6 px-8 md:flex-row md:space-y-0">
+
+            <section class="flex flex-col items-start">
+                <a href="https://interalia-demo.netlify.app/en/" aria-label="Go to homepage">
+                    <img class="h-16 w-auto" src="https://interalia-demo.netlify.app//media/logos/interalia-icon-logo.svg" alt="interalia logo icon">
+                </a>
+
+                <h2 id="newsletter-signup" class="mt-10 text-2xl">Join our newsletter</h2>
+                <form aria-labelledby="newsletter-signup" class="mt-4 lg:w-lg flex items-center border-b border-gray-400" method="POST" action="#">
+                    <label for="newsletter-email" class="sr-only">Email address</label>
+                    <input id="newsletter-email" name="email" type="email" placeholder="Email" class="w-full px-2 py-2 bg-transparent outline-none text-gray-700 border-none ring-0" required aria-required="true" autocomplete="email" />
+                    <button type="submit" class="ms-4 px-6 py-2 rounded-full bg-rose-100 text-gray-800 shadow-sm mb-2 focus:outline-none focus:ring-2 focus:ring-[#2C1B1B]">
+                        Submit
+                    </button>
+                    <span id="newsletter-feedback" class="sr-only" aria-live="polite"></span>
+                </form>
+            </section>
+
+            <section aria-labelledby="footer-social-links" class="flex flex-row space-y-4 space-x-20 lg:w-auto w-full lg:pt-0 pt-10">
+
+                <nav aria-labelledby="footer-primary-menu" class="">
+                    <h2 id="footer-primary-menu" class="sr-only">Primary Navigation</h2>
+                    <ul class="grid grid-flow-row space-y-4 font-light">
+
+                        <li><a href="https://interalia-demo.netlify.app/en/about/" class="lowercase hover:underline">About</a></li>
+
+                        <li><a href="https://interalia-demo.netlify.app/en/service/" class="lowercase hover:underline">Services</a></li>
+
+                    </ul>
+                </nav>
+
+                <h2 id="footer-social-links" class="sr-only">Social Media &amp; Legal Links</h2>
+
+                <nav aria-labelledby="footer-secondary-menu">
+                    <h2 id="footer-secondary-menu" class="sr-only">Secondary Navigation</h2>
+                    <ul class="grid grid-flow-row space-y-4 font-light">
+
+                        <li><a href="https://interalia-demo.netlify.app/en/imprint/" class="lowercase hover:underline">Imprint</a></li>
+
+                        <li><a href="https://interalia-demo.netlify.app/en/privacy/" class="lowercase hover:underline">Privacy Policy</a></li>
+
+                        <li><a href="https://www.linkedin.com/company/interalia.host/" target="_blank" rel="noopener" title="Linkedin" aria-label="Interalia on Linkedin" class="lowercase hover:underline">
+                                linkedin
+                            </a></li>
+                    </ul>
+                </nav>
+            </section>
+        </div>
+    </footer>
+
+    <script defer src="https://interalia-demo.netlify.app/collapse.min.js"></script>
+
+    <script defer src="https://interalia-demo.netlify.app/bundle.min.5f17d2130dff16574c317d5931effeb6a8bcc864fe7072feac7f4f2c4c6c8749.js" integrity="sha256-XxfSEw3/FldMMX1ZMe/&#43;tqi8yGT&#43;cHL&#43;rH9PLExsh0k="></script>
+
+    <script type="module" defer src="https://interalia-demo.netlify.app/instant.min.js"></script>
+
+</body>
