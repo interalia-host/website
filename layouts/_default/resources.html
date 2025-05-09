@@ -1,20 +1,83 @@
 {{ define "main" }}
-<main id="main-content" class="bg-[#FCFCF0] min-h-screen py-12" aria-labelledby="resources-title">
-  <div class="max-w-6xl mx-auto px-4">
-    <h1 id="resources-title" class="text-center text-2xl font-semibold mb-12">{{ .Title }}</h1>
-    <section aria-label="{{ i18n "strings.resources_list" }}" class="space-y-12">
-      {{/* Render reports from data/reports */}}
-      {{ $lang := .Site.Language.Lang }}
-      {{ $reports := (index .Site.Data.reports (print $lang)) }}
-      {{ range $reports }}
-        {{ partial "resource-item.html" (dict "item" . "type" "report") }}
-      {{ end }}
-      {{/* Render blogposts from content/reports */}}
-      {{ $posts := where (where .Site.RegularPages "Section" "reports") "Lang" $lang }}
-      {{ range $posts }}
-        {{ partial "resource-item.html" (dict "item" . "type" "post") }}
-      {{ end }}
-    </section>
-  </div>
-</main>
+<section class="py-16 px-8 md:px-12 bg-[#FCFCF0]">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-4xl md:text-5xl text-gray-900 mb-12">{{ .Title }}</h1>
+        
+        <!-- Reports Section -->
+        <div class="mb-20">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl text-gray-900">{{ i18n "strings.reports" }}</h2>
+                <div class="h-px flex-grow bg-[#E1E3A2] mx-8"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{ $lang := .Site.Language.Lang }}
+                {{ range $k, $v := .Site.Data.reports }}
+                    {{ if hasSuffix $k (print "." $lang) }}
+                        <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
+                            {{ if $v.image }}
+                                <div class="relative h-48 overflow-hidden">
+                                    <img src="{{ $v.image }}" alt="{{ $v.title }}" class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                                </div>
+                            {{ end }}
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="text-2xl font-bold mb-2 text-gray-900">{{ $v.title }}</h3>
+                                <p class="text-gray-600 mb-6">{{ $v.year }}</p>
+                                <div class="mt-auto">
+                                    {{ if $v.download }}
+                                        <a href="{{ $v.download }}" 
+                                           class="inline-flex items-center px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full transition group"
+                                           target="_blank"
+                                           rel="noopener">
+                                            {{ i18n "strings.download_report" }}
+                                            <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                            </svg>
+                                        </a>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+
+        <!-- Blogposts Section -->
+        <div>
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl text-gray-900">{{ i18n "strings.blog_posts" }}</h2>
+                <div class="h-px flex-grow bg-[#E1E3A2] mx-8"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {{ $posts := where (where .Site.RegularPages "Section" "reports") "Lang" $lang }}
+                {{ range $posts }}
+                    <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
+                        <div class="relative h-48 overflow-hidden">
+                            {{ if .Params.image }}
+                                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                            {{ else }}
+                                <img src="{{ .Site.BaseURL }}/media/images/default-blog.jpg" alt="{{ .Title }}" class="w-full h-full object-cover">
+                            {{ end }}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-2xl font-bold mb-2 text-gray-900">{{ .Title }}</h3>
+                            <p class="text-gray-600 mb-6">{{ .Date.Format "January 2, 2006" }}</p>
+                            <div class="mt-auto">
+                                <a href="{{ .RelPermalink }}" 
+                                   class="inline-flex items-center px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full transition group">
+                                    {{ i18n "strings.read_more" }}
+                                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
 {{ end }} 
