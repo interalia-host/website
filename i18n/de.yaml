@@ -50,16 +50,15 @@ strings:
   - id: team_intro_title
     translation: Die Veränderung, die wir sehen wollen
   - id: team_intro_text
-    translation: Wir arbeiten daran, das Tech- und Gesellschaftsökosystem zu
-      unterstützen, verstanden als alle, die sich mit Themen rund um die
-      Auswirkungen von Technologie und Daten auf unsere Gesellschaft
-      beschäftigen, im weitesten Sinne. Wir sehen einen dringenden Bedarf an
-      besser vernetzter operativer Infrastruktur in der Zivilgesellschaft, und
-      wir träumen von einem Netzwerk von Fiscal Hosts, das eine gemeinsame
-      Infrastruktur für operative Unterstützung, Wissen und Ressourcen
-      bereitstellt, die die Widerstandsfähigkeit des zivilgesellschaftlichen
-      Ökosystems stärkt und unsere Beziehungen zueinander so transformiert, dass
-      sie auf Fürsorge statt auf Wettbewerb ausgerichtet sind.
+    translation: "Wir setzen uns für eine vielfältige und starke Zivilgesellschaft
+      ein. Sie soll wachsen, Machtverhältnisse kritisch hinterfragen,
+      Veränderungen anstoßen und widerstandsfähig sein. Unsere langfristige
+      Vision: ein Netzwerk von Fiscal Hosts und gleichgesinnten Organisationen.
+      Nicht jeder für sich, sondern gemeinsam: geteilte Infrastruktur,
+      kollektives Wissen und gegenseitige Unterstützung. Ein Netzwerk, das
+      Ressourcen effizient nutzt, Kooperationen erleichtert und den Fokus auf
+      das legt, was wirklich zählt – Solidarität, Vertrauen und langfristige
+      Stabilität."
   - id: team_intro_button
     translation: Kontaktiere uns
   - id: team_intro_button_aria
