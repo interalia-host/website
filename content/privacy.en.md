@@ -5,18 +5,17 @@ weight: 1
 footer: true
 description: ""
 ---
-
 interalia operates the website accessible on the Internet at [https://interalia.host](https://interalia.host/) and its respective subdirectories (hereinafter “interalia.host” or the “Website”).
 
 With this privacy policy, interalia would like to explain to you which data is processed in which form when you visit our website. This also fulfills our obligation to inform you in accordance with Article 13 of the General Data Protection Regulation (GDPR).
 
-I. Personal data, purposes and legal basis of data processing
+### I. Personal data, purposes and legal basis of data processing
 
-1. Personal data
+#### Personal data
 
 According to the GDPR, personal data means “any information relating to an identified or identifiable natural person (‘data subject’); an identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.”
 
-1. General use of this website
+#### General use of this website
 
 **Logfiles**
 
@@ -34,17 +33,17 @@ The legal basis for the data processing is Art. 6 para. 1 lit. a) GDPR. The reci
 
 If you contact us at the email address provided on our website, you will at least provide us with your email address, as well as any other information you may disclose in your email. In order for us to process your request, we need to process this data. The legal basis for data processing is Art. 6 para. 1 lit. a) GDPR. Our e-mail provider is Fastmail located in Australia. You can find their Data Protection Agreement [here](https://www.fastmail.com/policies/dpa/).
 
-1. Purposes and legal basis of data processing
+#### Purposes and legal basis of data processing
 
 The processing of your IP address during the connection setup takes place so that we can provide you with our website. It is based on Art. 6 para. 1 lit. f) GDPR. Our legitimate interest is to provide our website.
 
 Processing in the context of contacting us takes place so that we can process and respond to your inquiry. The legal basis is Art. 6 para. 1 lit. a) GDPR. By contacting us by email, you consent to the data processing.
 
-II. Recipients of the data
+### II. Recipients of the data
 
 Within our organization, the departments that are responsible for processing the requests have access to your data. In addition, we use external service providers if we cannot or cannot reasonably perform services ourselves. These external service providers are primarily providers of IT services and telecommunications services.
 
-III. Storage duration
+### III. Storage duration
 
 We store your emails and contacts for as long as it is necessary to process your inquiry and then store them for a period of 3 years in case you contact us again with reference to your original question. We archive business and commercial letters for ten years due to the German Tax Code. IV. Rights of data subjects
 
@@ -75,11 +74,11 @@ Postfach 10 29 32 | DE-70025 Stuttgart
 **Email**: [poststelle@lfdi.bwl.de](mailto:poststelle@lfdi.bwl.de)\
 [](mailto:poststelle@lfdi.bwl.de)**Phone**: +49 711 / 61 55 41 – 0
 
-V. Existence of automated decision making (including profiling)
+### V. Existence of automated decision making (including profiling)
 
 We do not use automated decision making.
 
-VI. If you have any comments or questions
+### VI. If you have any comments or questions
 
 Protection and security of your data are very important to us. Your questions and comments about privacy are welcome, feel free to email us at [datenschutz@interalia.host](mailto:datenschutz@interalia.host).
 
