@@ -144,65 +144,6 @@ collections:
       - { name: "description", label: "Description", widget: "markdown", required: false, i18n: true, hint: "Short summary for SEO and sharing." }
       - { name: "body", label: "Body", widget: "markdown", required: false, i18n: true, hint: "Main content of the page." }
 
-  - name: "about-mission"
-    label: "About Mission Section"
-    label_singular: "About Mission"
-    files:
-      - name: "about-mission-en"
-        label: "About Mission (English)"
-        file: "data/about-mission.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "text", label: "Text", widget: "text" }
-      - name: "about-mission-de"
-        label: "About Mission (Deutsch)"
-        file: "data/about-mission.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "text", label: "Text", widget: "text" }
-
-  - name: "team"
-    label: "Team Members"
-    label_singular: "Team Member"
-    folder: "data/team"
-    description: "Edit team members for both languages. Each team member is a separate file."
-    create: true
-    format: "yml"
-    extension: "yml"
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{name | slugify}}"
-    fields:
-      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
-      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the team member." }
-      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
-      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
-      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
-      - { name: "social", label: "Social Link", widget: "string", i18n: duplicate, required: false, hint: "Link to social profile (e.g. LinkedIn)." }
-      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
-
-  - name: "board"
-    label: "Board Members"
-    label_singular: "Board Member"
-    folder: "data/board"
-    description: "Edit board members for both languages. Each board member is a separate file."
-    create: true
-    format: "yml"
-    extension: "yml"
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{name | slugify}}"
-    fields:
-      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
-      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the board member." }
-      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
-      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
-      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
-      - { name: "social", label: "Social Link", widget: "string", i18n: duplicate, required: false, hint: "Link to social profile (e.g. LinkedIn)." }
-      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
-
   - name: "blog-posts"
     label: "Blog Posts"
     label_singular: "Blog Post"
@@ -243,6 +184,162 @@ collections:
       - { name: "image", label: "Cover Image", widget: "image", i18n: duplicate, required: false, hint: "Cover image for the report." }
       - { name: "download", label: "PDF File", widget: "file", i18n: duplicate, required: false, hint: "PDF file of the report." }
 
+  - name: "team"
+    label: "Team Members"
+    label_singular: "Team Member"
+    folder: "data/team"
+    description: "Edit team members for both languages. Each team member is a separate file."
+    create: true
+    format: "yml"
+    extension: "yml"
+    i18n: true
+    locales: ["en", "de"]
+    slug: "{{name | slugify}}"
+    fields:
+      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
+      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the team member." }
+      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
+      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
+      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
+      - label: "Social Links"
+        name: "social"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - { label: "Platform", name: "platform", widget: "string", hint: "e.g. LinkedIn, Twitter, Mastodon" }
+          - { label: "URL", name: "url", widget: "string", hint: "Full profile URL" }
+          - { label: "Icon", name: "icon", widget: "string", hint: "FontAwesome icon name, e.g. linkedin, twitter, mastodon" }
+      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
+
+  - name: "board"
+    label: "Board Members"
+    label_singular: "Board Member"
+    folder: "data/board"
+    description: "Edit board members for both languages. Each board member is a separate file."
+    create: true
+    format: "yml"
+    extension: "yml"
+    i18n: true
+    locales: ["en", "de"]
+    slug: "{{name | slugify}}"
+    fields:
+      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
+      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the board member." }
+      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
+      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
+      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
+      - label: "Social Links"
+        name: "social"
+        widget: "list"
+        required: false
+        i18n: true
+        fields:
+          - { label: "Platform", name: "platform", widget: "string", hint: "e.g. LinkedIn, Twitter, Mastodon" }
+          - { label: "URL", name: "url", widget: "string", hint: "Full profile URL" }
+          - { label: "Icon", name: "icon", widget: "string", hint: "FontAwesome icon name, e.g. linkedin, twitter, mastodon" }
+      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
+
+  - name: "hero"
+    label: "Hero Section"
+    label_singular: "Hero Section"
+    files:
+      - name: "hero-en"
+        label: "Hero (English)"
+        file: "data/hero.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "text" }
+      - name: "hero-de"
+        label: "Hero (Deutsch)"
+        file: "data/hero.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "subtitle", label: "Untertitel", widget: "text" }
+
+  - name: "about-mission"
+    label: "About Mission Section"
+    label_singular: "About Mission"
+    files:
+      - name: "about-mission-en"
+        label: "About Mission (English)"
+        file: "data/about-mission.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+      - name: "about-mission-de"
+        label: "About Mission (Deutsch)"
+        file: "data/about-mission.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "text", label: "Text", widget: "text" }
+
+  - name: "our-service"
+    label: "Our Service Section"
+    label_singular: "Our Service Section"
+    files:
+      - name: "our-service-en"
+        label: "Our Service (English)"
+        file: "data/our-service.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "text" }
+          - { name: "additional", label: "Additional", widget: "text", required: false }
+          - label: "Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Title", widget: "string" }
+              - { name: "description", label: "Description", widget: "text" }
+              - { name: "request", label: "Request", widget: "boolean", required: false }
+      - name: "our-service-de"
+        label: "Our Service (Deutsch)"
+        file: "data/our-service.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "subtitle", label: "Untertitel", widget: "text" }
+          - { name: "additional", label: "Zusätzlich", widget: "text", required: false }
+          - label: "Elemente"
+            name: "items"
+            widget: "list"
+            fields:
+              - { name: "title", label: "Titel", widget: "string" }
+              - { name: "description", label: "Beschreibung", widget: "text" }
+              - { name: "request", label: "Anfrage", widget: "boolean", required: false }
+
+  - name: "service-card"
+    label: "Service Card Section"
+    label_singular: "Service Card Section"
+    files:
+      - name: "service-card-en"
+        label: "Service Card (English)"
+        file: "data/service-card.en.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "subtitle", label: "Subtitle", widget: "text" }
+          - { name: "button", label: "Button", widget: "string" }
+          - { name: "label", label: "Label", widget: "string" }
+          - { name: "link", label: "Link", widget: "string" }
+          - { name: "description", label: "Description", widget: "text" }
+      - name: "service-card-de"
+        label: "Service Card (Deutsch)"
+        file: "data/service-card.de.yml"
+        format: "yml"
+        fields:
+          - { name: "title", label: "Titel", widget: "string" }
+          - { name: "subtitle", label: "Untertitel", widget: "text" }
+          - { name: "button", label: "Button", widget: "string" }
+          - { name: "label", label: "Label", widget: "string" }
+          - { name: "link", label: "Link", widget: "string" }
+          - { name: "description", label: "Beschreibung", widget: "text" }
+
   - name: "services"
     label: "Services"
     label_singular: "Service"
@@ -263,39 +360,6 @@ collections:
           - { name: "title", label: "Titel", widget: "string" }
           - { name: "description", label: "Beschreibung", widget: "text" }
           - { name: "icon", label: "Icon", widget: "string", required: false }
-
-  - name: "our-service"
-    label: "Our Service"
-    label_singular: "Our Service"
-    files:
-      - name: "our-service-en"
-        label: "Our Service (English)"
-        file: "data/our-service.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "subtitle", label: "Subtitle", widget: "text", required: false }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "description", label: "Description", widget: "text" }
-              - { name: "image", label: "Image", widget: "image", required: false }
-      - name: "our-service-de"
-        label: "Unser Service (Deutsch)"
-        file: "data/our-service.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "subtitle", label: "Untertitel", widget: "text", required: false }
-          - label: "Elemente"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Titel", widget: "string" }
-              - { name: "description", label: "Beschreibung", widget: "text" }
-              - { name: "image", label: "Bild", widget: "image", required: false }
 
   - name: "what-we-do"
     label: "What We Do"

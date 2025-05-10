@@ -21,7 +21,7 @@
         Services :: interalia
     </title>
 
-    <link rel="stylesheet" href="https://interalia.host/style.f44f807f662f5a41b1d846392a2e5f8c3c7f8280c7b45a052ac0457c8def2492.css" />
+    <link rel="stylesheet" href="https://interalia.host/style.c56719b7d36cfbafa65934badaa5a44e3b7adbd9442860eb2a591ee3b038c5d4.css" />
 
     <link rel="apple-touch-icon" href="https://interalia.host/favicons/apple-touch-icon.png">
     <link rel="mask-icon" href="https://interalia.host/favicons/safari-pinned-tab.svg" color="#E28389">
@@ -91,7 +91,7 @@
 
                 </div>
 
-                <a href="mailto:info@interalia.host" role="menuitem" class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
+                <a href="mailto:hello@interalia.host" role="menuitem" class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
                     Kontakt
                 </a>
             </nav>
@@ -118,9 +118,22 @@
                     </a>
                 </div>
 
-                <a href="mailto:info@interalia.host" role="menuitem" class="inline w-max pt-1">
+                <a href="mailto:hello@interalia.host" role="menuitem" class="inline w-max pt-1">
                     Kontakt
                 </a>
+
+                <div class="inline-flex gap-4 items-center pointer-events-auto mt-4" role="group" aria-label="Language Switcher">
+
+                    <a href="https://interalia.host/en/service/" class="text-sm font-medium transition-colors duration-200 py-3 text-zinc-400 hover:text-zinc-600" tabindex="0">
+                        EN
+                    </a>
+
+                    <a href="https://interalia.host/de/service/" class="text-sm font-medium transition-colors duration-200 py-3 text-zinc-900" aria-current="page" tabindex="0">
+                        DE
+                    </a>
+
+                </div>
+
             </nav>
         </div>
     </div>
@@ -148,8 +161,8 @@
         <section class="container mx-auto py-16 px-8">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-                <div class="grid place-items-start lg:col-span-5">
-                    <div>
+                <div class="lg:col-span-5 flex flex-col items-start">
+                    <div class="max-w-2xl w-full">
                         <h2 class="text-4xl lg:text-6xl text-gray-900 mb-6">Unsere Services</h2>
                         <p class="text-gray-700">interalia bietet Unterstützung in verschiedenen Bereichen an. Üblicherweise berechnen wir eine Pauschale von 10 % auf eingeworbene Mittel. Wir haben unseren Sitz in Deutschland und arbeiten weltweit – wenn es die politische Lage und unsere Kapazitäten erlauben.</p>
                     </div>
@@ -158,7 +171,7 @@
 
                 <div class="hidden lg:block lg:col-span-1"></div>
 
-                <div class="space-y-8 lg:col-span-6">
+                <div class="space-y-8 lg:col-span-6 max-w-2xl w-full">
 
                     <div>
                         <h3 class="lg:text-4xl text-2xl mb-3">Gemeinnützigkeit</h3>
@@ -196,13 +209,13 @@
             <hr class="my-20 h-[2px] border-0 bg-[#E1E3A2]">
 
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
-                <div class="grid place-items-start lg:col-span-5">
-                    <h2 class="text-2xl lg:text-3xl text-gray-900">Zusätzlich bieten wir auf Anfrage folgende Services an. Bitte beachtet, dass dies zusätzliche Kosten verursachen kann:</h2>
+                <div class="lg:col-span-5 flex flex-col items-start">
+                    <h2 class="text-2xl lg:text-3xl text-gray-900 max-w-2xl w-full">Zusätzlich bieten wir auf Anfrage folgende Services an. Bitte beachtet, dass dies zusätzliche Kosten verursachen kann:</h2>
                 </div>
 
                 <div class="hidden lg:block lg:col-span-1"></div>
 
-                <div class="space-y-8 lg:col-span-6">
+                <div class="space-y-8 lg:col-span-6 max-w-2xl w-full">
 
                     <div>
                         <h3 class="lg:text-4xl text-2xl mb-3">Ad-hoc-Unterstützung</h3>
@@ -287,7 +300,7 @@
                                 `Email: ${email}\n` +
                                 `Location: ${location}\n` +
                                 `Message: ${message}`;
-                            const mailto = `mailto:info@interalia.host?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                            const mailto = `mailto:hello@interalia.host?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
                             window.location.href = mailto;
                         });
                     </script>
