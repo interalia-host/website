@@ -8,5 +8,8 @@ bio: Michael Brennan is an expert in technology and philanthropy strategy whose
   Foundation, overseeing a global grantmaking portfolio focused on technology &
   society.
 role: Member
-social: https://www.linkedin.com/in/mbren
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/mbren
+    icon: brands/linkedin
 image: /media/uploads/jane-doe.jpg

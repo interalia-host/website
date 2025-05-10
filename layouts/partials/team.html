@@ -6,7 +6,7 @@
     <p class="mt-4 mb-10 mx-auto text-lg">
       {{ i18n "strings.team_intro_text" }}
     </p>
-    <a href="mailto:info@interalia.host"
+    <a href="mailto:hello@interalia.host"
       class="px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-gray-500 transition"
       aria-label="{{ i18n "strings.team_intro_button_aria" }}">
       {{ i18n "strings.team_intro_button" }}
@@ -32,28 +32,31 @@
       {{ end }}
     {{ end }}
     {{ range sort $team "order" }}
+    {{ $member := . }}
     <div class="z-20">
       <!-- Name & Role -->
-      <h3 class="mt-4 text-xl">{{ .name }}</h3>
-      {{ if .pronoun }}
-      <span class="block text-xs text-gray-200 mt-1">{{ .pronoun }}</span>
+      <h3 class="mt-4 text-xl">{{ $member.name }}</h3>
+      {{ if $member.pronoun }}
+      <span class="block text-xs text-gray-200 mt-1">{{ $member.pronoun }}</span>
       {{ end }}
-      <p class="text-sm text-gray-100">{{ .role }}</p>
+      <p class="text-sm text-gray-100">{{ $member.role }}</p>
       <hr class="my-2 border-gray-200" />
 
-      <!-- Social Link -->
-      {{ if .social }}
-      <a href="{{ .social }}" target="_blank" rel="noopener" 
-         class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400"
-         aria-label="{{ i18n "strings.linkedin_profile_aria" }} {{ .name }}">
-        in
-      </a>
+      <!-- Social Links -->
+      {{ if $member.social }}
+      <div class="flex gap-2 mt-2">
+        {{ range $member.social }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400" aria-label="{{ .platform }} profile of {{ $member.name }}">
+            {{ partial "fontawesome.html" .icon }}
+          </a>
+        {{ end }}
+      </div>
       {{ end }}
 
       <hr class="my-2 border-gray-200" />
 
       <!-- Bio -->
-      <p class="mt-2 text-gray-100 text-sm">{{ .bio }}</p>
+      <p class="mt-2 text-gray-100 text-sm">{{ $member.bio }}</p>
     </div>
     {{ end }}
   </div>
@@ -71,25 +74,28 @@
       {{ end }}
     {{ end }}
     {{ range sort $board "order" }}
+    {{ $member := . }}
     <div class="z-20">
       <!-- Name & Role -->
-      <h3 class="mt-4 text-xl">{{ .name }}</h3>
-      {{ if .pronoun }}
-      <span class="block text-xs text-gray-200 mt-1">{{ .pronoun }}</span>
+      <h3 class="mt-4 text-xl">{{ $member.name }}</h3>
+      {{ if $member.pronoun }}
+      <span class="block text-xs text-gray-200 mt-1">{{ $member.pronoun }}</span>
       {{ end }}
-      <p class="text-sm text-gray-100">{{ .role }}</p>
+      <p class="text-sm text-gray-100">{{ $member.role }}</p>
       <hr class="my-2 border-gray-200" />
-      <!-- Social Link -->
-      {{ if .social }}
-      <a href="{{ .social }}" target="_blank" rel="noopener" 
-        class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400"
-        aria-label="{{ i18n "strings.linkedin_profile_aria" }} {{ .name }}">
-        in
-      </a>
+      <!-- Social Links -->
+      {{ if $member.social }}
+      <div class="flex gap-2 mt-2">
+        {{ range $member.social }}
+          <a href="{{ .url }}" target="_blank" rel="noopener" class="text-gray-100 hover:text-gray-300 font-bold text-2xl focus:ring-2 focus:ring-gray-400" aria-label="{{ .platform }} profile of {{ $member.name }}">
+            {{ partial "fontawesome.html" .icon }}
+          </a>
+        {{ end }}
+      </div>
       {{ end }}
       <hr class="my-2 border-gray-200" />
       <!-- Bio -->
-      <p class="mt-2 text-gray-100 text-sm">{{ .bio }}</p>
+      <p class="mt-2 text-gray-100 text-sm">{{ $member.bio }}</p>
     </div>
     {{ end }}
   </div>

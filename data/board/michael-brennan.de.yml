@@ -8,5 +8,8 @@ bio: Michael Brennan ist Experte für Technologie- und Philanthropiestrategien
   Senior Program Officer ein weltweites Förderprogramm im Bereich Technologie &
   Gesellschaft.
 role: Mitglied
-social: https://www.linkedin.com/in/mbren
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/mbren
+    icon: brands/linkedin
 image: /media/uploads/jane-doe.jpg

@@ -45,7 +45,7 @@
           {{ end }}
           
           <!-- Donate Button -->
-          <a href="mailto:info@interalia.host" role="menuitem"
+          <a href="mailto:hello@interalia.host" role="menuitem"
             class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
               {{ i18n "strings.contact_us" }}
           </a>
@@ -72,10 +72,23 @@
           {{ end }}
 
           <!-- Donate Button -->
-          <a href="mailto:info@interalia.host" role="menuitem"
+          <a href="mailto:hello@interalia.host" role="menuitem"
             class="inline w-max pt-1">
               {{ i18n "strings.contact_us" }}
           </a>
+
+          {{ if hugo.IsMultilingual }}
+          <div class="inline-flex gap-4 items-center pointer-events-auto mt-4" role="group" aria-label="Language Switcher">
+            {{ range .AllTranslations }}
+              <a href="{{ .Permalink }}"
+                class="text-sm font-medium transition-colors duration-200 py-3 {{ if eq .Lang $.Lang }}text-zinc-900{{ else }}text-zinc-400 hover:text-zinc-600{{ end }}"
+                {{ if eq .Lang $.Lang }}aria-current="page"{{ end }}
+                tabindex="0">
+                {{ upper .Lang }}
+              </a>
+            {{ end }}
+          </div>
+          {{ end }}
       </nav>
   </div>
 </div>

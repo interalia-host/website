@@ -1,11 +1,14 @@
 order: 1
 name: Paula Grünwald
 pronoun: she/her
-bio: "Paula likes to describe herself as radical administrator and has helped
+bio: Paula likes to describe herself as radical administrator and has helped
   various non-profits over the last two years build up and/or maintain healthy
   operational structures. Before that she has been working as Director of
   Strategy at the Center for the Cultivation of Technology. Prior to joining
-  CCT, she worked for the Goethe-Institute Freiburg as head of administration. "
+  CCT, she worked for the Goethe-Institute Freiburg as head of administration.
 role: "Executive Director "
-social: https://www.linkedin.com/in/paula-gr%C3%BCnwald-bb9a86250
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/paula-gr%C3%BCnwald-bb9a86250
+    icon: brands/linkedin
 image: /media/images/profile.png

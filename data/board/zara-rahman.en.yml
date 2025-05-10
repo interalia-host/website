@@ -7,4 +7,7 @@ bio: Zara Rahman is a co-founder of interalia, who developed the research and
   movements and organisations over the past 15 years. She currently works at
   SUPERRR Lab, working towards building radical hope and political imagination.
 role: Member
-social: https://www.linkedin.com/in/zara-rahman-7a8582261
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/zara-rahman-7a8582261
+    icon: brands/linkedin

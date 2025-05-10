@@ -3,8 +3,8 @@
         {{ $dataFile := printf "our-service.%s" .Lang }}
         {{ $data := index .Site.Data $dataFile }}
 
-        <div class="grid place-items-start lg:col-span-5">
-            <div>
+        <div class="lg:col-span-5 flex flex-col items-start">
+            <div class="max-w-2xl w-full">
                 <h2 class="text-4xl lg:text-6xl text-gray-900 mb-6">{{ $data.title }}</h2>
                 <p class="text-gray-700">{{ $data.subtitle }}</p>
             </div>
@@ -13,7 +13,7 @@
 
         <div class="hidden lg:block lg:col-span-1"></div>
 
-        <div class="space-y-8 lg:col-span-6">
+        <div class="space-y-8 lg:col-span-6 max-w-2xl w-full">
             {{ range $index, $element := where $data.items "request" "!=" true }}
                 <div>
                     <h3 class="lg:text-4xl text-2xl mb-3">{{ $element.title }}</h3>
@@ -26,13 +26,13 @@
     <hr class="my-20 h-[2px] border-0 bg-[#E1E3A2]">
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
-        <div class="grid place-items-start lg:col-span-5">
-            <h2 class="text-2xl lg:text-3xl text-gray-900">{{ $data.additional }}</h2>
+        <div class="lg:col-span-5 flex flex-col items-start">
+            <h2 class="text-2xl lg:text-3xl text-gray-900 max-w-2xl w-full">{{ $data.additional }}</h2>
         </div>
 
         <div class="hidden lg:block lg:col-span-1"></div>
 
-        <div class="space-y-8 lg:col-span-6">
+        <div class="space-y-8 lg:col-span-6 max-w-2xl w-full">
             {{ range $index, $element := where $data.items "request" true }}
                 <div>
                     <h3 class="lg:text-4xl text-2xl mb-3">{{ $element.title }}</h3>

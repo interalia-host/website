@@ -7,4 +7,7 @@ bio: Dr. Vivian Kube is a lawyer specializing in freedom of information,
   FragDenStaat. Vivian brings extensive experience and innovative legal
   strategies to her work.
 role: Member
-social: https://www.linkedin.com/in/dr-vivian-kube-ll-m-17b74ba3
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/dr-vivian-kube-ll-m-17b74ba3
+    icon: brands/linkedin

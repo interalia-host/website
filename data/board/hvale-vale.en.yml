@@ -7,4 +7,7 @@ bio: hvale vale (small letters as per bell hooks) is a feminist activist and
   infrastructure, organizing and holding spaces. Since 2017 hvale works at APC
   (Association for Progressive Communications) as Operations Managers.
 role: Member
-social: https://www.linkedin.com/in/hvalevale
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/hvalevale
+    icon: brands/linkedin

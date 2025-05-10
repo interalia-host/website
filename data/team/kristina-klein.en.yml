@@ -8,5 +8,8 @@ bio: Kristina is an executive with experience in international development and
   Open Knowledge Foundation Germany and is a board member of the organisation to
   this day.
 role: Executive Director
-social: https://www.linkedin.com/in/kristina-klein-219762135
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/kristina-klein-219762135
+    icon: brands/linkedin
 image: /media/images/profile.png

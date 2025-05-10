@@ -8,4 +8,7 @@ bio: hvale vale (klein geschrieben nach bell hooks) ist feministische
   2017 arbeitet hvale als Operations Manager bei APC (Association for
   Progressive Communications).
 role: Mitglied
-social: https://www.linkedin.com/in/hvalevale
+social:
+  - platform: LinkedIn
+    url: https://www.linkedin.com/in/hvalevale
+    icon: brands/linkedin
