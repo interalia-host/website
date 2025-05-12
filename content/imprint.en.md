@@ -15,7 +15,7 @@ Rehlingstraße 9
 
 **Registery No.:** HRB 731271, Amtsgericht Freiburg im Breisgau
 
-**CEO**: Stefanie Kristina Klein, Paula Grünwald
+**CEO**: Kristina Klein, Paula Grünwald
 
 [](<>)**Technical**: Hugo Static Site Generator with DecapCMS
 
