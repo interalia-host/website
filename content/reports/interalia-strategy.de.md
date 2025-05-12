@@ -2,6 +2,7 @@
 title: interalia Strategie 2025-2026
 date: 2025-05-09T14:22:00.000Z
 type: blog
+image: /media/uploads/thumbnail-interalia-blogpost.png
 ---
 # [](<>)Unsere Vision
 
