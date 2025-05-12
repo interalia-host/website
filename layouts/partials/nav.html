@@ -73,12 +73,12 @@
 
           <!-- Donate Button -->
           <a href="mailto:hello@interalia.host" role="menuitem"
-            class="inline w-max pt-1">
+            class="block py-2">
               {{ i18n "strings.contact_us" }}
           </a>
 
           {{ if hugo.IsMultilingual }}
-          <div class="inline-flex gap-4 items-center pointer-events-auto mt-4" role="group" aria-label="Language Switcher">
+          <div class="inline-flex gap-4 items-center pointer-events-auto" role="group" aria-label="Language Switcher">
             {{ range .AllTranslations }}
               <a href="{{ .Permalink }}"
                 class="text-sm font-medium transition-colors duration-200 py-3 {{ if eq .Lang $.Lang }}text-zinc-900{{ else }}text-zinc-400 hover:text-zinc-600{{ end }}"
