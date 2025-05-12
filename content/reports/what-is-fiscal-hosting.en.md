@@ -2,6 +2,7 @@
 title: What is fiscal hosting?
 date: 2025-05-09T12:16:00.000Z
 type: blog
+image: /media/uploads/thumbnail-what-is-fiscal-hosting.png
 ---
 
 Fiscal hosting, or fiscal sponsorship, is where a legally registered organisation (the host, or sponsor) holds and manages funds on behalf of someone else. By doing so they take fiscal responsibility (and often legal responsibility) for what happens with those funds. 
