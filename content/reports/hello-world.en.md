@@ -10,8 +10,6 @@ We’re interalia –a new fiscal host, registered as a non-profit (gGmbH) in Ge
 
 We were founded in mid-2024 by Paula Grünwald, Kristina Klein and Zara Rahman, and after almost a year of behind-the-scenes setting up our infrastructure, developing our strategy and building out our processes, we’re excited to launch publicly today. 
 
-![Zara, Paula and Kris before a big glass window with green hills in the back.](/media/uploads/signal-2025-05-12-110825_002.jpeg "Zara, Paula and Kris at the founding meeting.")
-
 ## Why a new fiscal host?
 
 The concept of fiscal hosting is more established in certain areas of the world than others. Here in Germany, it’s relatively unknown – but as we’ve discovered, once we start to explain the concept, people are very quickly on board. (German bureaucracy is notoriously complicated, and we seek to lighten that burden!). As we explore more in our **[Resources](https://interalia.host/de/resources/)**, fiscal hosts in the field of digital rights/internet freedom have struggled over past years, and this has left a number of groups struggling to find an operational home for their work.
@@ -22,10 +20,10 @@ All of the co-founders of interalia have roots in the digital civil society, so 
 
 ## Who funds us?
 
-We’ve been funded over the past year with an initial seed grant from the Open Tech Fund with special thanks to Ramy Roof Halim. Through that grant, we produced a couple of resources that we’re excited to share today: 
+We’ve been funded over the past year with an initial seed grant from the Open Tech Fund with special thanks to Ramy Raoof Halim. Through that grant, we produced a couple of resources that we’re excited to share today: 
 
 * **[Fiscal Hosting in the Internet Freedom Space](https://interalia.host/media/uploads/fiscal-hosting-in-the-internet-freedom-space.pdf)**, written by our co-founder, Zara Rahman 
-* [](<>)[‘**A Delicate Dance’**](https://interalia.host/media/uploads/a-delicate-dance_exploring-feminist-fiscal-sponsorship.pdf) – an exploration of feminist fiscal sponsorship, written by independent consultant Rayya El Zein, who we commissioned to produce this piece of work. 
+* **[](<>)[‘A Delicate Dance’](https://interalia.host/media/uploads/a-delicate-dance_exploring-feminist-fiscal-sponsorship.pdf)** – an exploration of feminist fiscal sponsorship, written by independent consultant Rayya El Zein, who we commissioned to produce this piece of work. 
 
 We’re also grateful to receive funding from Ford Foundation, Schöpflin Stiftung, and overheads from projects that we host. It’s been demonstrated time and time again that smaller fiscal hosts struggle to cover their core costs solely from overhead –so having core funding helps us to cover our staff costs and internal infrastructure, and also gives us some liquidity to be able to cover groups who might need costs advancing if their grants are late coming in. 
 
