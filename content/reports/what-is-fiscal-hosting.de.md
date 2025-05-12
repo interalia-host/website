@@ -2,7 +2,9 @@
 title: Was ist Fiscal Hosting
 date: 2025-05-09T12:16:00.000Z
 type: blog
----	
+image: /media/uploads/thumbnail-what-is-fiscal-hosting.png
+---
+	
 
 Beim Fiscal Hosting (oft auch Fiscal Sponsorship genannt) nimmt eine in der Regel gemeinnützige Organisation (der Host oder Sponsor) Gelder im Namen eines Projekts oder einer Initiative entgegen und verwaltet sie. Damit übernimmt der Fiscal Host die steuerliche und oft auch rechtliche Verantwortung für das, was mit diesen Geldern geschieht. 
 
