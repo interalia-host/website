@@ -10,12 +10,12 @@ Fiscal Hosting/Sponsorship ist vor allem in den USA verbreitet, inzwischen aber 
 
 Da wir oft von Menschen angesprochen werden, die bisher wenig oder keine Erfahrung mit Fiscal Hosting haben, haben wir einige gängige Fragen gesammelt und beantwortet. 
 
-## Wann macht Fiscal Hosting Sinn? 
+## Wann macht Fiscal Hosting Sinn?
 
 Es gibt sehr viele unterschiedliche Gründe, warum Fiscal Hosting für euch in Frage kommen könnte: 
 
 * Wenn sich Fördermöglichkeiten sehr schnell ergeben und bei euch nicht die nötige Zeit, das Wissen oder schlicht die Kapazität vorhanden sind, um einen eigenen Verein oder eine gGmbH zu gründen und zu unterhalten.
-* Aus Gründen der Privatsphäre oder Sicherheit kann es vorteilhaft sein, wenn euer Name nicht öffentlich mit einem bestimmten Projekt in Verbindung gebracht wird – zum Beispiel, wenn ihr im Bereich Menschenrechte arbeitet oder zu besonders sensiblen Themen.
+* Aus Gründen der Privatsphäre oder Sicherheit kann es vorteilhaft sein, wenn euer Name nicht öffentlich mit einem bestimmten Projekt in Verbindung gebracht wird – zum Beispiel, wenn ihr im Bereich Menschenrechte oder zu besonders sensiblen Themen arbeitet.
 * Wenn euch die Kapazitäten fehlen, den operativen Aufwand für die Verwaltung der Mittel zu tragen - zum Beispiel für die Buchhaltung, Budgetierung oder Steuererklärungen. 
 * Wenn Förderungen an bestimmte Bedingungen geknüpft sind, die eure Organisation nicht erfüllt – zum Beispiel die Anerkennung der Gemeinnützigkeit in einem bestimmten Land oder das Erreichen eines festgelegten Mindestumsatzes.
 * Wenn ihr euch professionalisieren wollt. Ihr habt ein Projekt in eurer Freizeit gestartet, und merkt, dass die bisherigen Strukturen an ihre Grenzen kommen. Zum Beispiel, wenn Projektgelder auf privaten Konten liegen, euer Team schnell wächst oder ihr jemanden anstellen wollt.
@@ -26,19 +26,19 @@ Es gibt sehr viele unterschiedliche Gründe, warum Fiscal Hosting für euch in F
 * Wenn euer Team selber über ausreichend administrative Fachkenntnisse verfügt und/oder ihr nur bestimmte Bereiche auslagern möchtet. 
 * Wenn ihr als Projekt, bzw. Team so groß seid, dass es finanziell sinnvoller ist, jemanden einzustellen, der sich um eure Verwaltung kümmert, als einem Fiscal Host den Overhead zu zahlen.
 
-## Was machen Fiscal Hosts eigentlich? 
+## Was machen Fiscal Hosts eigentlich?
 
 Das hängt tatsächlich sehr vom jeweiligen Fiscal Host ab. In der Regel übernehmen sie für euch die meisten administrativen Aufgaben sowie die Finanzplanung und -verwaltung. So müsst ihr euch nicht mit Bürokratie, Finanzen oder Papierkram herumschlagen – sondern könnt euch voll und ganz auf das konzentrieren, was wirklich zählt: eure Arbeit und euer Projekt.
 
 [Hier könnt ihr mehr über die Services erfahren, die interalia anbietet.](https://interalia.host/de/service/)
 
-## Was passiert, wenn ihr euch für einen Fiscal Host entscheidet? 
+## Was passiert, wenn ihr euch für einen Fiscal Host entscheidet?
 
 Der Auswahlprozess für Projekte und Initiativen ist bei jedem Fiscal Host unterschiedlich. In der Regel umfasst er einige Gesprächen, um gemeinsam herauszufinden, ob eine Zusammenarbeit sinnvoll ist. Anschließend wird meist eine formelle Vereinbarung geschlossen, die die wichtigsten Rechte und Pflichten beider Seiten festhält.
 
 Für interalia haben wir gemeinsam mit einer auf Gemeinnützigkeitsrecht spezialisierten Anwaltskanzlei Vereinbarungen erarbeitet. Wenn ihr wissen möchtet, wie diese aussehen, schreibt uns gerne an: [hello@interalia.host](mailto:hello@interalia.host).
 
-## Was passiert, wenn ihr mit den Leistungen eures Fiscal Hosts nicht zufrieden seid? 
+## Was passiert, wenn ihr mit den Leistungen eures Fiscal Hosts nicht zufrieden seid?
 
 Dies ist eine der schwierigsten Fragen, auf die wir bei unseren Recherchen im Rahmen der Gründung von interalia gestoßen sind und die Antwort kann je nach Aufbau des Fiscal Hosts stark variieren. Deshalb nur drei sehr allgemeine Hinweise:
 
