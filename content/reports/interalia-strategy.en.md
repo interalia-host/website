@@ -34,7 +34,7 @@ interalia enables and empowers members of civil society working at the intersect
 
 **Accountable**: We are grateful for feedback and input that helps us improve what we do and how we do it – we offer various pathways for holding us accountable and offering us feedback.
 
-#### Reimagining fiscal hosting
+### Reimagining fiscal hosting
 
 Fiscal hosts have the potential to be a transformative shared infrastructure for civil society, increasing the resilience of civil society broadly speaking. For that to happen, though, we need space to build relationships between fiscal hosts, and begin to build the trust, protocols, and figure out how to share what infrastructure between us in a way that meets the evolving needs of civil society. 
 
