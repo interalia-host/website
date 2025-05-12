@@ -12,7 +12,7 @@ Gegründet wurde interalia im Sommer 2024 von Paula Grünwald, Kristina Klein un
 
 ## Warum haben wir einen Fiscal Host gegründet?
 
-Fiscal Hostingist in Deutschland (noch) relativ unbekannt – doch wir merken immer wieder: Sobald wir erklären, was wir tun, sind unsere Gesprächspartner:innen schnell begeistert. (Bürokratie kann herausfordernd sein – genau deshalb setzen wir uns dafür ein, Hürden abzubauen und den Weg zu erleichtern). 
+Fiscal Hosting ist in Deutschland (noch) relativ unbekannt – doch wir merken immer wieder: Sobald wir erklären, was wir tun, sind unsere Gesprächspartner:innen schnell begeistert. Bürokratie kann herausfordernd sein – genau deshalb setzen wir uns dafür ein, Hürden abzubauen und den Weg zu erleichtern. 
 
 Beim Fiscal Hosting (oft auch Fiscal Sponsorship genannt) erhält und verwaltet eine in der Regel gemeinnützige Organisation (der Host oder Sponsor) Gelder im Namen eines Projekts oder einer Initiative. Damit übernimmt der Fiscal Host die steuerliche (und oft auch rechtliche) Verantwortung für das, was mit diesen Geldern geschieht. Mehr dazu was Fiscal Hosting ist, findet ihr in unseren **[Ressourcen](https://interalia.host/de/reports/what-is-fiscal-hosting/)**. 
 
