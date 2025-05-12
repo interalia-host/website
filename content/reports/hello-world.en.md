@@ -3,7 +3,7 @@ title: Hello world!
 date: 2025-02-10
 author: ""
 type: ""
-image: /media/uploads/our-strategy.jpg
+image: /media/uploads/thumbnail-interalia-blogpost.png
 description: ""
 ---
 
