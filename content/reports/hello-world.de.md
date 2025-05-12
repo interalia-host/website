@@ -22,7 +22,7 @@ Dies war für uns der Anlass, in den vergangenen Monate Strategiegespräche zu f
 
 Alle Gründerinnen von interalia haben ihre Wurzeln in der sogenannten digitalen Zivilgesellschaft, daher ist auch ein großer Teil unsere Netzwerke dort verortet. Für uns ist die Schnittstelle von Technologie und sozialer Gerechtigkeit jedoch sehr breit gefächert und wir freuen uns insbesondere über Anfragen von Gruppen, die sich vielleicht nicht unmittelbar diesem Bereich zuordnen würden.
 
-## Was ist bisher passiert**?**
+## Was ist bisher passiert?
 
 Im vergangenen Jahr konnten wir dank der Gründungsfinanzierung vom Open Technology Fund wichtige interne Strukturen aufbauen. Unser besonderer Dank gilt dabei Ramy Raoof Halim. Im Rahmen dieser Förderung sind auch zwei Berichte entstanden, die wir heute gerne mit euch teilen - derzeit sind sie nur auf Englisch verfügbar:
 
@@ -31,7 +31,7 @@ Im vergangenen Jahr konnten wir dank der Gründungsfinanzierung vom Open Technol
 
 Dankbar sind wir zudem über weitere Förderungen von der Ford Foundation, sowie der Schöpflin Stiftung. Wie sich insbesondere in den USA gezeigt hat, haben gerade kleinere Fiscal Hosts häufig Schwierigkeiten, ihre Kosten allein durch den Overhead der von ihnen betreuten Projekte zu decken. Dieses Kernfinanzierung hilft uns daher, unsere Personal- und Infrastrukturkosten zu decken und verschafft uns gleichzeitig die nötige Liquidität, um Gruppen zeitnah und unbürokratisch unterstützen zu können.
 
-## Ihr seid neugierig geworden**?**
+## Ihr seid neugierig geworden?
 
 Wenn ihr – als Einzelperson, lose Kollektive oder eingespielte Teams – Fördermittel beantragen oder Spenden entgegen nehmen wollt und eine Organisation sucht, die diese Mittel für euch verwaltet - sprecht uns an. Wir berechnen 10 % Overhead, um einen Teil unserer internen Personal- und Infrastrukturkosten zu decken, und unterstützen bei Fördermittelmanagement, Finanzberichterstattung, Kommunikation mit Förderinstitutionen, Vertragsgestaltung – und vielem mehr.
 
