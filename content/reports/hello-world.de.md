@@ -1,6 +1,6 @@
 ---
 title: Hallo Welt!
-date: 2025-02-10
+date: 2025-05-09T00:00:00.000Z
 author: ""
 type: ""
 image: /media/uploads/thumbnail-interalia-blogpost.png
