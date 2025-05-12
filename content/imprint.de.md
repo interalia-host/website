@@ -15,7 +15,7 @@ Rehlingstraße 9
 
 [](<>)**Registernummer:** HRB 731271, Amtsgericht Freiburg im Breisgau
 
-**Vertreten durch die Geschäftsführerinnen:** Paula Grünwald und Stefanie Kristina Klein
+**Vertreten durch die Geschäftsführerinnen:** Paula Grünwald und Kristina Klein
 
 **Technisch:** Hugo Static Site Generator mit DecapCMS
 
