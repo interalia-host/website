@@ -10,7 +10,7 @@ strings:
   - id: return_homepage
     translation: Return to homepage
   - id: project_help
-    translation: Do you have a project that we can help?
+    translation: Do you have a project that we can help with?
   - id: get_in_touch
     translation: Get in touch today
   - id: company_org
