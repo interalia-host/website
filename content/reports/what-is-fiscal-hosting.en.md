@@ -1,5 +1,5 @@
 ---
-title: What is fiscal hosting?
+title: What is Fiscal Hosting?
 date: 2025-05-09T12:16:00.000Z
 type: blog
 image: /media/uploads/thumbnail-what-is-fiscal-hosting.png
