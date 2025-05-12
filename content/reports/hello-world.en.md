@@ -1,5 +1,5 @@
 ---
-title: Hello world!
+title: Hello World!
 date: 2025-05-09T00:00:00.000Z
 author: ""
 type: ""
