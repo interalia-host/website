@@ -3,7 +3,7 @@ title: Hallo Welt!
 date: 2025-05-09T00:00:00.000Z
 author: ""
 type: ""
-image: /media/uploads/thumbnail-interalia-blogpost.png
+image: /media/uploads/thumbnail-interalia-hello-world.png
 description: ""
 ---
 Wir sind interalia (gGmbH) – ein neuer gemeinnütziger Fiscal Host mit Sitz in Deutschland. Wir unterstützen zivilgesellschaftliche Initiativen an der Schnittstelle von Technologie und sozialer Gerechtigkeit, damit sie ihre Vision vorantreiben können. Wir kümmern uns um ihre Finanzen und Administration während sie wachsen und wirken.

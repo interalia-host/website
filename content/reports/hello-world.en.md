@@ -3,7 +3,7 @@ title: Hello World!
 date: 2025-05-09T00:00:00.000Z
 author: ""
 type: ""
-image: /media/uploads/thumbnail-interalia-blogpost.png
+image: /media/uploads/thumbnail-interalia-hello-world.png
 description: ""
 ---
 We’re interalia –a new fiscal host, registered as a non-profit (gGmbH) in Germany. We’re focused on supporting the broad ecosystem of civil society working at the intersection of tech and social justice, by taking care of their operations and finances as they evolve. 
