@@ -1,12 +1,12 @@
 studios:
   - name: Plaintext:Design
-    logo: /media/uploads/plaintext_logo_greendots.svg
+    logo: /media/uploads/plaintext-logo.png
     link: https://plaintext.design/
   - name: Projects through the Flow Fund
-    logo: /media/uploads/bildschirmfoto_vom_2025-05-13_14-55-55-removebg-preview.png
+    logo: /media/uploads/flowfund-logo.png
     link: https://www.schoepflin-stiftung.de/foerdern/flow-fund/
   - name: International Women* Space - Migrant Justice Community of Practice
-    logo: /media/uploads/241023004033-removebg-preview.png
+    logo: /media/uploads/iws-logo.png
     link: https://iwspace.de/migrant-justice/
 funders:
   - name: Ford Foundation
@@ -16,7 +16,7 @@ funders:
     logo: /media/uploads/otf-logo.svg
     link: https://www.opentech.fund/
   - name: Schöpflin Stiftung
-    logo: /media/uploads/schopflin_stiftung_logo.png
+    logo: /media/uploads/schoepflin-logo.png
     link: https://www.schoepflin-stiftung.de/
 collaborators:
   - name: ura
@@ -26,5 +26,5 @@ collaborators:
     logo: /media/uploads/winkow-logo.png
     link: https://winkow.net/
   - name: Haus des Engagements
-    logo: /media/uploads/haus-des-engagements-logo.png
+    logo: /media/uploads/hde-logo.png
     link: https://haus-des-engagements.de/
