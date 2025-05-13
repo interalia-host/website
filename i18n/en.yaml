@@ -99,6 +99,6 @@ strings:
   - id: studios_title
     translation: Studios
   - id: funders_title
-    translation: Our funders
+    translation: Funders
   - id: collaborators_title
-    translation: Our collaborators
+    translation: Collaborators
