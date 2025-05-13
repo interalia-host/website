@@ -1,32 +1,30 @@
 studios:
-  - name: "Imaginners Lab"
-    logo: "/media/logos/studio1.png"
-    link: "https://example.com"
-  - name: "Projects through the Flow Fund"
-    logo: "/media/logos/studio2.png"
-    link: "https://example.com"
-  - name: "Barta Collective"
-    logo: "/media/logos/studio3.png"
-    link: "https://example.com"
-
+  - name: Plaintext:Design
+    logo: /media/uploads/plaintext_logo_greendots.svg
+    link: https://plaintext.design/
+  - name: Projects through the Flow Fund
+    logo: /media/uploads/bildschirmfoto_vom_2025-05-13_14-55-55-removebg-preview.png
+    link: https://www.schoepflin-stiftung.de/foerdern/flow-fund/
+  - name: International Women* Space - Migrant Justice Community of Practice
+    logo: /media/uploads/241023004033-removebg-preview.png
+    link: https://iwspace.de/migrant-justice/
 funders:
-  - name: "Ford Foundation"
-    logo: "/media/uploads/ford-foundation-logo.svg"
-    link: "https://www.fordfoundation.org/"
-  - name: "Open Technology Fund"
-    logo: "/media/uploads/otf-logo.svg"
-    link: "https://www.opentech.fund/"
-  - name: "Schöpflin Stiftung"
-    logo: "/media/uploads/schopflin-stiftung-logo.svg"
-    link: "https://www.schoepflin-stiftung.de/"
-
+  - name: Ford Foundation
+    logo: /media/uploads/ford-foundation-logo.svg
+    link: https://www.fordfoundation.org/
+  - name: Open Technology Fund
+    logo: /media/uploads/otf-logo.svg
+    link: https://www.opentech.fund/
+  - name: Schöpflin Stiftung
+    logo: /media/uploads/schopflin_stiftung_logo.png
+    link: https://www.schoepflin-stiftung.de/
 collaborators:
-  - name: "ura"
-    logo: "/media/uploads/ura-design-logo.svg"
-    link: "https://ura.design/"
-  - name: "Trust Law"
-    logo: "/media/uploads/trust-law-logo.svg"
-    link: "https://www.trust.org/trustlaw/"
-  - name: "Haus des Engagements"
-    logo: "/media/uploads/haus-des-engagements-logo.png"
-    link: "https://haus-des-engagements.de/" 
+  - name: ura
+    logo: /media/uploads/ura-design-logo.svg
+    link: https://ura.design/
+  - name: Winkow und Brockstedt
+    logo: /media/uploads/winkow-logo.png
+    link: https://winkow.net/
+  - name: Haus des Engagements
+    logo: /media/uploads/haus-des-engagements-logo.png
+    link: https://haus-des-engagements.de/
