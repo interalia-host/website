@@ -96,7 +96,7 @@ strings:
   - id: read_more
     translation: Weiterlesen
   - id: network_title
-    translation: Gehostete Projekte
+    translation: Projekte
   - id: studios_title
     translation: Studios
   - id: funders_title
