@@ -50,6 +50,18 @@
                 href="https://interalia.host/de/service/"
                 />
   </url><url>
+    <loc>https://interalia.host/de/network/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://interalia.host/en/network/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="de"
+                href="https://interalia.host/de/network/"
+                />
+  </url><url>
     <loc>https://interalia.host/de/resources/</loc>
     <xhtml:link
                 rel="alternate"
