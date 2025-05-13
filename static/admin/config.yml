@@ -184,6 +184,67 @@ collections:
       - { name: "image", label: "Cover Image", widget: "image", i18n: duplicate, required: false, hint: "Cover image for the report." }
       - { name: "download", label: "PDF File", widget: "file", i18n: duplicate, required: false, hint: "PDF file of the report." }
 
+  - name: "network"
+    label: "Network"
+    description: "Edit the Network page sections for both languages."
+    files:
+      - label: "Network (EN)"
+        name: "network_en"
+        file: "data/network.en.yaml"
+        fields:
+          - label: "Studios"
+            name: "studios"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image" }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+          - label: "Funders"
+            name: "funders"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image" }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+          - label: "Collaborators"
+            name: "collaborators"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image", required: false }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+      - label: "Network (DE)"
+        name: "network_de"
+        file: "data/network.de.yaml"
+        fields:
+          - label: "Studios"
+            name: "studios"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image" }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+          - label: "Funders"
+            name: "funders"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image" }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+          - label: "Collaborators"
+            name: "collaborators"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Logo Image", name: "logo", widget: "image", required: false }
+              - { label: "Logo Link (optional)", name: "logo_link", widget: "string", required: false }
+              - { label: "Link", name: "link", widget: "string", required: false }
+
   - name: "team"
     label: "Team Members"
     label_singular: "Team Member"

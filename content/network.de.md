@@ -1,5 +1,4 @@
 +++
-draft = true
 weight = 3
 title = "Netzwerk"
 layout = "network"

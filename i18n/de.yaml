@@ -95,3 +95,11 @@ strings:
     translation: Bericht herunterladen
   - id: read_more
     translation: Weiterlesen
+  - id: network_title
+    translation: Unser Netzwerk
+  - id: studios_title
+    translation: Studios
+  - id: funders_title
+    translation: Unsere Förderer
+  - id: collaborators_title
+    translation: Unsere Partner

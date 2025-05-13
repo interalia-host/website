@@ -1,0 +1,32 @@
+studios:
+  - name: "Imaginners Lab"
+    logo: "/media/logos/studio1.png"
+    link: "https://example.com"
+  - name: "Projects through the Flow Fund"
+    logo: "/media/logos/studio2.png"
+    link: "https://example.com"
+  - name: "Barta Collective"
+    logo: "/media/logos/studio3.png"
+    link: "https://example.com"
+
+funders:
+  - name: "Ford Foundation"
+    logo: "/media/uploads/ford-foundation-logo.svg"
+    link: "https://www.fordfoundation.org/"
+  - name: "Open Technology Fund"
+    logo: "/media/uploads/otf-logo.svg"
+    link: "https://www.opentech.fund/"
+  - name: "Schöpflin Stiftung"
+    logo: "/media/uploads/schopflin-stiftung-logo.svg"
+    link: "https://www.schoepflin-stiftung.de/"
+
+collaborators:
+  - name: "ura"
+    logo: "/media/uploads/ura-design-logo.svg"
+    link: "https://ura.design/"
+  - name: "Trust Law"
+    logo: "/media/uploads/trust-law-logo.svg"
+    link: "https://www.trust.org/trustlaw/"
+  - name: "Haus des Engagements"
+    logo: "/media/uploads/haus-des-engagements-logo.png"
+    link: "https://haus-des-engagements.de/" 
