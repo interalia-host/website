@@ -95,10 +95,10 @@ strings:
   - id: read_more
     translation: Read More
   - id: network_title
-    translation: Our Network
+    translation: Hosted Projects
   - id: studios_title
     translation: Studios
   - id: funders_title
-    translation: Our funders
+    translation: Funders
   - id: collaborators_title
-    translation: Our collaborators
+    translation: Collaborators
