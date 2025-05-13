@@ -19,6 +19,8 @@ Rehlingstraße 9
 
 [](<>)**Technical**: Hugo Static Site Generator with DecapCMS
 
+**Design and Web Development**: [Ura Design](https://ura.design/en/)
+
 ## [](<>)Exclusion of liability
 
 Responsible for the context of this website in accordance with § 55 section 2 RStV is the respective author.
