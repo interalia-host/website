@@ -24,9 +24,9 @@
 </section>
 
 <!-- Funders Section with middle curve -->
-<section class="relative py-32 px-8 md:px-12 mt-[25rem]" aria-labelledby="funders-title">
-  <div class="absolute -top-[40rem] bottom-0 left-0 right-0 bg-[url('/media/images/bpp.svg')] bg-cover bg-no-repeat bg-top z-10 pointer-events-none"></div>
-  <div class="relative max-w-6xl mx-auto text-center z-20 -mt-[37.5rem]">
+<section class="relative py-32 px-8 md:px-12 lg:mt-[25rem] mt-[35rem]" aria-labelledby="funders-title">
+  <div class="absolute lg:-top-[40rem] -top-[45rem] bottom-0 left-0 right-0 bg-[url('/media/images/bpp.svg')] bg-cover bg-no-repeat bg-top z-10 pointer-events-none"></div>
+  <div class="relative max-w-6xl mx-auto text-center z-20 lg:-mt-[37.5rem] -mt-[45rem]">
     <h2 id="funders-title" class="text-xl font-semibold mb-10">{{ i18n "strings.funders_title" }}</h2>
     <div class="flex flex-wrap justify-center items-center gap-12" aria-label="{{ i18n "strings.funders_title" }}">
       {{ range $data.funders }}
@@ -45,9 +45,9 @@
 </section>
 
 <!-- Collaborators Section with bottom curve -->
-<section class="relative py-32 px-8 md:px-12 mt-[-20.75rem]" aria-labelledby="collaborators-title">
+<section class="relative py-32 px-8 md:px-12 lg:mt-[-20.75rem] mt-[-12.5rem]" aria-labelledby="collaborators-title">
   <div class="absolute -top-[10rem] bottom-0 left-0 right-0 bg-[url('/media/images/btp.svg')] bg-cover bg-no-repeat bg-top z-10 pointer-events-none"></div>
-  <div class="relative max-w-6xl mx-auto text-center z-20 -mt-[5rem]">
+  <div class="relative max-w-6xl mx-auto text-center z-20 lg:-mt-[5rem] -mt-[10rem]">
     <h2 id="collaborators-title" class="text-xl font-semibold mb-10">{{ i18n "strings.collaborators_title" }}</h2>
     <div class="flex flex-wrap justify-center items-center gap-12" aria-label="{{ i18n "strings.collaborators_title" }}">
       {{ range $data.collaborators }}
