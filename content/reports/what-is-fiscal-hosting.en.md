@@ -13,8 +13,13 @@ Formal fiscal hosting/sponsorship organisations are currently most common in the
 ## Why use a fiscal host?
 
 [](<>)There are many reasons why you might want to use a fiscal host, including: 
+1. If you don’t have the capacity to set up a legal entity yourself – for example if a funding opportunity arises quickly, if you don’t have the necessary skills or expertise to know how to set up and run a legal entity, or other reasons. 
+2. Security reasons: there can be various valid reasons why you might not want your name to be related to a specific project, depending on where in the world you’re working or what you’re doing (or the human rights context thereof.) 
+3. If you don’t have the capacity or desire to carry out the operational burden of managing funds –for example, accounting and budgeting, tax reporting, and more. 
+4. Specificities of the funding opportunity: some financial resources are only available to certain types of legal entity –if you have access to one type of legal entity but not the other needed for one specific opportunity, it might make more sense to use a fiscal host as a one-off. 
+5. Your project is growing from a personal project to one that involves a team: if you’re currently holding funds in a personal bank account but slowly realising that to reach your goals, you’ll need more team members or even to employ someone, you might want to use a fiscal host to separate your project finances from your personal ones. 
 
-Why might you *not* want to use a fiscal host? 
+## Why might you *not* want to use a fiscal host? 
 
 1. If the operational needs of your project or initiative are extremely specific and you can’t find a fiscal host who meets those needs (eg. staff need to be employed in specific countries) 
 2. If you have operational or financial expertise on your staff, and/or the ability to outsource the specific financial services you need. 
