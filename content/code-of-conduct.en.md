@@ -39,7 +39,7 @@ We seek to follow transformative justice principles in how we enforce this Code 
 
 If someone causes harm, they will be first addressed on a one on one basis, and asked to reconsider their actions, with clear examples of the impact of said harm.
 
-**5. If‭ ‬You‭ ‬Witness‭ ‬or‭ ‬Are‭ ‬Subject‭ ‬to‭ ‬Unacceptable‭ ‬Behaviour**
+#### **5. If‭ ‬You‭ ‬Witness‭ ‬or‭ ‬Are‭ ‬Subject‭ ‬to‭ ‬Unacceptable‭ ‬Behaviour**
 
 If‭ ‬you‭ ‬are‭ ‬subject‭ ‬to‭ ‬or‭ ‬witness‭ ‬unacceptable‭ ‬behaviour,‭ ‬or‭ ‬have‭ ‬any‭ ‬other‭ ‬concerns,‭ ‬please‭ ‬notify‭  your direct contact from the interalia Co-Executive Directors ([hello@interalia.host](mailto:info@interalia.host)) or hosted project leads.
 
