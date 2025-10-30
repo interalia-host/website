@@ -41,7 +41,7 @@ If someone causes harm, they will be first addressed on a one on one basis, and 
 
 #### **5. If‭ ‬You‭ ‬Witness‭ ‬or‭ ‬Are‭ ‬Subject‭ ‬to‭ ‬Unacceptable‭ ‬Behaviour**
 
-If‭ ‬you‭ ‬are‭ ‬subject‭ ‬to‭ ‬or‭ ‬witness‭ ‬unacceptable‭ ‬behaviour,‭ ‬or‭ ‬have‭ ‬any‭ ‬other‭ ‬concerns,‭ ‬please‭ ‬notify‭  your direct contact from the interalia Co-Executive Directors ([hello@interalia.host](<>)) or hosted project leads.
+If‭ ‬you‭ ‬are‭ ‬subject‭ ‬to‭ ‬or‭ ‬witness‭ ‬unacceptable‭ ‬behaviour,‭ ‬or‭ ‬have‭ ‬any‭ ‬other‭ ‬concerns,‭ ‬please‭ ‬notify‭  your direct contact from the interalia Co-Executive Directors ([coc@interalia.host](mailto:coc@interalia.host)) or hosted project leads.
 
 Additionally, in the context of online or in-person meetings,‭ ‬meetup hosts ‬are‭ ‬available‭ ‬to‭ ‬help‭ ‬network‭ ‬members‭ ‬engage‭ ‬with‭ ‬local‭ ‬law‭ ‬enforcement‭ ‬or‭ ‬to‭ ‬otherwise‭ ‬help‭ ‬those‭ ‬experiencing‭ ‬unacceptable‭ ‬behaviour‭ ‬feel‭ ‬safe.‭ ‬In‭ ‬the‭ ‬context‭ ‬of‭ ‬in-person‭ ‬events,‭ ‬meetup hosts will‭ ‬also‭ ‬provide‭ ‬escorts‭ ‬as‭ ‬desired‭ ‬by‭ ‬the‭ ‬person‭ ‬experiencing‭ ‬distress.
 
