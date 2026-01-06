@@ -103,3 +103,29 @@ strings:
     translation: Förderer
   - id: collaborators_title
     translation: Partner
+  - id: all_rights_reserved
+    translation: Alle Rechte vorbehalten.
+  - id: min_read
+    translation: Min. Lesezeit
+  - id: last_updated
+    translation: Zuletzt aktualisiert
+  - id: opens_new_tab
+    translation: öffnet in neuem Tab
+  - id: table_of_contents
+    translation: Inhaltsverzeichnis
+  - id: share_article
+    translation: Diesen Artikel teilen
+  - id: copy_link
+    translation: Link kopieren
+  - id: copied
+    translation: Kopiert!
+  - id: related_posts
+    translation: Ähnliche Beiträge
+  - id: newsletter_cta_title
+    translation: Bleib auf dem Laufenden
+  - id: newsletter_cta_text
+    translation: Abonniere unseren Newsletter, um die neuesten Nachrichten und Updates von interalia zu erhalten.
+  - id: newsletter_privacy
+    translation: Wir respektieren deine Privatsphäre. Jederzeit abbestellbar.
+  - id: subscribe
+    translation: Abonnieren

@@ -5,61 +5,66 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Cache node_modules
-      uses: actions/cache@v4
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20.16.0'
+      - name: Install Node dependencies
+        run: npm ci
 
-    - name: Install dependencies
-      run: |
-        npm ci
-        npm -g install js-beautify
+      - name: Cache Hugo
+        uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-${{ hashFiles('**/*.html', '**/*.md') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-
 
-    - name: Cache Hugo
-      id: cache-hugo
-      uses: actions/cache@v4
-      with:
-        path: ./hugo
-        key: ${{ runner.os }}-hugo-0.145.0-${{ hashFiles('**/package.json') }}-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-hugo-0.145.0-
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.154.3'
+          extended: true
 
-    - name: Install Hugo
-      if: steps.cache-hugo.outputs.cache-hit != 'true'
-      run: |
-        wget https://github.com/gohugoio/hugo/releases/download/v0.145.0/hugo_extended_0.145.0_Linux-64bit.tar.gz
-        tar -xzf hugo_extended_0.145.0_Linux-64bit.tar.gz hugo
-        rm hugo_extended_0.145.0_Linux-64bit.tar.gz
+      - name: Build site
+        run: npm run build
+        env:
+          HUGO_CACHEDIR: /tmp/hugo_cache
+          HUGO_ENVIRONMENT: production
 
-    - name: Build Hugo site
-      run: ./hugo -d public
+      - name: Create CNAME file
+        run: echo 'interalia.host' > public/CNAME
 
-    - name: Create CNAME file
-      run: echo 'interalia.host' > public/CNAME
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
-    - name: Beautify HTML files
-      run: find public/ -type f -name "*.html" -exec js-beautify --html -r -m 1 "{}" \;
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./public
-
-
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

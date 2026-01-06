@@ -16,7 +16,7 @@
                         <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
                             {{ if $v.image }}
                                 <div class="relative h-48 overflow-hidden">
-                                    <img src="{{ $v.image }}" alt="{{ $v.title }}" class="w-full h-full object-cover">
+                                    <img src="{{ $v.image }}" alt="{{ $v.title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
                             {{ end }}
@@ -55,9 +55,9 @@
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
                         <div class="relative h-48 overflow-hidden">
                             {{ if .Params.image }}
-                                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
                             {{ else }}
-                                <img src="{{ .Site.BaseURL }}/media/images/default-blog.jpg" alt="{{ .Title }}" class="w-full h-full object-cover">
+                                <img src="{{ "/media/images/default-blog.jpg" | absURL }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
                             {{ end }}
                             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>

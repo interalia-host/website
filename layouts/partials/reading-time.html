@@ -1,0 +1,5 @@
+{{- $words := .Content | countwords -}}
+{{- $minutes := div $words 200 -}}
+{{- if lt $minutes 1 }}{{ $minutes = 1 }}{{ end -}}
+<span class="reading-time">{{ $minutes }} min read</span>
+

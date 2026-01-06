@@ -1,5 +1,22 @@
+# Hugo
 .hugo_build.lock
 resources/
 public/
+
+# Node
 node_modules/
+npm-debug.log*
+
+# OS
 .DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.bak

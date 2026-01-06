@@ -1,3 +1,5 @@
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
+{{- $currentURL := .RelPermalink -}}
 <div x-data="navbar()" class="bg-[#FCFCF0]">
   <div class="relative mx-auto flex items-center justify-around">
       <button @click="toggleMobileMenu()" 
@@ -16,7 +18,7 @@
           class="group p-4">
             <span class="sr-only">{{ i18n "strings.interalia" }}</span>
               <div class="h-12 w-auto">
-                <img src="{{ .Site.BaseURL}}/media/logos/interalia-horizontal-logo.svg" alt="{{ i18n "strings.interalia" }} logo" class="h-full w-full">
+                <img src="{{ "/media/logos/interalia-horizontal-logo.svg" | absURL }}" alt="{{ i18n "strings.interalia" }} logo" class="h-full w-full" loading="eager" decoding="async">
               </div>
       </a>
 
@@ -24,10 +26,13 @@
       role="navigation" aria-label="Main Menu">
       
           {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
-            {{ $parentPermalink := .Permalink }} 
-            <a href="{{ $parentPermalink }}" 
-              class="py-3 lowercase">
+            {{- $navURL := .RelPermalink -}}
+            {{- $isActive := or (eq $currentURL $navURL) (and (ne $navURL "/") (hasPrefix $currentURL $navURL)) -}}
+            <a href="{{ .Permalink }}" 
+              class="relative py-3 lowercase{{ if $isActive }} font-semibold{{ end }}"
+              {{ if $isActive }}aria-current="page"{{ end }}>
                 {{ .Title }}
+                {{ if $isActive }}<span class="absolute bottom-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#2C1B1B]" aria-hidden="true"></span>{{ end }}
             </a>
           {{ end }}
 
@@ -44,8 +49,8 @@
           </div>
           {{ end }}
           
-          <!-- Donate Button -->
-          <a href="mailto:hello@interalia.host" role="menuitem"
+          <!-- Contact Button -->
+          <a href="mailto:{{ $contactEmail }}" role="menuitem"
             class="flex rounded-full items-center bg-[#2C1B1B] hover:bg-[#6E4242] px-5 text-white transition">
               {{ i18n "strings.contact_us" }}
           </a>
@@ -60,19 +65,21 @@
          class="lg:hidden">
       <nav class="flex flex-col space-y-2 px-8 py-4">
           {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
-          {{ $parentPermalink := .Permalink }} 
-          {{ $parentTitle := .Title }}
+          {{- $navURL := .RelPermalink -}}
+          {{- $isActive := or (eq $currentURL $navURL) (and (ne $navURL "/") (hasPrefix $currentURL $navURL)) -}}
           
           <div x-data="{ mobileDropdownOpen: false }">
-              <a href="{{ $parentPermalink }}" 
-                class="block py-2 font-sans lowercase">
+              <a href="{{ .Permalink }}" 
+                class="flex items-center gap-2 py-2 font-sans lowercase{{ if $isActive }} font-semibold{{ end }}"
+                {{ if $isActive }}aria-current="page"{{ end }}>
+                  {{ if $isActive }}<span class="h-2 w-2 rounded-full bg-[#2C1B1B]" aria-hidden="true"></span>{{ end }}
                   {{ .Title }}
               </a>
           </div>
           {{ end }}
 
-          <!-- Donate Button -->
-          <a href="mailto:hello@interalia.host" role="menuitem"
+          <!-- Contact Button -->
+          <a href="mailto:{{ $contactEmail }}" role="menuitem"
             class="block py-2">
               {{ i18n "strings.contact_us" }}
           </a>

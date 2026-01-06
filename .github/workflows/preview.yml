@@ -1,0 +1,74 @@
+name: PR Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+  build-preview:
+    if: github.event.action != 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Cache Hugo
+        uses: actions/cache@v4
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugo-pr-${{ github.event.number }}-${{ hashFiles('**/*.html', '**/*.md') }}
+          restore-keys: |
+            ${{ runner.os }}-hugo-pr-${{ github.event.number }}-
+            ${{ runner.os }}-hugo-
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.154.3'
+          extended: true
+
+      - name: Build Tailwind CSS
+        run: npm run css:build
+
+      - name: Build Hugo site
+        run: hugo --minify --baseURL "https://interalia-host.github.io/website/pr-preview/pr-${{ github.event.number }}/"
+        env:
+          HUGO_CACHEDIR: /tmp/hugo_cache
+
+      - name: Deploy PR Preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./public/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto
+
+  cleanup:
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Cleanup PR Preview
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./public/
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: remove

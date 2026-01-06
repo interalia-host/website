@@ -5,7 +5,7 @@ defaultContentLanguage = "en"
 languageCode = "en-us"
 defaultContentLanguageInSubdir = true
 
-rssLimit  = 300
+rssLimit = 50
 
 archetypeDir = "archetypes"
 contentDir   = "content"
@@ -15,7 +15,7 @@ publishDir   = "public"
 
 buildDrafts  = false
 buildFuture  = false
-buildExpored = false
+buildExpired = false
 canonifyURLs = true
 
 enableRobotsTXT = true
@@ -29,7 +29,21 @@ disableHugoGeneratorInject = true
 
 pluralizeListTitles = false
 
+timeout = "60s"
+summaryLength = 70
+
 [permalinks]
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]
 
 [markup]
   [markup.goldmark]

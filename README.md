@@ -1,112 +1,173 @@
-## **1\. Overview**
+# interalia Website
 
-DecapCMS is a Git-based content management system that allows editors to manage content via a friendly admin interface, while storing all changes in a Git repository. This means:
+Website for [interalia](https://interalia.host) - a fiscal host for civil society organizations.
 
-* Every change to site content is version-controlled.  
-* Editors work in a user-friendly interface without having to manually edit files in a text editor.  
-* Changes can be reviewed and approved before they go live if the **Editorial Workflow** is enabled.
+Built with [Hugo](https://gohugo.io/) and [Tailwind CSS v4](https://tailwindcss.com/), with content management via [DecapCMS](https://decapcms.org/).
+
+## Prerequisites
+
+- **Node.js** 20+ ([Download](https://nodejs.org/))
+- **Hugo Extended** 0.154.3+ ([Installation guide](https://gohugo.io/installation/))
+
+### Installing Hugo
+
+**macOS:**
+```bash
+brew install hugo
+```
+
+**Linux (Debian/Ubuntu):**
+```bash
+# Download the latest .deb from GitHub releases
+wget https://github.com/gohugoio/hugo/releases/download/v0.154.3/hugo_extended_0.154.3_linux-amd64.deb
+sudo dpkg -i hugo_extended_0.154.3_linux-amd64.deb
+```
+
+**Windows:**
+```bash
+choco install hugo-extended
+# or
+winget install Hugo.Hugo.Extended
+```
+
+## Development
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/interalia-host/website.git
+   cd website
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+   This runs both Tailwind CSS watch and Hugo server concurrently.
+
+4. **Open in browser:**
+   Visit [http://localhost:1313](http://localhost:1313)
+
+## Available Scripts
+
+| Script | Description |
+|--------|-------------|
+| `npm run dev` | Start development server (CSS watch + Hugo server) |
+| `npm run build` | Build for production |
+| `npm run css:build` | Build and minify Tailwind CSS |
+| `npm run css:watch` | Watch Tailwind CSS for changes |
+| `npm run hugo:dev` | Start Hugo development server |
+| `npm run hugo:build` | Build Hugo site |
+
+## Project Structure
+
+```
+website/
+├── archetypes/          # Content templates
+├── assets/
+│   ├── icons/          # FontAwesome SVG icons
+│   ├── js/             # JavaScript files
+│   ├── style.css       # Compiled CSS (generated)
+│   └── tailwind.css    # Tailwind source
+├── config/
+│   └── _default/
+│       └── params.yml  # Site parameters
+├── content/            # Markdown content (multilingual)
+├── data/               # YAML data files
+├── i18n/               # Translations (en, de)
+├── layouts/            # Hugo templates
+│   ├── _default/       # Default layouts
+│   ├── partials/       # Reusable components
+│   └── shortcodes/     # Custom shortcodes
+├── static/
+│   ├── admin/          # DecapCMS configuration
+│   ├── favicons/       # Favicon files
+│   ├── fonts/          # Web fonts
+│   └── media/          # Images and uploads
+├── hugo.toml           # Hugo configuration
+└── package.json        # Node.js dependencies
+```
+
+## Content Management
+
+Content can be managed via:
+
+1. **DecapCMS** - Visit [interalia.host/admin/](https://interalia.host/admin/) and log in with GitHub
+2. **Direct editing** - Edit Markdown files in `content/` and YAML files in `data/`
+
+### Multilingual Content
+
+The site supports English (`en`) and German (`de`). Content files are named:
+- `about.en.md` - English version
+- `about.de.md` - German version
+
+## Customization
+
+### Colors
+
+Custom colors are defined in `assets/tailwind.css`:
+- `green-*` - Green color palette
+- `orange-*` - Orange color palette
+
+### Fonts
+
+The site uses:
+- **DM Sans** - Body text (`font-sans`)
+- **Platypi** - Headings (`font-serif`)
+
+## Deployment
+
+The site automatically deploys to GitHub Pages when changes are pushed to `main`:
+
+- **Production**: Deploys to [interalia.host](https://interalia.host)
+- **PR Previews**: Each PR gets a preview at `interalia-host.github.io/website/pr-preview/pr-{number}/`
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/improvement`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to the branch (`git push origin feature/improvement`)
+5. Open a Pull Request
+
+## License
+
+MIT License - see [LICENSE](LICENSE) for details.
 
 ---
 
-## **2\. Logging In**
+## DecapCMS Guide
 
-1. Go to your CMS admin URL.  
-   * Currently the CMS is available at the following URL `https://interalia.host/admin/`.  
-2. Based on the current setup, you may be prompted to log in via:  
-   * Your GitHub account  
-3. Once logged in, you will see the **Collections** view in the left sidebar.
+For content editors, see the sections below for detailed instructions on using DecapCMS.
 
----
+### Logging In
 
-## **3\. Editorial Workflow**
+1. Go to [interalia.host/admin/](https://interalia.host/admin/)
+2. Log in with your GitHub account
+3. You'll see the Collections view in the left sidebar
 
-This site uses `publish_mode: editorial_workflow`. This means:
+### Editorial Workflow
 
-* When you **create** or **edit** an entry, it will go into a “draft” or “in review” state.  
-* An admin or reviewer must **approve** and **publish** changes before they become live.  
-* DecapCMS automatically creates a branch in the repository for these changes. Once approved, the branch is merged into the main branch.
+This site uses editorial workflow:
+- New/edited content goes into "draft" state
+- An admin reviews and approves changes
+- Once approved, changes go live
 
-**Typical flow**:
+### Available Collections
 
-1. **Draft**  
-   You create or edit content and save it as a draft.  
-2. **Review**  
-   An admin or designated reviewer reviews the entry, possibly requesting changes.  
-3. **Publish**  
-   Once approved, the content is published, and the changes go live on the website.
+- **Single Pages** - Main pages (About, Service, Network, etc.)
+- **Site Settings** - Global site configuration
+- **Blog Posts** - Reports and articles
+- **Team Members** - Team and board member profiles
+- **Hero Section** - Homepage hero content
+- **Network** - Studios, funders, collaborators
 
----
+### Media Uploads
 
-## **4\. Collections Overview**
-
-Collections are distinct content types or sections. Each collection in this `config.yml` is defined with fields that determine what editors can modify. Below is a breakdown of each collection.
-
-### **Single Pages**
-
-* **Name in CMS**: `page`  
-* **Folder**: `content`  
-* **Description**: Manage content for single pages stored in the `content` folder.  
-* **Key Fields**:  
-  1. **Title** (`title`): String field for the page title.  
-  2. **Order** (`weight`): Number field (optional); can be used for navigation ordering.  
-  3. **Cover Image** (`cover`): Image field for a hero or feature image.  
-  4. **Is it part of the top navigation?** (`navbar`): Boolean toggle.  
-  5. **Is it part of the footer navigation?** (`footer`): Boolean toggle.  
-  6. **Description** (`description`): **Markdown** text for a summary or introduction.  
-  7. **Body** (`body`): **Markdown** field for the main content of the page.
-
-**Usage**:
-
-* Click **New Page** to create a new single page.  
-* Fill out the fields and **Save**.
-
----
-
-### **Site Settings**
-
-* **Name in CMS**: `settings`  
-* **Files**:  
-  * **Site Metadata** (`config/_default/params.yml`)
-
-Within **Site Metadata**, you can manage:
-
-1. **Site Description** (`description`): The main meta description for SEO and social sharing.  
-2. **Keywords** (`keywords`): Comma-separated list of keywords for SEO.  
-3. **Sharing image** (`images` list): Defines default images for social sharing.  
-4. **Hero Video** (`hero_video`): The homepage hero background video.  
-5. **Favicon Colors** (`favicon` object):  
-   * **Mask Color** (`color.mask`)  
-   * **MS Application Color** (`color.msapplication`)  
-6. **Social Media Links** (`social` list): Each item has:  
-   * **Platform** (`name`): Font Awesome brand name (e.g. `facebook`, `x-twitter`, `instagram`, etc.).  
-   * **URL** (`url`)  
-7. **Contact Information** (`contact` object):  
-   * Organization name, address, city/state/zip, emails (list), phone (object).  
-
----
-
-## **5\. Media and File Uploads**
-
-According to the config:
-
-* **media\_folder**: `static/media/uploads`  
-* **public\_folder**: `/media/uploads`
-
-This means any image, PDF, or other file you upload via the CMS will be stored in `static/media/uploads` in your repository, and referenced on the site at `/media/uploads/filename`.
-
-**Note**: If you upload a file through a field (e.g., an image or PDF), the system will place it in the configured media folder. Make sure to provide alt text or descriptive filenames if relevant.
-
----
-
-## **6\. Slug Configuration**
-
-The `slug` section in the config:
-
-* **encoding: "ascii"**: Converts any special characters into ASCII-friendly slugs (e.g., “é” → “e”).  
-* **clean\_accents: true**: Removes or normalizes accent marks.  
-* **sanitize\_replacement**: `"-"` indicates spaces and invalid characters will be replaced by hyphens.
-
-**Effect**: If you title a page “Hello World\!”, the slug might become `hello-world`.
-
----
-
+Upload files via the CMS:
+- Files are stored in `static/media/uploads/`
+- Referenced at `/media/uploads/filename`

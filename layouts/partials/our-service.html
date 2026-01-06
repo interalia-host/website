@@ -8,7 +8,7 @@
                 <h2 class="text-4xl lg:text-6xl text-gray-900 mb-6">{{ $data.title }}</h2>
                 <p class="text-gray-700">{{ $data.subtitle }}</p>
             </div>
-            <img src="{{ .Site.BaseURL}}/media/images/service-flower.png" alt="Illustration" class="max-w-sm mx-auto mt-10">
+            <img src="{{ "/media/images/service-flower.png" | absURL }}" alt="{{ i18n "strings.service_leaf_alt" }}" class="max-w-sm mx-auto mt-10" loading="lazy" decoding="async">
         </div>
 
         <div class="hidden lg:block lg:col-span-1"></div>

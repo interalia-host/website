@@ -1,9 +1,9 @@
-<footer class="relative bg-[#FCFCF0] py-16">
+<footer class="relative bg-[#FCFCF0] py-16" role="contentinfo">
     <div class="container mx-auto flex flex-col items-start justify-between space-y-6 px-8 md:flex-row md:space-y-0">
         
         <section class="flex flex-col items-start">
-            <a href="{{ .Site.Home.Permalink }}" aria-label="Go to homepage">
-                <img class="h-16 w-auto" src="{{ .Site.BaseURL}}/media/logos/interalia-icon-logo.svg" alt="interalia logo icon">
+            <a href="{{ .Site.Home.Permalink }}" aria-label="{{ i18n "strings.return_homepage" }}">
+                <img class="h-16 w-auto" src="{{ "/media/logos/interalia-icon-logo.svg" | absURL }}" alt="interalia logo icon" loading="lazy" decoding="async">
             </a>
 
             <h2 id="newsletter-signup" class="mt-10 text-2xl">{{ i18n "strings.join_newsletter" }}</h2>
@@ -47,7 +47,7 @@
                     {{ end }}
                 {{- with .Site.Params.social }}
                 {{- range . }}
-                    <li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name | humanize }}" aria-label="Interalia on {{ .name | humanize }}" class="lowercase hover:underline">
+                    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name | humanize }}" aria-label="{{ i18n "strings.interalia" }} on {{ .name | humanize }}" class="lowercase hover:underline">
                         {{ .name }}
                     </a></li>
                 {{- end }}

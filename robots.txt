@@ -1,1 +1,5 @@
-# robotstxt.org/
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+Sitemap: https://interalia.host/sitemap.xml

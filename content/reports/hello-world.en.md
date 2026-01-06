@@ -33,4 +33,4 @@ If you – as an individual, a formal team or an informal group, are looking to 
 
 Today, our core team is comprised of Paula Grünwald and Kristina Klein – Zara has moved onto the Advisory Council, along with a stellar line up of experts in this space.
 
-If you’d like to learn more about working with us, get in touch on [hello@interalia.host](mailtohello@interalia.host). We look forward to hearing from you!
+If you'd like to learn more about working with us, get in touch on [hello@interalia.host](mailto:hello@interalia.host). We look forward to hearing from you!

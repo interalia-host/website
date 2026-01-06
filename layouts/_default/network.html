@@ -13,10 +13,10 @@
       <div>
         {{ if .logo_link }}
           <a href="{{ .logo_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }} logo link">
-            <img src="{{ .logo }}" alt="{{ .name }} logo" class="mx-auto mb-4 max-h-20" />
+            <img src="{{ .logo }}" alt="{{ .name }} logo" class="mx-auto mb-4 max-h-20" loading="lazy" decoding="async">
           </a>
         {{ else }}
-          <img src="{{ .logo }}" alt="{{ .name }} logo" class="mx-auto mb-4 max-h-20" />
+          <img src="{{ .logo }}" alt="{{ .name }} logo" class="mx-auto mb-4 max-h-20" loading="lazy" decoding="async">
         {{ end }}
       </div>
     {{ end }}
@@ -33,10 +33,10 @@
         <div class="flex flex-col items-center">
           {{ if .link }}
             <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }} logo">
-              <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" />
+              <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" loading="lazy" decoding="async">
             </a>
           {{ else }}
-            <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" />
+            <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" loading="lazy" decoding="async">
           {{ end }}
         </div>
       {{ end }}
@@ -55,10 +55,10 @@
           {{ if .logo }}
             {{ if .logo_link }}
               <a href="{{ .logo_link }}" target="_blank" rel="noopener noreferrer" aria-label="{{ .name }} logo link">
-                <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" />
+                <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" loading="lazy" decoding="async">
               </a>
             {{ else }}
-              <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" />
+              <img src="{{ .logo }}" alt="{{ .name }} logo" class="mb-2 max-h-20" loading="lazy" decoding="async">
             {{ end }}
           {{ end }}
         </div>

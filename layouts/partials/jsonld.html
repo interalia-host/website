@@ -1,0 +1,53 @@
+{{- $contact := .Site.Params.contact -}}
+{{- $social := .Site.Params.social -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ $contact.name | default "interalia gGmbH" }}",
+  "url": "{{ .Site.BaseURL }}",
+  "logo": "{{ "/media/logos/interalia-horizontal-logo.svg" | absURL }}",
+  "description": "{{ .Site.Params.description }}",
+  {{- with $contact }}
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ .address }}",
+    "addressLocality": "{{ .city_state_zip }}"
+  },
+  {{- with .phone }}
+  "telephone": "{{ .number }}",
+  {{- end }}
+  {{- with .emails }}
+  "email": "{{ (index . 0).address }}",
+  {{- end }}
+  {{- end }}
+  "sameAs": [
+    {{- range $i, $s := $social }}
+    {{- if $i }},{{ end }}
+    "{{ $s.url }}"
+    {{- end }}
+  ]
+}
+</script>
+{{- if .IsPage }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary | plainify | truncate 160 }}{{ end }}",
+  "url": "{{ .Permalink }}",
+  "inLanguage": "{{ .Language.Lang }}",
+  {{- if .Params.date }}
+  "datePublished": "{{ .Date.Format "2006-01-02" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02" }}",
+  {{- end }}
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "{{ .Site.Title }}",
+    "url": "{{ .Site.BaseURL }}"
+  }
+}
+</script>
+{{- end }}
+

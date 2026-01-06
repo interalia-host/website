@@ -1,0 +1,43 @@
+{{- if .TableOfContents }}
+{{- $toc := .TableOfContents }}
+{{- if gt (len $toc) 100 }}
+<aside class="not-prose mb-8 rounded-xl bg-[#ECEBC9] p-6" x-data="{ open: true }">
+  <button 
+    @click="open = !open" 
+    class="flex w-full items-center justify-between text-left"
+    aria-expanded="true"
+    aria-controls="toc-content"
+  >
+    <h2 class="text-lg font-semibold text-gray-900">{{ i18n "strings.table_of_contents" | default "Table of Contents" }}</h2>
+    <svg 
+      class="h-5 w-5 transform transition-transform duration-200" 
+      :class="{ 'rotate-180': open }"
+      fill="none" 
+      viewBox="0 0 24 24" 
+      stroke-width="2" 
+      stroke="currentColor"
+      aria-hidden="true"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+    </svg>
+  </button>
+  <nav 
+    x-show="open" 
+    x-collapse
+    id="toc-content"
+    class="mt-4"
+    aria-label="Table of contents"
+  >
+    <div class="toc-links text-sm">
+      {{ $toc }}
+    </div>
+  </nav>
+</aside>
+<style>
+  .toc-links ul { margin: 0.5rem 0; padding-left: 1.25rem; list-style: none; }
+  .toc-links li { margin: 0.25rem 0; }
+  .toc-links a { color: #374151; text-decoration: none; transition: color 0.15s; }
+  .toc-links a:hover { color: #2C1B1B; text-decoration: underline; }
+</style>
+{{- end }}
+{{- end }}

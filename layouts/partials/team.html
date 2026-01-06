@@ -1,3 +1,4 @@
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
 <section class="relative lg:py-16 py-8 px-8 md:px-12 md:mt-[70rem] mt-[10rem]">
   <div class="absolute md:-top-[70rem] -top-[10rem] bottom-0 left-0 right-0 bg-[url('/media/images/bp.svg')] bg-cover bg-no-repeat bg-top z-10"></div>
 
@@ -6,8 +7,8 @@
     <p class="mt-4 mb-10 mx-auto text-lg">
       {{ i18n "strings.team_intro_text" }}
     </p>
-    <a href="mailto:hello@interalia.host"
-      class="px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full text-lg focus:outline-none focus:ring-4 focus:ring-gray-500 transition"
+    <a href="mailto:{{ $contactEmail }}"
+      class="px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#2C1B1B] transition"
       aria-label="{{ i18n "strings.team_intro_button_aria" }}">
       {{ i18n "strings.team_intro_button" }}
     </a>

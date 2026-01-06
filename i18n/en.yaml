@@ -102,3 +102,29 @@ strings:
     translation: Funders
   - id: collaborators_title
     translation: Collaborators
+  - id: all_rights_reserved
+    translation: All rights reserved.
+  - id: min_read
+    translation: min read
+  - id: last_updated
+    translation: Last updated
+  - id: opens_new_tab
+    translation: opens in new tab
+  - id: table_of_contents
+    translation: Table of Contents
+  - id: share_article
+    translation: Share this article
+  - id: copy_link
+    translation: Copy link
+  - id: copied
+    translation: Copied!
+  - id: related_posts
+    translation: Related posts
+  - id: newsletter_cta_title
+    translation: Stay updated
+  - id: newsletter_cta_text
+    translation: Subscribe to our newsletter to receive the latest news and updates from interalia.
+  - id: newsletter_privacy
+    translation: We respect your privacy. Unsubscribe at any time.
+  - id: subscribe
+    translation: Subscribe

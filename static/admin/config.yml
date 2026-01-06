@@ -9,7 +9,6 @@ backend:
   repo: interalia-host/website
   branch: main
   site_domain: interalia.host
-  app_id: #
   use_graphql: true
   squash_merges: true
 
