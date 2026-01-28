@@ -24,6 +24,7 @@ Within a diverse group of people, conflicts, disagreements and difficult convers
 * Take responsibility for your actions and choices.
 * Allow for imperfection in yourself and others. We are all human and make mistakes.
 * A good [apology](<>) includes: self-reflection, the apology itself, making amends to the harmed parties, and changing your behaviour so the same thing doesn’t happen again.
+* Be mindful of structural power differences, dependencies, and multiple roles or affiliations (e.g. employment relationships, funding contexts, project hierarchies). Actively reflect on how these may shape communication, expectations, and the ability to speak up.
 
 #### **3. Unacceptable‭ ‬Behaviour**
 
