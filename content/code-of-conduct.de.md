@@ -18,7 +18,7 @@ Like any document, this Code of Conduct is imperfect and will evolve as we learn
 
 #### **2. Point of Contact**
 
-Your point of contact for any matter regarding the CoC is‭ your direct contact from the interalia core team or hosted project leads – or if that is not possible,‭ write to [coc@interalia.host](mailto:coc@interalia.host). People with access to this account are: xx and xx from our Advisory Council.
+Your point of contact for any matter regarding the CoC is‭ your direct contact from the interalia core team or hosted project leads – or if that is not possible,‭ write to [coc@interalia.host](mailto:coc@interalia.host).
 
 Your point of contact is also here to help you interpret and understand the CoC.
 
