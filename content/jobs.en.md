@@ -3,6 +3,8 @@ title: Jobs
 navbar: false
 footer: true
 ---
+> ***Because this job requires strong German languages skills, we published the job ad only in German.***
+
 # **Wir suchen eine:n Senior Finance & Operations Manager**
 
 ### Über interalia
@@ -15,7 +17,7 @@ Unsere wertebasierte Arbeit hat den Anspruch, nachhaltige Strukturen für Projek
 
 interalia arbeitet oft dort, wo Veränderung vorbereitet und möglich gemacht wird – nicht unbedingt im Rampenlicht, sondern in der zweiten Reihe. Wir verstehen unsere Rolle ähnlich wie in einem Staffellauf: Die Initiativen und Projekte tragen die Vision – wir übernehmen an Position zwei oder drei, stärken Strukturen, planen Ressourcen und sichern Infrastruktur. Und dann geben wir den Staffelstab weiter - damit Initiativen und Projekte unabhängig weiterlaufen können.
 
-## Über die Stelle: Senior Finance & Operations Manager 
+## Über die Stelle: Senior Finance & Operations Manager
 
 *\- Du magst die Arbeit mit Menschen und findest Ruhe in Zahlen. -* 
 
@@ -72,7 +74,7 @@ Viele der Initiativen, mit denen wir arbeiten, hätten ohne diese Infrastruktur 
 **Zusätzliche Erfahrungen**
 
 * Du hast bereits Erfahrung mit Fiscal Hosting oder Fiscal Sponsorship.
-*  Du hast in internationalen Förderstrukturen gearbeitet.
+* Du hast in internationalen Förderstrukturen gearbeitet.
 * Du arbeitest gerne mit digitalen Tools und hast Interesse daran, Technologie zu nutzen, um Arbeitsabläufe einfacher und effizienter zu gestalten.
 
 ## Weitere Informationen
