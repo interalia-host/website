@@ -7,7 +7,7 @@ footer: true
 
 ### Über interalia
 
-interalia ist eine gemeinnützige Organisation, die Initiativen und Projekte unterstützt, die sich für soziale Gerechtigkeit und strukturellen Wandel einsetzen. Als Fiscal Host bietet interalia Organisationen und Initiativen ein administratives und finanzielles Dach , damit sie sich auf ihre inhaltliche Arbeit konzentrieren können.
+interalia ist eine gemeinnützige Organisation, die Initiativen und Projekte unterstützt, die sich für soziale Gerechtigkeit und strukturellen Wandel einsetzen. Als Fiscal Host bietet interalia Organisationen und Initiativen ein administratives und finanzielles Dach, damit sie sich auf ihre inhaltliche Arbeit konzentrieren können.
 
 Wir arbeiten aktuell in einem 4-köpfigen Team und unterstützen weltweit Projekte in unterschiedlichen Phasen ihrer Entwicklung - von der frühen Ideenphase bis zur langfristigen institutionellen Verankerung bzw. Ausgründung. Dabei verbinden wir Fördermittelmanagement, Organisationsentwicklung und finanzstrategische Begleitung.
 
