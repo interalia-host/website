@@ -48,7 +48,7 @@ Du behältst Budgets im Blick, koordinierst finanzielle Abläufe und sorgst daf�
 * Die administrativen und operativen Abläufe im eigenen Projektportfolio selbständig organisieren – z. B. Budgets abstimmen, Reisekosten bearbeiten und Verträge mit Hilfe von Vorlagen selbst aufsetzen
 * Gemeinsam mit dem Team unsere operativen Prozesse verbessern und, wo sinnvoll, automatisieren
 
-\- Viele der Initiativen, mit denen wir arbeiten, hätten ohne diese Infrastruktur keine Möglichkeit, ihre Arbeit langfristig umzusetzen. -
+*\- Viele der Initiativen, mit denen wir arbeiten, hätten ohne diese Infrastruktur keine Möglichkeit, ihre Arbeit langfristig umzusetzen. -*
 
 ## Über dich
 
