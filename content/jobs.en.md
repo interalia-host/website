@@ -3,7 +3,7 @@ title: Jobs
 navbar: false
 footer: true
 ---
-> ***Because this job requires strong German languages skills, it's only published in German.***
+> ***Because this job requires strong German language skills, it's only published in German.***
 
 # **Wir suchen eine:n Senior Finance & Operations Manager**
 
