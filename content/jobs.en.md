@@ -3,11 +3,11 @@ title: Jobs
 navbar: false
 footer: true
 ---
-> ***Because this job requires strong German languages skills, we published the job ad only in German.***
+> ***Because this job requires strong German languages skills, it's only published in German.***
 
 # **Wir suchen eine:n Senior Finance & Operations Manager**
 
-### Über interalia
+## Über interalia
 
 interalia ist eine gemeinnützige Organisation, die Initiativen und Projekte unterstützt, die sich für soziale Gerechtigkeit und strukturellen Wandel einsetzen. Als Fiscal Host bietet interalia Organisationen und Initiativen ein administratives und finanzielles Dach, damit sie sich auf ihre inhaltliche Arbeit konzentrieren können.
 
@@ -17,7 +17,7 @@ Unsere wertebasierte Arbeit hat den Anspruch, nachhaltige Strukturen für Projek
 
 interalia arbeitet oft dort, wo Veränderung vorbereitet und möglich gemacht wird – nicht unbedingt im Rampenlicht, sondern in der zweiten Reihe. Wir verstehen unsere Rolle ähnlich wie in einem Staffellauf: Die Initiativen und Projekte tragen die Vision – wir übernehmen an Position zwei oder drei, stärken Strukturen, planen Ressourcen und sichern Infrastruktur. Und dann geben wir den Staffelstab weiter - damit Initiativen und Projekte unabhängig weiterlaufen können.
 
-## Über die Stelle: Senior Finance & Operations Manager
+## Über die Stelle
 
 *\- Du magst die Arbeit mit Menschen und findest Ruhe in Zahlen. -* 
 
@@ -31,7 +31,7 @@ Als Senior im Bereich Finance & Operations bringst du dich außerdem in die Weit
 
 Du behältst Budgets im Blick, koordinierst finanzielle Abläufe und sorgst dafür, dass alles gut zusammenläuft. Gleichzeitig ist die Position bewusst so gestaltet, dass du viel Verantwortung übernehmen kannst ohne die rechtliche Gesamtverantwortung tragen zu müssen, beispielsweise bei Jahresabschlüssen. So entsteht ein Raum, in dem du eigenständig arbeiten und wachsen kannst, während wir dich als Team unterstützen.
 
-### Deine Aufgaben
+## Deine Aufgaben
 
 **Programmkoordination & Projektmanagement**
 
@@ -87,6 +87,8 @@ Du behältst Budgets im Blick, koordinierst finanzielle Abläufe und sorgst daf�
 * Budget für Weiterbildungen und technisches Equipment
 * Zuschuss zum Deutschlandticket oder Gutschein-Äquivalent
 * Remote-Arbeit und flexible Arbeitsmodelle
+* Geplanter Start: zwischen Juli und September 2026. Ein früherer Einstieg ist ebenfalls möglich.
+* Vertragslaufzeit: 2 Jahre mit Aussicht auf Entfristung
 
 **Arbeitsort**
 
@@ -100,21 +102,15 @@ Bereitschaft zu gelegentlicher Reisetätigkeit. Dazu gehört die Teilnahme an pe
 
 Wenn du Interesse an dieser Position hast, freuen wir uns über deine Bewerbung.
 
-Bitte sende uns folgende Unterlagen:
+Bitte sende uns folgende Unterlagen an [bewerben@interalia.host](<>) :
 
 * deinen Lebenslauf
 * ein kurzes Motivationsschreiben (max. 1 Seite)
 * wenn möglich eine Referenzperson
 
-an: [bewerben@interalia.host](mailto:bewerben@interalia.host) 
-
 **Bewerbungsfrist**: 20. April 2026
 
-**Geplanter Start**: zwischen Juli und September 2026. Ein früherer Einstieg ist ebenfalls möglich.
-
-**Vertragslaufzeit**: 2 Jahre mit Aussicht auf Entfristung
-
-#### Du erfüllst nicht alle Anforderungen?
+**Du erfüllst nicht alle Anforderungen?**
 
 interalia setzt sich für ein diverses und inklusives Arbeitsumfeld ein. Wir begrüßen ausdrücklich Bewerbungen von Personen, die in Arbeitskontexten häufig unterrepräsentiert sind.
 
