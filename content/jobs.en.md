@@ -35,7 +35,7 @@ Du behältst Budgets im Blick, koordinierst finanzielle Abläufe und sorgst daf�
 
 **Programmkoordination & Projektmanagement**
 
-* Mehrere (inter-)nationale interalia-Projekte im Tagesgeschäft eigenverantwortlich steuern - , Budgetplanung und Einhaltung von Berichtspflichten
+* Mehrere (inter-)nationale interalia-Projekte im Tagesgeschäft eigenverantwortlich begleiten, inkl. Budgetplanung und Einhaltung von Berichtspflichten
 * Eine qualitativ hochwertige Projektumsetzung sicherstellen, inklusive Einhaltung von Programmbudgets sowie rechtlichen und vertraglichen Anforderungen
 * Mit gehosteten Initiativen und Förderpartner:innen eng zusammenarbeiten und über den gesamten Partnerschaftszyklus hinweg transparent kommunizieren
 * Zentrale Schritte im Fördermittel-Management umsetzen – z. B. Due-Diligence-Prüfungen durchführen, Fördervereinbarungen vorbereiten und mit relevanten Systemen arbeiten
