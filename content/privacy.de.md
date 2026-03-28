@@ -89,4 +89,4 @@ Wir verwenden keine automatisierte Entscheidungsfindung.
 
 Der Schutz und die Sicherheit Ihrer Daten sind uns sehr wichtig. Ihre Fragen und Kommentare zum Thema Datenschutz sind willkommen. Sie können uns gerne eine E-Mail an [datenschutz@interalia.host](mailto:datenschutz@interalia.host) schicken.
 
-Freiburg i. Brsg., 2025
+Freiburg i. Brsg., 2026

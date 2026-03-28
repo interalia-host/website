@@ -82,4 +82,4 @@ We do not use automated decision making.
 
 Protection and security of your data are very important to us. Your questions and comments about privacy are welcome, feel free to email us at [datenschutz@interalia.host](mailto:datenschutz@interalia.host).
 
-Freiburg i. Brsg., 2025
+Freiburg i. Brsg., 2026
