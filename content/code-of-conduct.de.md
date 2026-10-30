@@ -31,7 +31,7 @@ Within a diverse group of people, conflicts, disagreements and difficult convers
 * Be clear about what you need; ask for what you need, and respect when others do the same.
 * Take responsibility for your actions and choices.
 * Allow for imperfection in yourself and others. We are all human and make mistakes.
-* **Meaningful accountability may include reflection, an [apology](https://leavingevidence.wordpress.com/2019/12/18/how-to-give-a-good-apology-part-1-the-four-parts-of-accountability/%20), making amends to those harmed, and taking steps to prevent the behaviour from recurring.**
+* Meaningful accountability may include reflection, an [apology](https://leavingevidence.wordpress.com/2019/12/18/how-to-give-a-good-apology-part-1-the-four-parts-of-accountability/%20), making amends to those harmed, and taking steps to prevent the behaviour from recurring.
 * Be mindful of structural power differences, dependencies, and multiple roles or affiliations (e.g. employment relationships, funding contexts or project hierarchies). Actively reflect on how these may shape communication, expectations, and the ability to speak up.
 
 #### **4. Unacceptable‭ ‬Behaviour**
@@ -44,8 +44,8 @@ Harassment‭ ‬includes ‬harmful‭ ‬or‭ ‬prejudicial‭ ‬verbal‭ 
 
 Unacceptable‭ ‬behaviour‭ ‬from‭ ‬any‭ network‭ ‬member,‭ ‬including‭ ‬interalia staff, contractors ‬and/or‭ ‬those‭ ‬with‭ ‬decision-making‭ ‬authority,‭ ‬will‭ ‬not‭ ‬be‭ ‬tolerated. Anyone‭ ‬asked‭ ‬to‭ ‬stop‭ ‬unacceptable‭ ‬behaviour‭ ‬is‭ ‬expected‭ ‬to‭ ‬comply‭ ‬immediately. If‭ ‬a‭ ‬network‭ ‬member‭ ‬engages‭ ‬in‭ ‬unacceptable‭ ‬behaviour,‭ ‬the‭ ‬interalia core team and hosted project leads ‭‬may‭ ‬take‭ ‬any‭ ‬action‭ ‬they‭ ‬deem‭ ‬appropriate,‭ ‬up‭ ‬to‭ ‬and‭ ‬including‭ ‬a‭ ‬temporary‭ ‬ban‭ ‬or‭ ‬permanent‭ ‬expulsion‭ ‬from‭ ‬the‭ ‬network‭ ‬without‭ ‬warning‭ (‬and‭ ‬without‭ ‬refund‭ ‬in‭ ‬the‭ ‬case‭ ‬of‭ ‬a‭ ‬paid‭ ‬event‭)‬.
 
-**We seek to follow transformative justice principles in how we enforce this Code of Conduct:** 
-**We aim to address harm through dialogue and accountability where possible. However, interalia may take immediate action, including temporary or permanent removal from the network, where necessary to protect participants.**
+We seek to follow transformative justice principles in how we enforce this Code of Conduct:
+We aim to address harm through dialogue and accountability where possible. However, interalia may take immediate action, including temporary or permanent removal from the network, where necessary to protect participants.
 
 If someone causes harm, they will be first addressed on a one on one basis, and asked to reconsider their actions, with clear examples of the impact of said harm. This means more than acknowledgement — we ask that the person takes meaningful steps to repair the harm caused. What that looks like will depend on the situation, and wherever possible, the person who experienced the harm will be centred in deciding what feels right to them.
 
