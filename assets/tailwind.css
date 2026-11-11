@@ -1,4 +1,10 @@
-@import 'tailwindcss';
+@import 'tailwindcss' source(none);
+
+/* Only scan files that can contain classes (not the CMS bundle or node_modules) */
+@source "../layouts";
+@source "../content";
+@source "../data";
+@source "../static/admin/preview-templates.js";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
@@ -12,31 +18,19 @@
   --font-magnet: Magnet, sans-serif;
   --font-magnet-headline: MagnetHeadline, sans-serif;
 
-  --color-green-25: #f6fef9;
-  --color-green-50: #edfcf2;
-  --color-green-100: #d3f8df;
-  --color-green-200: #aaf0c4;
-  --color-green-300: #73e2a3;
-  --color-green-400: #3ccb7f;
-  --color-green-500: #16b364;
-  --color-green-600: #099250;
-  --color-green-700: #087443;
-  --color-green-800: #095c37;
-  --color-green-900: #084c2e;
-  --color-green-950: #052e1c;
-
-  --color-orange-25: #fefaf5;
-  --color-orange-50: #fef6ee;
-  --color-orange-100: #fdead7;
-  --color-orange-200: #f9dbaf;
-  --color-orange-300: #f7b27a;
-  --color-orange-400: #f38744;
-  --color-orange-500: #ef6820;
-  --color-orange-600: #e04f16;
-  --color-orange-700: #b93815;
-  --color-orange-800: #932f19;
-  --color-orange-900: #772917;
-  --color-orange-950: #511c10;
+  /* ── Brand colours ──────────────────────────────────────────
+     Use these names in templates (bg-ink, text-cocoa, fill-blush,
+     ring-ink/10 …) instead of hex values, so the palette lives here. */
+  --color-ink: #2c1b1b;          /* primary text, dark buttons */
+  --color-cocoa: #6e4242;        /* hover state for ink */
+  --color-cream: #fcfcf0;        /* page background */
+  --color-blush: #f5d9cc;        /* peach sections, cards */
+  --color-blush-light: #fbebdf;  /* light buttons */
+  --color-blush-deep: #ebc7ba;   /* darker peach curve */
+  --color-sage: #ecebc9;         /* green cards */
+  --color-sage-deep: #e1e3a2;    /* dividers, hover on sage */
+  --color-maroon: #430608;       /* dark curved sections */
+  --color-petal: #e28389;        /* logo accent, highlights */
 }
 
 @layer base {
@@ -113,6 +107,23 @@
 
 .mix-blend {
   @apply mix-blend-multiply;
+}
+
+/* Visible keyboard focus everywhere (mouse clicks don't show it) */
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
+
+/* Respect the "reduce motion" system setting */
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 [x-cloak] {
