@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="grid min-h-[60vh] place-items-center px-8 py-16">
     <div class="mx-auto max-w-xl text-center">
-        <img src="/media/images/404.svg" alt="{{ i18n "strings.404_alt" }}" class="mx-auto mb-8 w-64" loading="lazy" decoding="async">
+        <img src="{{ "media/images/404.svg" | relURL }}" alt="{{ i18n "strings.404_alt" }}" class="mx-auto mb-8 w-64" loading="lazy" decoding="async">
         <h1 class="text-6xl font-bold text-gray-900">404</h1>
         <p class="mt-4 text-xl text-gray-600">{{ i18n "strings.sorry_not_found" }}</p>
         <a href="{{ .Site.Home.Permalink }}" 

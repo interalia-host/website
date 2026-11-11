@@ -31,7 +31,7 @@
                                 <p class="text-gray-600 mb-6">{{ $v.year }}</p>
                                 <div class="mt-auto">
                                     {{ if $v.download }}
-                                        <a href="{{ $v.download }}" 
+                                        <a href="{{ strings.TrimPrefix "/" $v.download | relURL }}" 
                                            class="inline-flex items-center px-6 py-3 bg-ink hover:bg-cocoa text-white rounded-full transition group"
                                            target="_blank"
                                            rel="noopener noreferrer">
