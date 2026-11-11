@@ -62,9 +62,6 @@ jobs:
           hugo-version: '0.169.0'
           extended: true
 
-      - name: Build Tailwind CSS
-        run: npm run css:build
-
       - name: Build Hugo site
         run: hugo --minify --baseURL "$PREVIEW_URL"
         env:

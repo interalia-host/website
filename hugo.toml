@@ -119,3 +119,15 @@ summaryLength = 70
   [privacy.youtube]
     disable = false
     privacyEnhanced = true
+
+# Rebuild the Tailwind CSS when a file it scans for classes changes
+# (see @source in assets/tailwind.css); Hugo caches it otherwise.
+[build]
+  [[build.cachebusters]]
+    source = '(layouts|content|data)[\\/].*|preview-templates\.js$'
+    target = 'css'
+
+# Allow Hugo to run the Tailwind CLI (css.TailwindCSS in layouts/_partials/head.html);
+# the other entries are Hugo's defaults.
+[security.exec]
+  allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']

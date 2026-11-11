@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "Website for interalia - fiscal hosting for civil society",
   "scripts": {
-    "dev": "npm run css:build && concurrently \"npm run css:watch\" \"npm run hugo:dev\"",
+    "dev": "hugo server --buildDrafts --buildFuture",
     "cms": "npx --yes decap-server@3.11.6",
-    "build": "npm run css:build && npm run hugo:build",
-    "css:build": "tailwindcss -i ./assets/tailwind.css -o ./assets/style.css --minify",
-    "css:watch": "tailwindcss -i ./assets/tailwind.css -o ./assets/style.css --watch",
-    "hugo:dev": "hugo server --buildDrafts --buildFuture",
-    "hugo:build": "hugo --minify"
+    "build": "hugo --minify"
   },
   "repository": {
     "type": "git",
@@ -28,7 +24,6 @@
     "@tailwindcss/cli": "^4.3.5",
     "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/typography": "^0.5.20",
-    "concurrently": "^10.0.7",
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4.3.5"

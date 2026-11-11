@@ -1,10 +1,11 @@
 @import 'tailwindcss' source(none);
 
-/* Only scan files that can contain classes (not the CMS bundle or node_modules) */
-@source "../layouts";
-@source "../content";
-@source "../data";
-@source "../static/admin/preview-templates.js";
+/* Only scan files that can contain classes (not the CMS bundle or node_modules).
+   Paths are relative to the project root: Hugo's css.TailwindCSS runs the CLI there. */
+@source "layouts";
+@source "content";
+@source "data";
+@source "static/admin/preview-templates.js";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
