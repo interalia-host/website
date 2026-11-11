@@ -60,7 +60,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/dmsans/dm-sans-latin-wght-normal.woff2") format("woff2");
+    src: url("fonts/dmsans/dm-sans-latin-wght-normal.woff2") format("woff2");
   }
 
   @font-face {
@@ -68,7 +68,7 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/dmsans/dm-sans-latin-wght-italic.woff2") format("woff2");
+    src: url("fonts/dmsans/dm-sans-latin-wght-italic.woff2") format("woff2");
   }
 
   @font-face {
@@ -76,7 +76,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/platypi/platypi-latin-wght-normal.woff2") format("woff2");
+    src: url("fonts/platypi/platypi-latin-wght-normal.woff2") format("woff2");
   }
 
   @font-face {
@@ -84,7 +84,7 @@
     font-style: italic;
     font-weight: 100 900;
     font-display: swap;
-    src: url("/fonts/platypi/platypi-latin-wght-italic.woff2") format("woff2");
+    src: url("fonts/platypi/platypi-latin-wght-italic.woff2") format("woff2");
   }
 
   h1,

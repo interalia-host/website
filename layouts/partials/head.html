@@ -4,13 +4,13 @@
 {{/* SEO Meta Tags */}}
 <meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.contact.name | default "interalia gGmbH" }}{{ end }}">
 {{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}{{ if $.Params.tags }}{{ range $.Params.tags }}, {{ . }}{{ end }}{{ end }}">{{ end }}
-<meta name="robots" content="index, follow">
+<meta name="robots" content="{{ if hugo.IsProduction }}index, follow{{ else }}noindex, nofollow{{ end }}">
 <meta name="theme-color" content="#FCFCF0">
 <meta name="color-scheme" content="light">
 
 {{/* Preloading Fonts */}}
-<link rel="preload" href="{{ "/fonts/platypi/platypi-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" href="{{ "/fonts/dmsans/dm-sans-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ "fonts/platypi/platypi-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ "fonts/dmsans/dm-sans-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
 
 {{/* Title */}}
 {{ block "title" . }}
@@ -23,8 +23,9 @@
   {{ $style = $style | resources.Fingerprint "sha256" }}
 {{ end }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-{{- /* Unfingerprinted copy for the CMS live preview (static/admin/preview-templates.js) */}}
-{{- if .IsHome }}{{ $_ := (resources.Get "style.css" | resources.Copy "admin/preview.css").RelPermalink }}{{ end }}
+{{- /* Unfingerprinted copy for the CMS live preview (static/admin/preview-templates.js).
+     Published next to style.css so its relative font URLs resolve. */}}
+{{- if .IsHome }}{{ $_ := (resources.Get "style.css" | resources.Copy "preview.css").RelPermalink }}{{ end }}
 
 {{/* Favicons */}}
 {{- partial "favicons.html" . }}

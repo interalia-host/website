@@ -46,6 +46,6 @@
        {{- with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async"
        {{- with .fetchpriority }} fetchpriority="{{ . }}"{{ end }}>
 {{- else if $src -}}
-  <img src="{{ $src | absURL }}" alt="{{ $alt }}"
+  <img src="{{ strings.TrimPrefix "/" $src | absURL }}" alt="{{ $alt }}"
        {{- with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async">
 {{- end -}}

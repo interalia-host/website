@@ -34,6 +34,13 @@
 
     {{ partial "scroll-to-top.html" . }}
 
+    {{- with site.Params.previewpr }}
+    {{/* Only in PR preview builds (set by .github/workflows/preview.yml) */}}
+    <a href="https://github.com/interalia-host/website/pull/{{ . }}" class="fixed bottom-8 left-8 z-50 rounded-full bg-maroon px-4 py-2 text-sm font-medium text-white shadow-lg hover:bg-ink">
+      Preview · PR #{{ . }}
+    </a>
+    {{- end }}
+
     {{ partial "javascript.html" . }}
 
 </body>

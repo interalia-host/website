@@ -3,7 +3,7 @@
   e.g. for CSS backgrounds. Falls back to the original URL.
   Usage: {{ partial "img-src.html" (dict "src" "/media/images/x.png" "width" 1200) }}
 */ -}}
-{{- $url := .src | absURL -}}
+{{- $url := strings.TrimPrefix "/" .src | absURL -}}
 {{- with partial "image-resource.html" .src -}}
   {{- $w := $.width | default 1200 -}}
   {{- if gt .Width $w -}}

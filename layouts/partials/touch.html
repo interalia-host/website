@@ -1,7 +1,7 @@
 {{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
 <section class="relative bg-blush py-12 px-8 md:px-12 lg:py-16">
     <!-- Background Pattern -->
-    <div class="pointer-events-none absolute inset-0 bg-contain bg-right bg-no-repeat opacity-0 md:opacity-80" style="background-image: url('/media/images/pattern-2.svg');"></div>
+    <div class="pointer-events-none absolute inset-0 bg-contain bg-right bg-no-repeat opacity-0 md:opacity-80" style="background-image: url('{{ "media/images/pattern-2.svg" | absURL }}');"></div>
   
     <div class="relative mx-auto max-w-6xl grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
       <!-- Contact Form Section -->

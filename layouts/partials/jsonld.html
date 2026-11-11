@@ -1,6 +1,6 @@
 {{- /* Structured data (schema.org), built as data and serialised with jsonify so values are always escaped correctly */ -}}
 {{- $contact := site.Params.contact -}}
-{{- $logo := "/media/logos/interalia-horizontal-logo.svg" | absURL -}}
+{{- $logo := "media/logos/interalia-horizontal-logo.svg" | absURL -}}
 {{- $org := dict
     "@type" "Organization"
     "@id" (printf "%s#organization" site.Home.Permalink)

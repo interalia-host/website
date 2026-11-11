@@ -137,14 +137,16 @@ Every page gets a generated sharing card (`layouts/partials/og-image.html`, base
 
 ### CMS live preview
 
-`static/admin/preview-templates.js` renders CMS previews with the site's own CSS (published as `/admin/preview.css`). Update it when you change a section's design.
+`static/admin/preview-templates.js` renders CMS previews with the site's own CSS (published as `/preview.css`). Update it when you change a section's design.
 
 ## Deployment
 
-The site automatically deploys to GitHub Pages when changes are pushed to `main`:
+GitHub Pages serves the `gh-pages` branch (Settings → Pages → Source: *Deploy from a branch*, `gh-pages` / root).
 
-- **Production**: Deploys to [interalia.host](https://interalia.host)
-- **PR Previews**: Each PR gets a preview at `interalia-host.github.io/website/pr-preview/pr-{number}/`
+- **Production** (`.github/workflows/deploy.yml`): every push to `main` builds the site and publishes it to the root of `gh-pages` → [interalia.host](https://interalia.host).
+- **PR previews** (`.github/workflows/preview.yml`): every pull request, including CMS drafts in the editorial workflow, is built to `gh-pages/pr-preview/pr-{number}/` → `https://interalia.host/pr-preview/pr-{number}/`. The link is posted as a PR comment and as a `deploy/preview` commit status, which powers the CMS "View preview" button. Previews are marked `noindex`, show a "Preview · PR #" badge, and are removed when the PR is closed. PRs from forks don't get a preview.
+
+Templates must stay subpath-safe for previews: use `absURL`/`relURL` without a leading slash (`"media/x.png" | absURL`) or resource permalinks, never hard-coded `/…` paths.
 
 ## Contributing
 
