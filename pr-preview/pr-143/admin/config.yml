@@ -331,7 +331,7 @@ collections:
   summary: '{{title}}'
   fields:
   - {name: title, label: Page title, widget: string, i18n: true, hint: Also used in the menu.}
-  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
   - {name: body, label: Text, widget: markdown, i18n: true, hint: The first paragraph is shown large as the intro; the following paragraphs appear on the coloured curve.}
   - {name: areas_title, label: 'Areas of work: heading', widget: string, required: false, i18n: true}
   - label: Areas of work
@@ -363,7 +363,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -376,7 +376,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -389,7 +389,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -402,7 +402,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -415,7 +415,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -428,7 +428,7 @@ collections:
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
-    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
     - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
     - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
     - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
@@ -448,7 +448,7 @@ collections:
   summary: '{{title}}'
   fields:
   - {name: title, label: Title, widget: string, i18n: true}
-  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
   - {name: body, label: Text, widget: markdown, required: false, i18n: true}
   - {name: weight, label: Position in menu, widget: number, value_type: int, required: false, i18n: duplicate}
   - {name: navbar, label: 'Show in top menu?', widget: boolean, default: false, required: false, i18n: duplicate}
@@ -478,7 +478,7 @@ collections:
   - {name: date, label: Publication date, widget: datetime, i18n: duplicate, hint: Only the year is shown on the site; the full date is used to sort articles (newest first).}
   - {name: author, label: Author, widget: string, i18n: true, required: false}
   - {name: image, label: Cover image, widget: image, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown on the article page, in the Resources list and when the article is shared. Landscape, at least 1600×900 px (16:9); keep important content in the centre. Resized and converted automatically. Max 10 MB.'}
-  - {name: description, label: Short summary (SEO and sharing), widget: text, i18n: true, required: false}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, i18n: true, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
   - {name: body, label: Text, widget: markdown, i18n: true}
 
 - name: reports
@@ -496,7 +496,7 @@ collections:
   summary: '{{title}} ({{year}})'
   fields:
   - {name: title, label: Title, widget: string, i18n: true}
-  - {name: year, label: Year, widget: number, value_type: int, i18n: duplicate}
+  - {name: year, label: Year, widget: number, value_type: int, min: 2000, max: 2100, i18n: duplicate}
   - {name: image, label: Cover image, widget: image, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown on the report card on the Resources page (cropped to a wide strip). Landscape, about 1200×800 px. Max 10 MB.'}
   - {name: download, label: PDF file, widget: file, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PDF, max 10 MB. Use a short file name without spaces, e.g. annual-report-2026.pdf.'}
 
@@ -533,7 +533,7 @@ collections:
     summary: '{{fields.platform}}'
     fields:
     - {label: Label, name: platform, widget: string, i18n: duplicate, hint: 'e.g. LinkedIn, Website'}
-    - {label: URL, name: url, widget: string, i18n: duplicate}
+    - {label: URL, name: url, widget: string, i18n: duplicate, pattern: ['^(https?://|mailto:)\S+$', 'Enter a full link starting with https:// (or mailto: for an email address).']}
     - label: Icon
       name: icon
       i18n: duplicate
@@ -580,7 +580,7 @@ collections:
     summary: '{{fields.platform}}'
     fields:
     - {label: Label, name: platform, widget: string, i18n: duplicate, hint: 'e.g. LinkedIn, Website'}
-    - {label: URL, name: url, widget: string, i18n: duplicate}
+    - {label: URL, name: url, widget: string, i18n: duplicate, pattern: ['^(https?://|mailto:)\S+$', 'Enter a full link starting with https:// (or mailto: for an email address).']}
     - label: Icon
       name: icon
       i18n: duplicate
@@ -625,7 +625,7 @@ collections:
       summary: '{{fields.name}}'
       fields:
       - {label: Name, name: name, widget: string, hint: e.g. linkedin}
-      - {label: URL, name: url, widget: string}
+      - {label: URL, name: url, widget: string, pattern: ['^https?://\S+$', 'Enter a full link starting with https://.']}
     - label: Contact information
       name: contact
       widget: object
@@ -639,13 +639,13 @@ collections:
         hint: The first address is used for all contact buttons and the contact form.
         summary: '{{fields.address}}'
         fields:
-        - {label: Email address, name: address, widget: string}
+        - {label: Email address, name: address, widget: string, pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Enter a valid email address, e.g. hello@interalia.host.']}
         - {label: Label, name: label, widget: string}
       - label: Phone
         name: phone
         widget: object
         fields:
-        - {label: Phone number, name: number, widget: string}
+        - {label: Phone number, name: number, widget: string, pattern: ['^\+?[0-9 ()/-]{6,}$', 'Use digits, spaces and an optional leading +, e.g. +49 155 63208494.']}
         - {label: Label, name: label, widget: string}
 
 - name: i18n
