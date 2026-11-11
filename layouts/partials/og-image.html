@@ -2,7 +2,8 @@
   Returns the social sharing image (1200×630 JPEG resource) for a page:
   1. the page's `image` (articles, pages) cropped to 1200×630,
   2. otherwise the first site-wide sharing image from Site settings,
-  3. otherwise a generated brand card with the page title.
+  3. otherwise a generated brand card: interalia logo + wordmark and the page title
+     (base image with logo and curves: assets/og/base.png).
 */ -}}
 {{- $page := . -}}
 {{- $result := false -}}
@@ -27,12 +28,20 @@
   {{- if $page.IsHome }}{{ $title = (index hugo.Data (printf "hero.%s" $page.Lang)).title | default site.Params.description | default site.Title }}{{ end -}}
   {{- $title = $title | plainify | htmlUnescape | truncate 90 -}}
   {{- $size := cond (gt (len $title) 45) 58 70 -}}
+  {{- /* Wrap words ourselves so long titles keep a right margin (images.Text wraps at the image edge) */ -}}
+  {{- $max := cond (eq $size 70) 26 32 -}}
+  {{- $lines := slice -}}{{- $line := "" -}}
+  {{- range split $title " " -}}
+    {{- if and $line (gt (add (len $line) (len .) 1) $max) }}{{ $lines = $lines | append $line }}{{ $line = . }}
+    {{- else }}{{ $line = cond (eq $line "") . (printf "%s %s" $line .) }}{{ end -}}
+  {{- end -}}
+  {{- $title = delimit ($lines | append $line) "\n" -}}
   {{- $filters := slice
-      (images.Text site.Title (dict "font" $serif "size" 38 "color" "#2c1b1b" "x" 112 "y" 68))
-      (images.Text $title (dict "font" $serif "size" $size "linespacing" 10 "color" "#2c1b1b" "x" 80 "y" 170))
+      (images.Text site.Title (dict "font" $serif "size" 46 "color" "#2c1b1b" "x" 160 "y" 60))
+      (images.Text $title (dict "font" $serif "size" $size "linespacing" 10 "color" "#2c1b1b" "x" 76 "y" 200))
   -}}
   {{- with $page.Section }}{{ if eq . "reports" }}
-    {{- $filters = $filters | append (images.Text (i18n "strings.articles" | upper) (dict "font" $sans "size" 22 "color" "#6e4242" "x" 82 "y" 134)) -}}
+    {{- $filters = $filters | append (images.Text (i18n "strings.articles" | upper) (dict "font" $sans "size" 22 "color" "#6e4242" "x" 78 "y" 164)) -}}
   {{ end }}{{ end -}}
   {{- $result = ($base | images.Filter $filters).Process "jpg q85" -}}
 {{- end -}}
