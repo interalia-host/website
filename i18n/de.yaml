@@ -15,8 +15,6 @@ strings:
     translation: Kontaktiere uns
   - id: company_org
     translation: Firma / Organisation
-  - id: company_org_placeholder
-    translation: Firma / Organisation
   - id: name
     translation: Name
   - id: email
@@ -39,30 +37,6 @@ strings:
     translation: E-Mail-Adresse
   - id: interalia
     translation: interalia
-  - id: hero_cta_contact
-    translation: Kontakt
-  - id: hero_cta_mission
-    translation: Unsere Mission
-  - id: hero_cta_contact_aria
-    translation: Kontakt
-  - id: hero_cta_mission_aria
-    translation: Erfahre mehr über unsere Mission
-  - id: team_intro_title
-    translation: Was wir erreichen wollen
-  - id: team_intro_text
-    translation: "Wir setzen uns für eine vielfältige und starke Zivilgesellschaft
-      ein. Sie soll wachsen, Machtverhältnisse kritisch hinterfragen,
-      Veränderungen anstoßen und widerstandsfähig sein. Unsere langfristige
-      Vision: ein Netzwerk von Fiscal Hosts und gleichgesinnten Organisationen.
-      Nicht jeder für sich, sondern gemeinsam: geteilte Infrastruktur,
-      kollektives Wissen und gegenseitige Unterstützung. Ein Netzwerk, das
-      Ressourcen effizient nutzt, Kooperationen erleichtert und den Fokus auf
-      das legt, was wirklich zählt – Solidarität, Vertrauen und langfristige
-      Stabilität."
-  - id: team_intro_button
-    translation: Kontakt
-  - id: team_intro_button_aria
-    translation: Kontakt
   - id: footer_primary_nav
     translation: Hauptnavigation
   - id: footer_secondary_nav
@@ -73,44 +47,18 @@ strings:
     translation: Zum Inhalt springen
   - id: 404_alt
     translation: 404 - Seite nicht gefunden
-  - id: illustration_alt
-    translation: Illustration
-  - id: service_leaf_alt
-    translation: Serviceblatt-Illustration
-  - id: mission_flower_alt
-    translation: Missionsblumen-Illustration
-  - id: what_we_do_flower_alt
-    translation: Was wir tun Illustration
-  - id: who_we_work_with_flower_alt
-    translation: Mit wem wir arbeiten Illustration
-  - id: linkedin_profile_aria
-    translation: LinkedIn-Profil von
   - id: advisory_council
     translation: Beirat
   - id: reports
     translation: Berichte
-  - id: blog_posts
-    translation: Blogbeiträge
+  - id: articles
+    translation: Artikel
   - id: download_report
     translation: Bericht herunterladen
   - id: read_more
     translation: Weiterlesen
-  - id: network_title
-    translation: Projekte
-  - id: studios_title
-    translation: Studios
-  - id: funders_title
-    translation: Förderer
-  - id: collaborators_title
-    translation: Partner
-  - id: all_rights_reserved
-    translation: Alle Rechte vorbehalten.
   - id: min_read
     translation: Min. Lesezeit
-  - id: last_updated
-    translation: Zuletzt aktualisiert
-  - id: opens_new_tab
-    translation: öffnet in neuem Tab
   - id: table_of_contents
     translation: Inhaltsverzeichnis
   - id: share_article
@@ -120,7 +68,7 @@ strings:
   - id: copied
     translation: Kopiert!
   - id: related_posts
-    translation: Ähnliche Beiträge
+    translation: Weitere Artikel
   - id: newsletter_cta_title
     translation: Bleib auf dem Laufenden
   - id: newsletter_cta_text
@@ -129,3 +77,15 @@ strings:
     translation: Wir respektieren deine Privatsphäre. Jederzeit abbestellbar.
   - id: subscribe
     translation: Abonnieren
+  - id: toggle_menu
+    translation: Navigation ein-/ausblenden
+  - id: scroll_to_top
+    translation: Nach oben scrollen
+  - id: opens_new_tab
+    translation: öffnet in neuem Tab
+  - id: language
+    translation: Sprache
+  - id: share_on
+    translation: Teilen auf
+  - id: share_via
+    translation: Teilen per

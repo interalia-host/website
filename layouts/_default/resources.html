@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="lg:py-16 py-8 px-8 md:px-12 bg-[#FCFCF0]">
+<section class="lg:py-16 py-8 px-8 md:px-12 bg-cream">
     <div class="max-w-7xl mx-auto">
         <h1 class="text-4xl md:text-5xl text-gray-900 mb-12">{{ .Title }}</h1>
         
@@ -7,16 +7,22 @@
         <div class="mb-20">
             <div class="flex items-center justify-between mb-8">
                 <h2 class="text-3xl text-gray-900">{{ i18n "strings.reports" }}</h2>
-                <div class="h-px flex-grow bg-[#E1E3A2] mx-8"></div>
+                <div class="h-px flex-grow bg-sage-deep mx-8"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {{ $lang := .Site.Language.Lang }}
-                {{ range $k, $v := .Site.Data.reports }}
+                {{ $reports := slice }}
+                {{ range $k, $v := hugo.Data.reports }}
                     {{ if hasSuffix $k (print "." $lang) }}
+                        {{ $reports = $reports | append $v }}
+                    {{ end }}
+                {{ end }}
+                {{ range sort $reports "year" "desc" }}
+                    {{ $v := . }}
                         <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
                             {{ if $v.image }}
                                 <div class="relative h-48 overflow-hidden">
-                                    <img src="{{ $v.image }}" alt="{{ $v.title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                    {{ partial "img.html" (dict "src" $v.image "alt" "" "class" "h-full w-full object-cover" "sizes" "(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" "widths" (slice 400 800)) }}
                                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                                 </div>
                             {{ end }}
@@ -26,9 +32,9 @@
                                 <div class="mt-auto">
                                     {{ if $v.download }}
                                         <a href="{{ $v.download }}" 
-                                           class="inline-flex items-center px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full transition group"
+                                           class="inline-flex items-center px-6 py-3 bg-ink hover:bg-cocoa text-white rounded-full transition group"
                                            target="_blank"
-                                           rel="noopener">
+                                           rel="noopener noreferrer">
                                             {{ i18n "strings.download_report" }}
                                             <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
@@ -38,35 +44,36 @@
                                 </div>
                             </div>
                         </div>
-                    {{ end }}
                 {{ end }}
             </div>
         </div>
 
-        <!-- Blogposts Section -->
+        <!-- Articles Section -->
         <div>
             <div class="flex items-center justify-between mb-8">
-                <h2 class="text-3xl text-gray-900">{{ i18n "strings.blog_posts" }}</h2>
-                <div class="h-px flex-grow bg-[#E1E3A2] mx-8"></div>
+                <h2 class="text-3xl text-gray-900">{{ i18n "strings.articles" }}</h2>
+                <div class="h-px flex-grow bg-sage-deep mx-8"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {{ $posts := where (where .Site.RegularPages "Section" "reports") "Lang" $lang }}
+                {{ $posts := (where .Site.RegularPages "Section" "reports").ByDate.Reverse }}
                 {{ range $posts }}
                     <div class="bg-white rounded-2xl shadow-md overflow-hidden transform transition duration-300 hover:scale-[1.02] hover:shadow-lg flex flex-col">
                         <div class="relative h-48 overflow-hidden">
-                            {{ if .Params.image }}
-                                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                            {{ with .Params.image }}
+                                {{ partial "img.html" (dict "src" . "alt" "" "class" "h-full w-full object-cover" "sizes" "(min-width: 1024px) 400px, (min-width: 768px) 50vw, 100vw" "widths" (slice 400 800)) }}
                             {{ else }}
-                                <img src="{{ "/media/images/default-blog.jpg" | absURL }}" alt="{{ .Title }}" class="w-full h-full object-cover" loading="lazy" decoding="async">
+                                <div class="grid h-full w-full place-items-center bg-blush" aria-hidden="true">
+                                    <img src="{{ "/media/logos/interalia-icon-logo.svg" | absURL }}" alt="" class="h-20 w-20" width="80" height="80" loading="lazy">
+                                </div>
                             {{ end }}
                             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                         <div class="p-6 flex flex-col flex-grow">
                             <h3 class="text-2xl font-bold mb-2 text-gray-900">{{ .Title }}</h3>
-                            <p class="text-gray-600 mb-6">{{ .Date.Format "January 2, 2006" }}</p>
+                            <p class="text-gray-600 mb-6">{{ if not .Date.IsZero }}{{ .Date.Year }}{{ end }}</p>
                             <div class="mt-auto">
                                 <a href="{{ .RelPermalink }}" 
-                                   class="inline-flex items-center px-6 py-3 bg-[#2C1B1B] hover:bg-[#6E4242] text-white rounded-full transition group">
+                                   class="inline-flex items-center px-6 py-3 bg-ink hover:bg-cocoa text-white rounded-full transition group">
                                     {{ i18n "strings.read_more" }}
                                     <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
