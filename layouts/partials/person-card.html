@@ -1,0 +1,22 @@
+{{- $person := . -}}
+<article>
+  <h3 class="mt-4 text-xl">{{ $person.name }}</h3>
+  {{ with $person.pronoun }}<p class="mt-1 text-xs text-white/80">{{ . }}</p>{{ end }}
+  <p class="text-sm text-white/90">{{ $person.role }}</p>
+  <hr class="my-2 border-white/40">
+  {{ with $person.social }}
+  <ul class="mt-2 flex gap-2" role="list">
+    {{ range . }}
+    <li>
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+         class="inline-flex rounded text-white/90 transition hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
+        <span class="sr-only">{{ .platform }}: {{ $person.name }} ({{ i18n "strings.opens_new_tab" }})</span>
+        {{ partial "fontawesome.html" (dict "icon" (.icon | default "solid/link") "class" "h-6 w-6") }}
+      </a>
+    </li>
+    {{ end }}
+  </ul>
+  <hr class="my-2 border-white/40">
+  {{ end }}
+  <p class="mt-2 text-sm text-white/90">{{ $person.bio }}</p>
+</article>

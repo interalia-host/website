@@ -1,14 +1,14 @@
 <section class="container mx-auto py-16 px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {{ $dataFile := printf "our-service.%s" .Lang }}
-        {{ $data := index .Site.Data $dataFile }}
+        {{ $data := index hugo.Data $dataFile }}
 
         <div class="lg:col-span-5 flex flex-col items-start">
             <div class="max-w-2xl w-full">
                 <h2 class="text-4xl lg:text-6xl text-gray-900 mb-6">{{ $data.title }}</h2>
                 <p class="text-gray-700">{{ $data.subtitle }}</p>
             </div>
-            <img src="{{ "/media/images/service-flower.png" | absURL }}" alt="{{ i18n "strings.service_leaf_alt" }}" class="max-w-sm mx-auto mt-10" loading="lazy" decoding="async">
+            {{ partial "img.html" (dict "src" ($data.image | default "/media/images/service-flower.png") "alt" "" "class" "mx-auto mt-10 h-auto w-full max-w-sm" "sizes" "384px" "widths" (slice 400 800)) }}
         </div>
 
         <div class="hidden lg:block lg:col-span-1"></div>
@@ -23,7 +23,7 @@
         </div>
     </div>
 
-    <hr class="my-20 h-[2px] border-0 bg-[#E1E3A2]">
+    <hr class="my-20 h-[2px] border-0 bg-sage-deep">
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-20">
         <div class="lg:col-span-5 flex flex-col items-start">

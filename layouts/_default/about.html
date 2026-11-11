@@ -1,12 +1,13 @@
 {{ define "main" }}
 
+{{- $intro := index hugo.Data (printf "about-intro.%s" .Lang) -}}
 <section class="lg:py-16 py-8 px-8 md:px-12 text-center">
     <div class="max-w-5xl mx-auto">
         <h1 class="mt-2 max-w-3xl mx-auto text-4xl lg:text-6xl font-light text-gray-900 leading-tight">
-          {{ .Page.Params.subtitle }}
+          {{ $intro.title | default .Title }}
         </h1>
         <p class="mt-4 font-serif mx-auto text-lg text-gray-700">
-          {{ .Page.Params.description }}
+          {{ $intro.text | default .Description }}
         </p>
     </div>
 
