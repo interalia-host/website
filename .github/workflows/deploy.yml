@@ -19,29 +19,31 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install Node dependencies
         run: npm ci
 
       - name: Cache Hugo
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugo-${{ hashFiles('**/*.html', '**/*.md') }}
+          path: |
+            /tmp/hugo_cache
+            resources/_gen
+          key: ${{ runner.os }}-hugo-${{ hashFiles('layouts/**', 'content/**', 'static/media/**', 'hugo.toml') }}
           restore-keys: |
             ${{ runner.os }}-hugo-
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.154.3'
+          hugo-version: '0.169.0'
           extended: true
 
       - name: Build site
@@ -54,7 +56,7 @@ jobs:
         run: echo 'interalia.host' > public/CNAME
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
@@ -67,4 +69,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
