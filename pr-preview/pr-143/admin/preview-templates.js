@@ -1,13 +1,13 @@
 // Live preview templates for Decap CMS.
 // They mirror the Hugo templates in layouts/ using the site's own Tailwind CSS
-// (published to /admin/preview.css by layouts/partials/head.html), so editors see
+// (published to /preview.css by layouts/partials/head.html; loaded relative to /admin/), so editors see
 // real fonts, colours and spacing while typing. Keep them roughly in sync when
 // changing a section's design. This file is also scanned by Tailwind for classes.
 
 (function () {
     if (!window.CMS || !window.h || !window.createClass) return;
 
-    CMS.registerPreviewStyle("/admin/preview.css");
+    CMS.registerPreviewStyle("../preview.css");
     CMS.registerPreviewStyle(
         "body{background:var(--color-cream);margin:0} .preview-note{font:12px/1.4 system-ui;color:#6e4242;background:#fbebdf;padding:6px 12px;border-radius:999px;display:inline-block}",
         { raw: true }
