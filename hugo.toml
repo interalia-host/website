@@ -26,6 +26,8 @@ enableMissingTranslationPlaceholders = true
 disableRSS     = false
 disableSitemap = false
 disable404     = false
+# No categories/tags are used, so don't build empty taxonomy pages
+disableKinds   = ["taxonomy", "term"]
 disableHugoGeneratorInject = true
 
 pluralizeListTitles = false
@@ -43,8 +45,6 @@ summaryLength = 70
 [outputs]
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML"]
-  term = ["HTML"]
 
 [markup]
   [markup.goldmark]
@@ -87,9 +87,6 @@ summaryLength = 70
     quality = 82
     hint = "picture"
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
 
 
 [languages]
