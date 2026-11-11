@@ -45,7 +45,9 @@ Within our organization, the departments that are responsible for processing the
 
 ### III. Storage duration
 
-We store your emails and contacts for as long as it is necessary to process your inquiry and then store them for a period of 3 years in case you contact us again with reference to your original question. We archive business and commercial letters for ten years due to the German Tax Code. IV. Rights of data subjects
+We store your emails and contacts for as long as it is necessary to process your inquiry and then store them for a period of 3 years in case you contact us again with reference to your original question. We archive business and commercial letters for ten years due to the German Tax Code.
+
+### IV. Rights of data subjects
 
 The General Data Protection Regulation guarantees you certain rights that you can assert against us – insofar as the legal requirements are met.
 
@@ -72,7 +74,7 @@ You can reach the **Commissioner for Data Protection of Baden-Wuerttemberg** a
 Postfach 10 29 32 | DE-70025 Stuttgart
 
 **Email**: [poststelle@lfdi.bwl.de](mailto:poststelle@lfdi.bwl.de)\
-[](mailto:poststelle@lfdi.bwl.de)**Phone**: +49 711 / 61 55 41 – 0
+**Phone**: +49 711 / 61 55 41 – 0
 
 ### V. Existence of automated decision making (including profiling)
 
