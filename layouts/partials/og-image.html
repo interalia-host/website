@@ -37,7 +37,7 @@
   {{- end -}}
   {{- $title = delimit ($lines | append $line) "\n" -}}
   {{- $filters := slice
-      (images.Text site.Title (dict "font" $serif "size" 46 "color" "#2c1b1b" "x" 160 "y" 60))
+      (images.Text site.Title (dict "font" $serif "size" 46 "color" "#2c1b1b" "x" 160 "y" 53))
       (images.Text $title (dict "font" $serif "size" $size "linespacing" 10 "color" "#2c1b1b" "x" 76 "y" 200))
   -}}
   {{- with $page.Section }}{{ if eq . "reports" }}
