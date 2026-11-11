@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>interalia</title>
+  <meta name="robots" content="noindex, follow">
+  <!--
+    Root of the site: send visitors to their language.
+    Order: the language they last picked in the language switcher
+    (saved by layouts/partials/nav.html), then the browser's preferred
+    languages, then English. Links are relative so this also works for
+    PR previews under /pr-preview/pr-<n>/.
+    Hugo's own root redirect is disabled (disableDefaultLanguageRedirect).
+  -->
+  <script>
+    (function () {
+      var supported = ["en", "de"];
+      var pick = null;
+      try { pick = localStorage.getItem("lang"); } catch (e) {}
+      if (supported.indexOf(pick) === -1) {
+        pick = null;
+        var prefs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+        for (var i = 0; i < prefs.length && !pick; i++) {
+          var code = String(prefs[i] || "").slice(0, 2).toLowerCase();
+          if (supported.indexOf(code) !== -1) pick = code;
+        }
+      }
+      location.replace((pick || "en") + "/" + location.search + location.hash);
+    })();
+  </script>
+  <noscript><meta http-equiv="refresh" content="0; url=en/"></noscript>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #fcfcf0; color: #2c1b1b; font: 18px/1.5 system-ui, sans-serif; }
+    a { color: inherit; margin: 0 0.75rem; }
+  </style>
+</head>
+<body>
+  <p><a href="en/" hreflang="en" lang="en">English</a> <a href="de/" hreflang="de" lang="de">Deutsch</a></p>
+</body>
+</html>

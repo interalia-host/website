@@ -9,6 +9,7 @@
     {{- range .AllTranslations }}
     <li>
       <a href="{{ .Permalink }}" lang="{{ .Lang }}" hreflang="{{ .Lang }}"
+         onclick="try { localStorage.setItem('lang', '{{ .Lang }}') } catch (e) {}"
          class="rounded py-3 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink {{ if eq .Lang $.Lang }}text-zinc-900{{ else }}text-zinc-500 hover:text-zinc-700{{ end }}"
          {{ if eq .Lang $.Lang }}aria-current="true"{{ end }}>
         <span aria-hidden="true">{{ upper .Lang }}</span>

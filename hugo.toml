@@ -4,6 +4,7 @@ baseURL = "https://interalia.host"
 defaultContentLanguage = "en"
 locale = "en-US"
 defaultContentLanguageInSubdir = true
+disableDefaultLanguageRedirect = true
 
 rssLimit = 50
 
