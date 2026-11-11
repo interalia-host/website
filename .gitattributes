@@ -1,0 +1,18 @@
+# Use LF line endings in the repository and in every working copy, regardless
+# of the editor or OS (avoids "LF will be replaced by CRLF" noise on Windows).
+* text=auto eol=lf
+
+# Binary files: never touch line endings or diff them as text
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.avif   binary
+*.ico    binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.otf    binary
+*.zip    binary
