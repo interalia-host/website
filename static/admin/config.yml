@@ -10,6 +10,10 @@ logo:
 
 site_url: https://interalia.host
 display_url: https://interalia.host
+# "View preview" on drafts uses the deploy/preview commit status that
+# .github/workflows/preview.yml sets on each PR; "View live" uses site_url.
+# Both append the preview_path of the entry.
+show_preview_links: true
 
 backend:
   name: github
@@ -18,6 +22,7 @@ backend:
   site_domain: interalia.host
   use_graphql: true
   squash_merges: true
+  preview_context: deploy/preview
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
     update: "Update {{collection}} “{{slug}}”"
@@ -57,6 +62,7 @@ collections:
   - name: hero-en
     label: 1 · Hero (top banner) — English
     file: data/hero.en.yml
+    preview_path: en/
     format: yml
     fields:
     - {name: title, label: Headline, widget: string, hint: 'To make a word italic and thin, wrap it like this: <span class=''italic font-thin''>word</span>'}
@@ -66,6 +72,7 @@ collections:
   - name: hero-de
     label: 1 · Hero (top banner) — Deutsch
     file: data/hero.de.yml
+    preview_path: de/
     format: yml
     fields:
     - {name: title, label: Headline, widget: string, hint: 'To make a word italic and thin, wrap it like this: <span class=''italic font-thin''>word</span>'}
@@ -75,6 +82,7 @@ collections:
   - name: what-we-do-en
     label: 2 · What we do — English
     file: data/what-we-do.en.yml
+    preview_path: en/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -90,6 +98,7 @@ collections:
   - name: what-we-do-de
     label: 2 · What we do — Deutsch
     file: data/what-we-do.de.yml
+    preview_path: de/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -105,6 +114,7 @@ collections:
   - name: methodology-en
     label: 3 · How we work — English
     file: data/methodology.en.yml
+    preview_path: en/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -121,6 +131,7 @@ collections:
   - name: methodology-de
     label: 3 · How we work — Deutsch
     file: data/methodology.de.yml
+    preview_path: de/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -137,6 +148,7 @@ collections:
   - name: service-card-en
     label: 4 · Services teaser — English
     file: data/service-card.en.yml
+    preview_path: en/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -156,6 +168,7 @@ collections:
   - name: service-card-de
     label: 4 · Services teaser — Deutsch
     file: data/service-card.de.yml
+    preview_path: de/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -180,6 +193,7 @@ collections:
   - name: about-intro-en
     label: 1 · Intro — English
     file: data/about-intro.en.yml
+    preview_path: en/about/
     format: yml
     fields:
     - {name: title, label: Headline, widget: string}
@@ -187,6 +201,7 @@ collections:
   - name: about-intro-de
     label: 1 · Intro — Deutsch
     file: data/about-intro.de.yml
+    preview_path: de/about/
     format: yml
     fields:
     - {name: title, label: Headline, widget: string}
@@ -194,6 +209,7 @@ collections:
   - name: about-mission-en
     label: 2 · Our mission — English
     file: data/about-mission.en.yml
+    preview_path: en/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -202,6 +218,7 @@ collections:
   - name: about-mission-de
     label: 2 · Our mission — Deutsch
     file: data/about-mission.de.yml
+    preview_path: de/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -210,6 +227,7 @@ collections:
   - name: who-we-work-with-en
     label: 3 · Who we work with — English
     file: data/who-we-work-with.en.yml
+    preview_path: en/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -225,6 +243,7 @@ collections:
   - name: who-we-work-with-de
     label: 3 · Who we work with — Deutsch
     file: data/who-we-work-with.de.yml
+    preview_path: de/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -240,6 +259,7 @@ collections:
   - name: team-intro-en
     label: 4 · The change we want to see — English
     file: data/team-intro.en.yml
+    preview_path: en/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -248,6 +268,7 @@ collections:
   - name: team-intro-de
     label: 4 · The change we want to see — Deutsch
     file: data/team-intro.de.yml
+    preview_path: de/about/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -261,6 +282,7 @@ collections:
   - name: our-service-en
     label: Services — English
     file: data/our-service.en.yml
+    preview_path: en/service/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -278,6 +300,7 @@ collections:
   - name: our-service-de
     label: Services — Deutsch
     file: data/our-service.de.yml
+    preview_path: de/service/
     format: yml
     fields:
     - {name: title, label: Heading, widget: string}
@@ -295,6 +318,7 @@ collections:
 
 - name: partner
   label: Partner page
+  preview_path: 'en/partner/'
   label_singular: Partner page
   description: All texts of the Partner page, English and Deutsch side by side.
   folder: content
@@ -335,6 +359,7 @@ collections:
   - name: about-page-en
     label: About — English
     file: content/about.en.md
+    preview_path: en/about/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -347,6 +372,7 @@ collections:
   - name: about-page-de
     label: About — Deutsch
     file: content/about.de.md
+    preview_path: de/about/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -359,6 +385,7 @@ collections:
   - name: services-page-en
     label: Services — English
     file: content/service.en.md
+    preview_path: en/service/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -371,6 +398,7 @@ collections:
   - name: services-page-de
     label: Services — Deutsch
     file: content/service.de.md
+    preview_path: de/service/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -383,6 +411,7 @@ collections:
   - name: resources-page-en
     label: Resources — English
     file: content/resources.en.md
+    preview_path: en/resources/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -395,6 +424,7 @@ collections:
   - name: resources-page-de
     label: Resources — Deutsch
     file: content/resources.de.md
+    preview_path: de/resources/
     format: frontmatter
     fields:
     - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
@@ -407,6 +437,7 @@ collections:
 
 - name: page
   label: Other pages
+  preview_path: 'en/{{slug}}/'
   label_singular: Page
   description: Text pages such as Imprint, Privacy and Code of Conduct.
   folder: content
@@ -428,6 +459,7 @@ collections:
 
 - name: blog-posts
   label: Articles
+  preview_path: 'en/reports/{{slug}}/'
   label_singular: Article
   description: Articles listed on the Resources page.
   folder: content/reports
@@ -451,6 +483,7 @@ collections:
 
 - name: reports
   label: Reports
+  preview_path: 'en/resources/'
   label_singular: Report
   description: Downloadable reports (PDF) listed on the Resources page.
   folder: data/reports
@@ -471,6 +504,7 @@ collections:
 
 - name: team
   label: Team
+  preview_path: 'en/about/'
   label_singular: Team member
   description: Core team members shown on the About page.
   folder: data/team
@@ -517,6 +551,7 @@ collections:
 
 - name: board
   label: Advisory council
+  preview_path: 'en/about/'
   label_singular: Advisory council member
   description: Advisory council members shown on the About page.
   folder: data/board
@@ -565,6 +600,7 @@ collections:
 
 - name: settings
   label: Site settings
+  preview_path: 'en/'
   description: Contact details, social links and sharing defaults.
   editor: {preview: false}
   files:
@@ -614,6 +650,7 @@ collections:
 
 - name: i18n
   label: Interface text
+  preview_path: 'en/'
   description: 'Small texts used across the site: menu, buttons, form labels, accessibility labels. Only change the translation, never the key.'
   editor: {preview: false}
   files:
