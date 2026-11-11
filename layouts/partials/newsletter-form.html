@@ -1,0 +1,40 @@
+{{- /*
+  Buttondown newsletter sign-up that stays on the page.
+
+  With JavaScript (Alpine) the form is sent in the background and a translated
+  message replaces the popup window Buttondown would otherwise open. Without
+  JavaScript it falls back to a normal form post to Buttondown.
+  The response can't be read cross-origin (no-cors), so success means
+  "request sent": Buttondown then emails a confirmation link.
+
+  Usage: {{ partial "newsletter-form.html" (dict "variant" "footer" "id" "newsletter-email" "labelledby" "newsletter-signup") }}
+         {{ partial "newsletter-form.html" (dict "variant" "card" "id" "newsletter-email-cta") }}
+*/ -}}
+{{- $card := eq .variant "card" -}}
+<form method="post" action="https://buttondown.com/api/emails/embed-subscribe/interalia"
+      {{- with .labelledby }} aria-labelledby="{{ . }}"{{ end }}
+      x-data="{ state: 'idle' }"
+      @submit.prevent="
+        state = 'sending';
+        fetch($el.action, { method: 'POST', body: new FormData($el), mode: 'no-cors' })
+          .then(() => { state = 'done'; $el.reset(); })
+          .catch(() => { state = 'error'; })
+      "
+      class="{{ if $card }}mt-6{{ else }}mt-4 lg:w-lg{{ end }}">
+  <div x-show="state !== 'done'" class="{{ if $card }}flex flex-col gap-3 sm:flex-row sm:justify-center{{ else }}flex items-center border-b border-gray-400{{ end }}">
+    <label for="{{ .id }}" class="sr-only">{{ i18n "strings.email_address" }}</label>
+    <input id="{{ .id }}" name="email" type="email" required autocomplete="email"
+           placeholder="{{ i18n "strings.email" }}"
+           class="{{ if $card }}w-full rounded-full border-0 bg-white px-5 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-ink sm:w-64{{ else }}w-full border-none bg-transparent px-2 py-2 text-gray-700 outline-none ring-0{{ end }}">
+    <input type="hidden" name="embed" value="1">
+    <button type="submit" :disabled="state === 'sending'"
+            class="{{ if $card }}rounded-full bg-ink px-6 py-3 font-medium text-white shadow-sm transition hover:bg-cocoa{{ else }}ms-4 mb-2 rounded-full bg-blush px-6 py-2 text-gray-800 shadow-sm transition hover:bg-blush-deep{{ end }} disabled:cursor-wait disabled:opacity-60">
+      <span x-show="state !== 'sending'">{{ i18n (cond $card "strings.subscribe" "strings.submit") }}</span>
+      <span x-show="state === 'sending'" x-cloak>{{ i18n "strings.newsletter_sending" }}</span>
+    </button>
+  </div>
+  <p role="status" aria-live="polite" class="text-sm {{ if $card }}mt-3 text-center{{ else }}mt-3{{ end }}">
+    <span x-show="state === 'done'" x-cloak class="font-medium text-ink">{{ i18n "strings.newsletter_success" }}</span>
+    <span x-show="state === 'error'" x-cloak class="text-cocoa">{{ i18n "strings.newsletter_error" }}</span>
+  </p>
+</form>

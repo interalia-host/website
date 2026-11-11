@@ -89,3 +89,9 @@ strings:
     translation: Share on
   - id: share_via
     translation: Share via
+  - id: newsletter_sending
+    translation: "Sending…"
+  - id: newsletter_success
+    translation: "Almost done! Please check your inbox and confirm your subscription."
+  - id: newsletter_error
+    translation: "Something went wrong. Please try again, or email us at hello@interalia.host."

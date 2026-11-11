@@ -89,3 +89,9 @@ strings:
     translation: Teilen auf
   - id: share_via
     translation: Teilen per
+  - id: newsletter_sending
+    translation: "Wird gesendet…"
+  - id: newsletter_success
+    translation: "Fast geschafft! Bitte bestätige dein Abo über den Link in deinem Postfach."
+  - id: newsletter_error
+    translation: "Das hat leider nicht geklappt. Bitte versuche es erneut oder schreib uns an hello@interalia.host."
