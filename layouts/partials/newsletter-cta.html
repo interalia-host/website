@@ -1,4 +1,4 @@
-<aside class="my-8 rounded-2xl bg-[#F5D9CC] p-8">
+<aside class="my-8 rounded-2xl bg-blush p-8">
   <div class="mx-auto max-w-xl text-center">
     <h2 class="text-2xl font-bold text-gray-900">{{ i18n "strings.newsletter_cta_title" | default "Stay updated" }}</h2>
     <p class="mt-2 text-gray-700">{{ i18n "strings.newsletter_cta_text" | default "Subscribe to our newsletter to receive the latest news and updates from interalia." }}</p>
@@ -16,14 +16,14 @@
         name="email"
         type="email"
         placeholder="{{ i18n "strings.email" }}"
-        class="w-full rounded-full border-0 bg-white px-5 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#2C1B1B] sm:w-64"
+        class="w-full rounded-full border-0 bg-white px-5 py-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-ink sm:w-64"
         required
         aria-required="true"
         autocomplete="email"
       >
       <button 
         type="submit" 
-        class="rounded-full bg-[#2C1B1B] px-6 py-3 font-medium text-white shadow-sm transition hover:bg-[#6E4242] focus:outline-none focus:ring-2 focus:ring-[#2C1B1B] focus:ring-offset-2"
+        class="rounded-full bg-ink px-6 py-3 font-medium text-white shadow-sm transition hover:bg-cocoa focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2"
       >
         {{ i18n "strings.subscribe" | default "Subscribe" }}
       </button>

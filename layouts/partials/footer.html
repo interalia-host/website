@@ -1,9 +1,9 @@
-<footer class="relative bg-[#FCFCF0] py-16" role="contentinfo">
+<footer class="relative bg-cream py-16" role="contentinfo">
     <div class="container mx-auto flex flex-col items-start justify-between space-y-6 px-8 md:flex-row md:space-y-0">
         
         <section class="flex flex-col items-start">
             <a href="{{ .Site.Home.Permalink }}" aria-label="{{ i18n "strings.return_homepage" }}">
-                <img class="h-16 w-auto" src="{{ "/media/logos/interalia-icon-logo.svg" | absURL }}" alt="interalia logo icon" loading="lazy" decoding="async">
+                <img class="h-16 w-auto" src="{{ "/media/logos/interalia-icon-logo.svg" | absURL }}" alt="" width="64" height="64" loading="lazy" decoding="async">
             </a>
 
             <h2 id="newsletter-signup" class="mt-10 text-2xl">{{ i18n "strings.join_newsletter" }}</h2>
@@ -19,7 +19,7 @@
                     aria-required="true"
                     autocomplete="email"
                 />
-                <button type="submit" class="ms-4 px-6 py-2 rounded-full bg-rose-100 text-gray-800 shadow-sm mb-2 focus:outline-none focus:ring-2 focus:ring-[#2C1B1B]">
+                <button type="submit" class="ms-4 px-6 py-2 rounded-full bg-rose-100 text-gray-800 shadow-sm mb-2 focus:outline-none focus:ring-2 focus:ring-ink">
                     {{ i18n "strings.submit" }}
                 </button>
                 <span id="newsletter-feedback" class="sr-only" aria-live="polite"></span>
@@ -47,8 +47,8 @@
                     {{ end }}
                 {{- with .Site.Params.social }}
                 {{- range . }}
-                    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" title="{{ .name | humanize }}" aria-label="{{ i18n "strings.interalia" }} on {{ .name | humanize }}" class="lowercase hover:underline">
-                        {{ .name }}
+                    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="lowercase hover:underline">
+                        {{ .name }}<span class="sr-only"> ({{ i18n "strings.opens_new_tab" }})</span>
                     </a></li>
                 {{- end }}
                 {{- end -}}                

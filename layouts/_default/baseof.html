@@ -17,14 +17,14 @@
     </style>
 </head>
 
-<body class="bg-[#FCFCF0]">
-    <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[#2C1B1B] focus:text-white focus:px-4 focus:py-2 focus:rounded-full" href="#content">{{ i18n "skip_to_content" }}</a>
+<body class="bg-cream">
+    <a class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-ink focus:text-white focus:px-4 focus:py-2 focus:rounded-full" href="#content">{{ i18n "strings.skip_to_content" }}</a>
 
     <header>
         {{ partial "nav.html" . }}
     </header>
 
-    <main id="content" class="content">
+    <main id="content" class="content focus:outline-none" tabindex="-1">
         {{ block "main" . }}{{ end }}
     </main>
 
