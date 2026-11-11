@@ -59,7 +59,7 @@ winget install Hugo.Hugo.Extended
 | `npm run dev` | Start development server (CSS watch + Hugo server) |
 | `npm run cms` | Start the local CMS proxy, then open http://localhost:1313/admin/ to edit files on disk without logging in |
 | `npm run build` | Build for production |
-| `npm run css:build` | Build and minify Tailwind CSS |
+| `npm run css:build` | Build and minify Tailwind CSS (`assets/style.css` is generated and not committed; `npm run dev`, `npm run build` and CI build it automatically) |
 | `npm run css:watch` | Watch Tailwind CSS for changes |
 | `npm run hugo:dev` | Start Hugo development server |
 | `npm run hugo:build` | Build Hugo site |
@@ -72,7 +72,7 @@ website/
 ├── assets/
 │   ├── icons/          # FontAwesome SVG icons
 │   ├── js/             # JavaScript files
-│   ├── style.css       # Compiled CSS (generated)
+│   ├── style.css       # Compiled CSS (generated, git-ignored)
 │   └── tailwind.css    # Tailwind source
 ├── config/
 │   └── _default/

@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Website for interalia - fiscal hosting for civil society",
   "scripts": {
-    "dev": "concurrently \"npm run css:watch\" \"npm run hugo:dev\"",
+    "dev": "npm run css:build && concurrently \"npm run css:watch\" \"npm run hugo:dev\"",
     "cms": "npx --yes decap-server@3.11.6",
     "build": "npm run css:build && npm run hugo:build",
     "css:build": "tailwindcss -i ./assets/tailwind.css -o ./assets/style.css --minify",
