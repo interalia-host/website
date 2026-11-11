@@ -47,7 +47,7 @@ winget install Hugo.Hugo.Extended
    ```bash
    npm run dev
    ```
-   This runs both Tailwind CSS watch and Hugo server concurrently.
+   This starts the Hugo server. Hugo compiles Tailwind CSS itself (`css.TailwindCSS`, using the Tailwind CLI installed by `npm install`) and rebuilds it when templates or content change.
 
 4. **Open in browser:**
    Visit [http://localhost:1313](http://localhost:1313)
@@ -56,13 +56,9 @@ winget install Hugo.Hugo.Extended
 
 | Script | Description |
 |--------|-------------|
-| `npm run dev` | Start development server (CSS watch + Hugo server) |
+| `npm run dev` | Start the Hugo development server (includes drafts and future-dated content) |
 | `npm run cms` | Start the local CMS proxy, then open http://localhost:1313/admin/ to edit files on disk without logging in |
-| `npm run build` | Build for production |
-| `npm run css:build` | Build and minify Tailwind CSS (`assets/style.css` is generated and not committed; `npm run dev`, `npm run build` and CI build it automatically) |
-| `npm run css:watch` | Watch Tailwind CSS for changes |
-| `npm run hugo:dev` | Start Hugo development server |
-| `npm run hugo:build` | Build Hugo site |
+| `npm run build` | Build the site for production into `public/` (Hugo also compiles the CSS) |
 
 ## Project Structure
 
@@ -72,8 +68,8 @@ website/
 ├── assets/
 │   ├── icons/          # FontAwesome SVG icons
 │   ├── js/             # JavaScript files
-│   ├── style.css       # Compiled CSS (generated, git-ignored)
-│   └── tailwind.css    # Tailwind source
+│   ├── og/             # Share-card base image and fonts
+│   └── tailwind.css    # Tailwind source (compiled by Hugo)
 ├── config/
 │   └── _default/
 │       └── params.yml  # Site parameters
@@ -81,9 +77,11 @@ website/
 ├── data/               # YAML data files
 ├── i18n/               # Translations (en, de)
 ├── layouts/            # Hugo templates
-│   ├── _default/       # Default layouts
-│   ├── partials/       # Reusable components
-│   └── shortcodes/     # Custom shortcodes
+│   ├── baseof.html     # Page skeleton (Hugo 0.146+ template layout)
+│   ├── home.html, single.html, list.html, about.html, …
+│   ├── _markup/        # Markdown render hooks (links, images)
+│   ├── _partials/      # Reusable components
+│   └── _shortcodes/    # Custom shortcodes
 ├── static/
 │   ├── admin/          # DecapCMS configuration
 │   ├── favicons/       # Favicon files
@@ -133,11 +131,11 @@ Only a curated set of Font Awesome icons is kept in `assets/icons/{brands,solid}
 
 ### Images
 
-Uploads can be any size. `layouts/partials/img.html` resizes raster images and converts them to WebP at build time (with `srcset`/`sizes`). Use it instead of a raw `<img>` for anything under `/media/`.
+Uploads can be any size. `layouts/_partials/img.html` resizes raster images and converts them to WebP at build time (with `srcset`/`sizes`). Use it instead of a raw `<img>` for anything under `/media/`.
 
 ### Social sharing
 
-Every page gets a generated sharing card (`layouts/partials/og-image.html`, base image and fonts in `assets/og/`). Articles use their cover image instead.
+Every page gets a generated sharing card (`layouts/_partials/og-image.html`, base image and fonts in `assets/og/`). Articles use their cover image instead.
 
 ### CMS live preview
 
