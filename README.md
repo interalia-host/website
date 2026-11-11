@@ -100,6 +100,10 @@ Content can be managed via:
 1. **DecapCMS** - Visit [interalia.host/admin/](https://interalia.host/admin/) and log in with GitHub
 2. **Direct editing** - Edit Markdown files in `content/` and YAML files in `data/`
 
+### Line endings
+
+`.gitattributes` keeps every text file on LF line endings in the repository and in working copies, whatever the OS or editor.
+
 ### Multilingual Content
 
 The site supports English (`en`) and German (`de`). Content files are named:
@@ -145,6 +149,10 @@ GitHub Pages serves the `gh-pages` branch (Settings → Pages → Source: *Deplo
 
 - **Production** (`.github/workflows/deploy.yml`): every push to `main` builds the site and publishes it to the root of `gh-pages` → [interalia.host](https://interalia.host).
 - **PR previews** (`.github/workflows/preview.yml`): every pull request, including CMS drafts in the editorial workflow, is built to `gh-pages/pr-preview/pr-{number}/` → `https://interalia.host/pr-preview/pr-{number}/`. The link is posted as a PR comment and as a `deploy/preview` commit status, which powers the CMS "View preview" button. Previews are marked `noindex`, show a "Preview · PR #" badge, and are removed when the PR is closed. PRs from forks don't get a preview.
+
+A weekly job (`.github/workflows/prune-previews.yml`, also runnable by hand) removes any preview whose PR is no longer open. Dependabot (`.github/dependabot.yml`) opens weekly update PRs for GitHub Actions and npm; those PRs, like PRs from forks, get a build check instead of a preview because they can't publish.
+
+The site root (`static/index.html`) sends visitors to `/en/` or `/de/`: first the language they last picked in the language switcher, then their browser language, then English. The branded 404 page is copied to the root during deploy, because GitHub Pages only uses a root `404.html`.
 
 Templates must stay subpath-safe for previews: use `absURL`/`relURL` without a leading slash (`"media/x.png" | absURL`) or resource permalinks, never hard-coded `/…` paths.
 

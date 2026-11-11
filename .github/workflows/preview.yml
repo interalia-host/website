@@ -25,8 +25,12 @@ env:
 
 jobs:
   build-preview:
-    # Forks can't write to this repository, so they get no preview.
-    if: github.event.action != 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    # Forks and Dependabot only get a read-only token, so they can't publish a
+    # preview; they get the build-check job below instead.
+    if: >-
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-26.04
     steps:
       - name: Checkout repository
@@ -98,7 +102,10 @@ jobs:
             Built from ${{ github.event.pull_request.head.sha }}. GitHub Pages usually publishes it within a minute or two.
 
   remove-preview:
-    if: github.event.action == 'closed' && github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
     runs-on: ubuntu-26.04
     steps:
       - name: Create empty folder
@@ -121,3 +128,34 @@ jobs:
           header: pr-preview
           message: |
             Preview removed because the pull request was closed.
+
+  build-check:
+    # Build without publishing for PRs that can't get a preview.
+    if: >-
+      github.event.action != 'closed' &&
+      (github.event.pull_request.head.repo.full_name != github.repository ||
+       github.actor == 'dependabot[bot]')
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.169.0'
+          extended: true
+
+      - name: Build site
+        run: npm run build
