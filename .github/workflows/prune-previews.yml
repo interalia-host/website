@@ -1,0 +1,56 @@
+name: Prune PR previews
+
+# Safety net for preview.yml: removes gh-pages/pr-preview/pr-<n>/ folders whose
+# pull request is no longer open (e.g. if a cleanup run failed or was skipped).
+
+on:
+  schedule:
+    - cron: '17 3 * * 1' # Mondays 03:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: prune-previews
+  cancel-in-progress: false
+
+jobs:
+  prune:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v7
+        with:
+          ref: gh-pages
+
+      - name: Remove previews of closed pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          [ -d pr-preview ] || { echo "No previews."; exit 0; }
+          open=" $(gh pr list --repo "${{ github.repository }}" --state open --limit 500 --json number --jq '[.[].number] | join(" ")') "
+          echo "Open PRs:${open}"
+          removed=0
+          for dir in pr-preview/pr-*/; do
+            [ -d "$dir" ] || continue
+            num="${dir%/}"; num="${num##*pr-}"
+            case "$open" in
+              *" $num "*) echo "Keep $dir" ;;
+              *) echo "Remove $dir"; git rm -rq "$dir"; removed=$((removed + 1)) ;;
+            esac
+          done
+          echo "removed=$removed" >> "$GITHUB_ENV"
+
+      - name: Commit and push
+        if: env.removed != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Remove previews of closed pull requests"
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin gh-pages && git push origin gh-pages && exit 0
+            sleep 5
+          done
+          exit 1
