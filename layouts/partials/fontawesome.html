@@ -1,6 +1,17 @@
-{{ $fname:= print "assets/icons/" . ".svg" }}
-{{- $svg := readFile $fname -}}
-{{- $commentStrippedSvg := replaceRE "<!--[^>]*-->" "" $svg -}}
-{{- $svgWithSize := replaceRE `<svg([^>]*)>` `<svg$1 class='w-6 h-6'>` $commentStrippedSvg -}}
-{{- $filledPathSvg := replace $svgWithSize "<path" "<path fill='currentColor' aria-hidden='true'" -}}
-{{ $filledPathSvg | safeHTML }}
+{{- /*
+  Inline a Font Awesome icon from assets/icons/<style>/<name>.svg, e.g. "brands/linkedin".
+  Usage: {{ partial "fontawesome.html" "solid/globe" }}
+         {{ partial "fontawesome.html" (dict "icon" "solid/globe" "class" "h-4 w-4") }}
+  Only a curated set is kept in the repo; add more SVGs from fontawesome.com when needed.
+*/ -}}
+{{- $icon := . -}}
+{{- $class := "w-6 h-6" -}}
+{{- if reflect.IsMap . }}{{ $icon = .icon }}{{ $class = .class | default $class }}{{ end -}}
+{{- $fname := print "assets/icons/" $icon ".svg" -}}
+{{- if fileExists $fname -}}
+  {{- $svg := readFile $fname | replaceRE "<!--[^>]*-->" "" -}}
+  {{- $svg = replaceRE `<svg([^>]*)>` (printf `<svg$1 class="%s" aria-hidden="true" focusable="false">` $class) $svg -}}
+  {{- replace $svg "<path" "<path fill='currentColor'" | safeHTML -}}
+{{- else -}}
+  {{- warnf "Icon %q not found in assets/icons/ (page: %s)" $icon page.File.Path -}}
+{{- end -}}
