@@ -1,8 +1,4 @@
-{{ if .Get "src" }}
-<img src="{{ .Get "src" | safeURL }}" 
-     {{ with .Get "alt" }}alt="{{ . | plainify }}"{{ end }}
-     loading="lazy" 
-     decoding="async"
-     class="{{ with .Get "position"}}{{ . }}{{ else -}} left {{- end }}" 
-     {{ with .Get "style" }}style="{{ . | safeCSS }}"{{ end }} />
-{{ end }}
+{{- /* {{< image src="/media/uploads/x.png" alt="…" position="…" >}} — optimised automatically */ -}}
+{{- with .Get "src" -}}
+{{ partial "img.html" (dict "src" . "alt" ($.Get "alt" | plainify) "class" (printf "h-auto %s" ($.Get "position" | default "left")) "sizes" "(min-width: 896px) 832px, 100vw") }}
+{{- end -}}

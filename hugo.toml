@@ -2,7 +2,7 @@ title = "interalia"
 baseURL = "https://interalia.host"
 
 defaultContentLanguage = "en"
-languageCode = "en-us"
+locale = "en-US"
 defaultContentLanguageInSubdir = true
 
 rssLimit = 50
@@ -56,6 +56,36 @@ summaryLength = 70
       startLevel = 2
       endLevel = 4
 
+# Articles live in content/reports/ but have no overview page of their own:
+# they are listed on the Resources page, so don't render an empty /reports/ page.
+[[cascade]]
+  [cascade.build]
+    render = "never"
+    list = "always"
+  [cascade.target]
+    path = "/reports"
+    kind = "section"
+
+# Expose uploaded media to Hugo Pipes so images can be resized and converted
+# to WebP at build time (see layouts/partials/img.html). The originals are
+# still published unchanged via the static mount.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/media"
+    target = "assets/media"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[imaging]
+  resampleFilter = "Lanczos"
+  [imaging.webp]
+    quality = 82
+    hint = "picture"
+
 [taxonomies]
   category = "categories"
   tag = "tags"
@@ -63,17 +93,17 @@ summaryLength = 70
 
 [languages]
   [languages.en]
-    languageName = "English"
+    label = "English"
+    locale = "en-US"
     weight = 1
   [languages.en.params]
-    languageName = "English"
     direction = "ltr"
 
   [languages.de]
-    languageName = "Deutsch"
+    label = "Deutsch"
+    locale = "de-DE"
     weight = 2
   [languages.de.params]
-    languageName = "Deutsch"
     direction = "ltr"
 
 [privacy]

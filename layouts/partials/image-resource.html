@@ -1,0 +1,15 @@
+{{- /*
+  Returns the processable image resource for a site path like "/media/uploads/x.png"
+  (or a full https://interalia.host/... URL to it), or false for SVG/GIF/external/missing files.
+*/ -}}
+{{- $result := false -}}
+{{- $path := . | default "" -}}
+{{- $path = replaceRE `^https?://(www\.)?interalia\.host` "" $path -}}
+{{- if and $path (not (hasPrefix $path "http")) -}}
+  {{- with resources.Get (strings.TrimPrefix "/" $path) -}}
+    {{- if and (eq .ResourceType "image") (in (slice "png" "jpeg" "jpg" "webp" "tiff" "bmp") .MediaType.SubType) -}}
+      {{- $result = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $result -}}

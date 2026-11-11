@@ -1,0 +1,51 @@
+{{- /*
+  Responsive, optimised <img>.
+
+  Raster images under static/media/ (uploads, illustrations) are resized to a few
+  widths and converted to WebP at build time, with width/height set to avoid
+  layout shift. SVGs, GIFs, external URLs and unknown files are output as-is,
+  so editors can upload images of any size.
+
+  Usage:
+    {{ partial "img.html" (dict "src" .Params.image "alt" .Title "sizes" "(min-width: 768px) 50vw, 100vw" "class" "w-full") }}
+
+  Params:
+    src      (required) e.g. "/media/uploads/photo.png"
+    alt      alternative text ("" for decorative images)
+    sizes    the `sizes` attribute (default "100vw")
+    class    CSS classes
+    widths   slice of target widths (default 480, 800, 1200, 1600)
+    loading  "lazy" (default) or "eager" for above-the-fold images
+    fetchpriority  optional, e.g. "high" for the main image of a page
+*/ -}}
+{{- $src := .src | default "" -}}
+{{- $alt := .alt | default "" -}}
+{{- $sizes := .sizes | default "100vw" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $widths := .widths | default (slice 480 800 1200 1600) -}}
+{{- $res := partial "image-resource.html" $src -}}
+
+{{- if $res -}}
+  {{- $srcset := slice -}}
+  {{- $largest := false -}}
+  {{- range $widths -}}
+    {{- if le . $res.Width -}}
+      {{- $img := $res.Resize (printf "%dx webp" .) -}}
+      {{- $srcset = $srcset | append (printf "%s %dw" $img.RelPermalink $img.Width) -}}
+      {{- $largest = $img -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if not $largest -}}
+    {{- /* Smaller than every target width: convert, don't upscale */ -}}
+    {{- $largest = $res.Process "webp" -}}
+    {{- $srcset = slice (printf "%s %dw" $largest.RelPermalink $largest.Width) -}}
+  {{- end -}}
+  <img src="{{ $largest.RelPermalink }}" srcset="{{ delimit $srcset ", " }}" sizes="{{ $sizes }}"
+       width="{{ $largest.Width }}" height="{{ $largest.Height }}" alt="{{ $alt }}"
+       {{- with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async"
+       {{- with .fetchpriority }} fetchpriority="{{ . }}"{{ end }}>
+{{- else if $src -}}
+  <img src="{{ $src | absURL }}" alt="{{ $alt }}"
+       {{- with $class }} class="{{ . }}"{{ end }} loading="{{ $loading }}" decoding="async">
+{{- end -}}

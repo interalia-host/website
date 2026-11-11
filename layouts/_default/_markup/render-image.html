@@ -1,17 +1,7 @@
-{{- $src := .Destination -}}
-{{- $alt := .Text -}}
-{{- $title := .Title -}}
+{{- /* Markdown images: ![alt](src "caption") — resized and converted to WebP automatically */ -}}
 <figure class="my-6">
-  <img 
-    src="{{ $src | safeURL }}" 
-    alt="{{ $alt }}"
-    {{ with $title }}title="{{ . }}"{{ end }}
-    loading="lazy" 
-    decoding="async"
-    class="mx-auto rounded-lg"
-  >
-  {{- with $title }}
+  {{ partial "img.html" (dict "src" .Destination "alt" .Text "class" "mx-auto h-auto rounded-lg" "sizes" "(min-width: 896px) 832px, 100vw") }}
+  {{- with .Title }}
   <figcaption class="mt-2 text-center text-sm text-gray-600">{{ . }}</figcaption>
   {{- end }}
 </figure>
-

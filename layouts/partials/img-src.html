@@ -1,0 +1,15 @@
+{{- /*
+  Returns a single optimised (WebP, max `width` px) URL for an image path,
+  e.g. for CSS backgrounds. Falls back to the original URL.
+  Usage: {{ partial "img-src.html" (dict "src" "/media/images/x.png" "width" 1200) }}
+*/ -}}
+{{- $url := .src | absURL -}}
+{{- with partial "image-resource.html" .src -}}
+  {{- $w := $.width | default 1200 -}}
+  {{- if gt .Width $w -}}
+    {{- $url = (.Resize (printf "%dx webp" $w)).RelPermalink -}}
+  {{- else -}}
+    {{- $url = (.Process "webp").RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+{{- return $url -}}
