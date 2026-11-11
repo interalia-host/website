@@ -43,6 +43,24 @@
   {{- if not .Date.IsZero }}{{ $article = merge $article (dict "datePublished" (.Date.Format "2006-01-02") "dateModified" (.Lastmod.Format "2006-01-02")) }}{{ end -}}
   {{- with partial "og-image.html" . }}{{ $article = merge $article (dict "image" .Permalink) }}{{ end -}}
   {{- $graph = $graph | append $article -}}
+  {{- /* Optional FAQ (front matter faq: true): every "## Question?" heading and the
+       text below it, up to the next heading, becomes a question/answer pair. */ -}}
+  {{- if .Params.faq -}}
+    {{- $questions := slice -}}
+    {{- range after 1 (split (string .Content) "<h2") -}}
+      {{- $parts := split . "</h2>" -}}
+      {{- if ge (len $parts) 2 -}}
+        {{- $q := index $parts 0 | replaceRE `^[^>]*>` "" | plainify | htmlUnescape | strings.TrimSpace -}}
+        {{- $a := delimit (after 1 $parts) "" | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace -}}
+        {{- if and (strings.HasSuffix $q "?") $a -}}
+          {{- $questions = $questions | append (dict "@type" "Question" "name" $q "acceptedAnswer" (dict "@type" "Answer" "text" $a)) -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- with $questions -}}
+      {{- $graph = $graph | append (dict "@type" "FAQPage" "inLanguage" $.Language.Lang "mainEntity" .) -}}
+    {{- end -}}
+  {{- end -}}
 {{- else if .IsPage -}}
   {{- $graph = $graph | append (dict
       "@type" "WebPage"
