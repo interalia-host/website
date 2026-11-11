@@ -6,8 +6,8 @@ Built with [Hugo](https://gohugo.io/) and [Tailwind CSS v4](https://tailwindcss.
 
 ## Prerequisites
 
-- **Node.js** 20+ ([Download](https://nodejs.org/))
-- **Hugo Extended** 0.154.3+ ([Installation guide](https://gohugo.io/installation/))
+- **Node.js** 22+ ([Download](https://nodejs.org/))
+- **Hugo Extended** 0.169.0+ ([Installation guide](https://gohugo.io/installation/))
 
 ### Installing Hugo
 
@@ -19,8 +19,8 @@ brew install hugo
 **Linux (Debian/Ubuntu):**
 ```bash
 # Download the latest .deb from GitHub releases
-wget https://github.com/gohugoio/hugo/releases/download/v0.154.3/hugo_extended_0.154.3_linux-amd64.deb
-sudo dpkg -i hugo_extended_0.154.3_linux-amd64.deb
+wget https://github.com/gohugoio/hugo/releases/download/v0.169.0/hugo_extended_0.169.0_linux-amd64.deb
+sudo dpkg -i hugo_extended_0.169.0_linux-amd64.deb
 ```
 
 **Windows:**
@@ -57,6 +57,7 @@ winget install Hugo.Hugo.Extended
 | Script | Description |
 |--------|-------------|
 | `npm run dev` | Start development server (CSS watch + Hugo server) |
+| `npm run cms` | Start the local CMS proxy, then open http://localhost:1313/admin/ to edit files on disk without logging in |
 | `npm run build` | Build for production |
 | `npm run css:build` | Build and minify Tailwind CSS |
 | `npm run css:watch` | Watch Tailwind CSS for changes |
@@ -107,17 +108,36 @@ The site supports English (`en`) and German (`de`). Content files are named:
 
 ## Customization
 
-### Colors
+### Colours
 
-Custom colors are defined in `assets/tailwind.css`:
-- `green-*` - Green color palette
-- `orange-*` - Orange color palette
+Brand colours are defined once in `assets/tailwind.css` (`@theme`) and used by name in templates:
+`ink`, `cocoa`, `cream`, `blush`, `blush-light`, `blush-deep`, `sage`, `sage-deep`, `maroon`, `petal`
+(e.g. `bg-blush`, `text-ink`, `fill-maroon`, `ring-ink/10`). Avoid hex values in templates.
 
 ### Fonts
 
-The site uses:
-- **DM Sans** - Body text (`font-sans`)
-- **Platypi** - Headings (`font-serif`)
+- **DM Sans**: body text (`font-sans`)
+- **Platypi**: headings (`font-serif`)
+
+### Curved sections
+
+Use `{{ partial "curve.html" (dict "fill" "fill-blush" "shape" "left") }}` directly above a block with the matching `bg-*` class. It scales with the page width, with no negative margins.
+
+### Icons
+
+Only a curated set of Font Awesome icons is kept in `assets/icons/{brands,solid}`. To add one, download its SVG from fontawesome.com into the same folder and add it to the icon list in `static/admin/hugo_shortcodes_decap_cms.js` and the team "Icon" select in `static/admin/config.yml`.
+
+### Images
+
+Uploads can be any size. `layouts/partials/img.html` resizes raster images and converts them to WebP at build time (with `srcset`/`sizes`). Use it instead of a raw `<img>` for anything under `/media/`.
+
+### Social sharing
+
+Every page gets a generated sharing card (`layouts/partials/og-image.html`, base image and fonts in `assets/og/`). Articles use their cover image instead.
+
+### CMS live preview
+
+`static/admin/preview-templates.js` renders CMS previews with the site's own CSS (published as `/admin/preview.css`). Update it when you change a section's design.
 
 ## Deployment
 
@@ -159,12 +179,22 @@ This site uses editorial workflow:
 
 ### Available Collections
 
-- **Single Pages** - Main pages (About, Service, Network, etc.)
-- **Site Settings** - Global site configuration
-- **Blog Posts** - Reports and articles
-- **Team Members** - Team and board member profiles
-- **Hero Section** - Homepage hero content
-- **Network** - Studios, funders, collaborators
+The sidebar is grouped into four sections:
+
+- **Pages**
+  - **Homepage**: hero, What we do, How we work, services teaser
+  - **About page**: intro, mission, who we work with, "the change we want to see"
+  - **Services page**: list of services
+  - **Partner page**: all texts of the Partner page (English and Deutsch side by side)
+  - **Page titles & menu**: titles, SEO summaries and menu position of About, Services and Resources
+  - **Other pages**: Imprint, Privacy, Code of Conduct and any new text page
+- **Articles & reports**: articles and downloadable PDF reports, both listed on the Resources page
+- **People**: team and advisory council
+- **Settings**: contact details and social links (Site settings) and small interface texts such as buttons and form labels (Interface text)
+
+Sections stored as one file per language (for example the homepage sections) appear as separate "English" and "Deutsch" entries; everything else is edited side by side.
+
+Sidebar group headings and icons are defined in `static/admin/index.html`, keyed by each collection's `name` in `static/admin/config.yml`.
 
 ### Media Uploads
 
