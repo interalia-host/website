@@ -1,5 +1,5 @@
 // Buttons in the CMS Markdown editor ("+" menu) that insert Hugo shortcodes.
-// Each component must match a shortcode in layouts/shortcodes/ (or a Hugo built-in).
+// Each component must match a shortcode in layouts/_shortcodes/ (or a Hugo built-in).
 
 const attr = (name, value) => (value ? ` ${name}="${String(value).replace(/"/g, "&quot;")}"` : "");
 const getAttr = (str, name) => {
@@ -7,7 +7,7 @@ const getAttr = (str, name) => {
     return m ? m[1] : "";
 };
 
-// Icon — layouts/shortcodes/fontawesome.html (only icons in assets/icons/ exist)
+// Icon — layouts/_shortcodes/fontawesome.html (only icons in assets/icons/ exist)
 CMS.registerEditorComponent({
     id: "fontawesome",
     label: "Icon",
@@ -66,7 +66,7 @@ CMS.registerEditorComponent({
     }
 });
 
-// Figure — layouts/shortcodes/figure.html (images are resized and converted automatically)
+// Figure — layouts/_shortcodes/figure.html (images are resized and converted automatically)
 CMS.registerEditorComponent({
     id: "figure",
     label: "Image with caption",

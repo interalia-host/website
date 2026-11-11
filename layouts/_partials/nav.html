@@ -3,7 +3,7 @@
 {{- $navPages := sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" -}}
 {{- $page := . -}}
 
-{{- define "partials/nav-languages" -}}
+{{- define "_partials/nav-languages" -}}
   {{- if hugo.IsMultilingual }}
   <ul class="flex items-center gap-4" aria-label="{{ i18n "strings.language" }}" role="list">
     {{- range .AllTranslations }}

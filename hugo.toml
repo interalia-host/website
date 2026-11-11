@@ -68,7 +68,7 @@ summaryLength = 70
     kind = "section"
 
 # Expose uploaded media to Hugo Pipes so images can be resized and converted
-# to WebP at build time (see layouts/partials/img.html). The originals are
+# to WebP at build time (see layouts/_partials/img.html). The originals are
 # still published unchanged via the static mount.
 [module]
   [[module.mounts]]

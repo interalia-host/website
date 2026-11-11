@@ -1,6 +1,6 @@
 // Live preview templates for Decap CMS.
 // They mirror the Hugo templates in layouts/ using the site's own Tailwind CSS
-// (published to /preview.css by layouts/partials/head.html; loaded relative to /admin/), so editors see
+// (published to /preview.css by layouts/_partials/head.html; loaded relative to /admin/), so editors see
 // real fonts, colours and spacing while typing. Keep them roughly in sync when
 // changing a section's design. This file is also scanned by Tailwind for classes.
 
@@ -29,7 +29,7 @@
             .filter(Boolean)
             .map((p, i) => h("p", { key: i }, p));
 
-    // Brand curve (same shapes as layouts/partials/curve.html)
+    // Brand curve (same shapes as layouts/_partials/curve.html)
     const CURVES = {
         left: "M449.589 69.2708C269.693 112.059 -0.273438 206.786 -0.273438 206.786V320H1439.73V314.049C1439.73 314.049 1262.82 137.478 1172.86 81.2537C1082.9 25.0294 1022.64 9.2192 917.635 1.49562C814.146 -6.11639 629.218 26.5464 449.589 69.2708Z",
         right: "M990.794 63.48C1170.69 102.587 1440.66 189.165 1440.66 189.165V320H0.65625V287.2C0.65625 287.2 177.562 125.819 267.521 74.432C357.48 23.0445 417.741 8.59439 522.747 1.53524C626.237 -5.42192 811.165 24.431 990.794 63.48Z"
