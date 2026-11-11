@@ -471,15 +471,16 @@ collections:
   format: frontmatter
   summary: '{{title}} ({{year}})'
   sortable_fields:
-  - date
+  - {field: date, default_sort: desc}
   - title
   fields:
-  - {name: title, label: Title, widget: string, i18n: true}
-  - {name: date, label: Publication date, widget: datetime, i18n: duplicate, hint: Only the year is shown on the site; the full date is used to sort articles (newest first).}
+  - {name: title, label: Title, widget: string, i18n: true, hint: 'Also used for the web address (e.g. "Annual report 2026" becomes /reports/annual-report-2026/).'}
+  - {name: date, label: Publication date, widget: datetime, default: '{{now}}', i18n: duplicate, hint: 'Defaults to now. Only the year is shown on the site; the full date sorts articles (newest first). A future date keeps the article hidden until that date.'}
   - {name: author, label: Author, widget: string, i18n: true, required: false}
-  - {name: image, label: Cover image, widget: image, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown on the article page, in the Resources list and when the article is shared. Landscape, at least 1600×900 px (16:9); keep important content in the centre. Resized and converted automatically. Max 10 MB.'}
+  - {name: image, label: Cover image, widget: image, i18n: duplicate, required: true, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Required. Shown on the article page, in the Resources list and when the article is shared. Landscape, at least 1600×900 px (16:9); keep important content in the centre. Resized and converted automatically. Max 10 MB.'}
   - {name: description, label: Short summary (SEO and sharing), widget: text, i18n: true, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
-  - {name: body, label: Text, widget: markdown, i18n: true}
+  - {name: body, label: Text, widget: markdown, i18n: true, hint: 'Use "Heading 2" for sections; long articles get a table of contents automatically.'}
+  - {name: faq, label: Show as FAQ in search engines, widget: boolean, default: false, required: false, i18n: duplicate, hint: 'Turn on for question-and-answer articles: every "Heading 2" that ends with a question mark, with the text below it, is marked up as an FAQ.'}
 
 - name: reports
   label: Reports
