@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{- /*
+  Partner page. All text is editable in content/partner.<lang>.md (or via the CMS → Partner page):
+  - the first paragraph of the body is shown as the large intro,
+  - the remaining paragraphs are shown in the curved section,
+  - `areas` (optional list) is shown as a set of highlighted fields of work, with `areas_title` as heading,
+  - `cta_text`, `cta_title`, `cta_button` fill the closing contact band.
+*/ -}}
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
+{{- $content := string .Content -}}
+{{- $firstPara := `(?s)^\s*<p>.*?</p>` -}}
+{{- $lead := index (findRE $firstPara $content 1) 0 | default "" -}}
+{{- $rest := replaceRE $firstPara "" $content 1 -}}
+
+<!-- Intro -->
+<section class="relative px-8 pt-12 pb-16 md:px-12 lg:pt-24 lg:pb-24" aria-labelledby="partner-title">
+  <div class="mx-auto max-w-4xl text-center">
+    <h1 id="partner-title" class="text-5xl text-gray-900 md:text-7xl">{{ .Title }}</h1>
+    {{ with $lead }}
+    <div class="partner-lead mx-auto mt-10 max-w-3xl font-serif text-xl leading-relaxed text-gray-800 md:text-2xl md:leading-relaxed">
+      {{ . | safeHTML }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+
+<!-- Body text and areas of work, on the signature curve -->
+<section class="relative" aria-labelledby="{{ with .Params.areas_title }}partner-areas-title{{ else }}partner-title{{ end }}">
+  {{ partial "curve.html" (dict "fill" "fill-blush" "shape" "left") }}
+  <div class="bg-blush px-8 pb-20 md:px-12 lg:pb-28">
+    <div class="mx-auto max-w-3xl">
+      {{ with trim $rest " \n" }}
+      <div class="prose prose-lg mx-auto max-w-none text-center prose-p:text-gray-800 prose-a:text-ink prose-strong:text-gray-900">
+        {{ . | safeHTML }}
+      </div>
+      {{ end }}
+
+      {{ with .Params.areas }}
+      <div class="mt-14 text-center">
+        {{ with $.Params.areas_title }}
+        <h2 id="partner-areas-title" class="text-2xl text-gray-900 md:text-3xl">{{ . }}</h2>
+        {{ end }}
+        <ul class="mt-8 flex flex-wrap justify-center gap-3" role="list">
+          {{ range . }}
+          <li class="flex items-center gap-3 rounded-full bg-cream px-5 py-3 text-base text-gray-900 shadow-sm ring-1 ring-ink/10 md:text-lg">
+            <span class="h-2 w-2 shrink-0 rounded-full bg-petal" aria-hidden="true"></span>
+            {{ . }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Call to action -->
+<section class="relative bg-blush" aria-labelledby="partner-cta-title">
+  {{ partial "curve.html" (dict "fill" "fill-maroon" "shape" "right") }}
+  <div class="bg-maroon px-8 pb-20 text-center text-white md:px-12 lg:pb-24">
+    <p class="text-lg text-blush">{{ .Params.cta_text | default (i18n "strings.project_help") }}</p>
+    <h2 id="partner-cta-title" class="mt-2 text-3xl md:text-5xl">{{ .Params.cta_title | default (i18n "strings.get_in_touch") }}</h2>
+    <a href="mailto:{{ $contactEmail }}"
+       class="mt-8 inline-flex rounded-full bg-cream px-6 py-3 text-lg text-ink transition hover:bg-blush focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-maroon">
+      {{ .Params.cta_button | default (i18n "strings.contact_us") }}
+    </a>
+  </div>
+</section>
+{{ end }}
