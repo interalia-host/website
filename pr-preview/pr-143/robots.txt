@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://interalia-host.github.io/website/pr-preview/pr-143/sitemap.xml

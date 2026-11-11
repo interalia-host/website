@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>interalia · Content Management</title>
+    <link rel="stylesheet" href="all.min.css">
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+        @font-face {
+            font-family: InterVariable;
+            font-style: normal;
+            font-weight: 100 900;
+            font-display: swap;
+            src: url("webfonts/InterVariable.woff2") format("woff2");
+        }
+
+        :root,
+        body,
+        h1, h2, h3, h4, h5, h6,
+        p, input, textarea, button, a {
+            font-family: "InterVariable", sans-serif !important;
+        }
+
+        /* ──────────────────────────────────────────────────────────────
+           Sidebar: icons and group headings.
+           Keys are the collection `name`s from config.yml (Decap renders
+           them as data-testid on each sidebar link). Icons are Font Awesome 6
+           Free Solid code points: https://fontawesome.com/search?ic=free&o=r
+           ────────────────────────────────────────────────────────────── */
+
+        aside a[data-testid] > span:first-child {
+            width: 24px;
+            margin-right: 10px !important;
+            display: inline-grid;
+            place-items: center;
+        }
+
+        aside a[data-testid] > span:first-child svg {
+            display: none;
+        }
+
+        aside a[data-testid] > span:first-child::before {
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 15px;
+            line-height: 1;
+            content: "\f15b"; /* file — fallback for new collections */
+        }
+
+        aside a[data-testid="home"] > span:first-child::before          { content: "\f015"; } /* house */
+        aside a[data-testid="about"] > span:first-child::before         { content: "\f05a"; } /* circle-info */
+        aside a[data-testid="services-page"] > span:first-child::before { content: "\f4be"; } /* hand-holding-heart */
+        aside a[data-testid="partner"] > span:first-child::before       { content: "\f2b5"; } /* handshake */
+        aside a[data-testid="page-settings"] > span:first-child::before { content: "\f0c9"; } /* bars (menu) */
+        aside a[data-testid="page"] > span:first-child::before          { content: "\f24e"; } /* scale-balanced */
+        aside a[data-testid="blog-posts"] > span:first-child::before    { content: "\f1ea"; } /* newspaper */
+        aside a[data-testid="reports"] > span:first-child::before       { content: "\f1c1"; } /* file-pdf */
+        aside a[data-testid="team"] > span:first-child::before          { content: "\f0c0"; } /* users */
+        aside a[data-testid="board"] > span:first-child::before         { content: "\f508"; } /* user-tie */
+        aside a[data-testid="settings"] > span:first-child::before      { content: "\f013"; } /* gear */
+        aside a[data-testid="i18n"] > span:first-child::before          { content: "\f1ab"; } /* language */
+
+        /* Group headings, inserted before the first collection of each group */
+        aside li:has(> a[data-testid="home"])::before,
+        aside li:has(> a[data-testid="blog-posts"])::before,
+        aside li:has(> a[data-testid="team"])::before,
+        aside li:has(> a[data-testid="settings"])::before {
+            display: block;
+            padding: 18px 20px 6px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #798291;
+        }
+
+        aside li:has(> a[data-testid="home"])::before       { content: "Pages"; padding-top: 4px; }
+        aside li:has(> a[data-testid="blog-posts"])::before { content: "Articles & reports"; }
+        aside li:has(> a[data-testid="team"])::before       { content: "People"; }
+        aside li:has(> a[data-testid="settings"])::before   { content: "Settings"; }
+
+        aside li:has(> a[data-testid="blog-posts"]),
+        aside li:has(> a[data-testid="team"]),
+        aside li:has(> a[data-testid="settings"]) {
+            margin-top: 6px;
+            border-top: 1px solid #eff0f4;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="decap-cms.js"></script>
+    <script src="hugo_shortcodes_decap_cms.js"></script>
+    <script src="preview-templates.js"></script>
+</body>
+
+</html>
