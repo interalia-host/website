@@ -1,13 +1,7 @@
 ---
 title: Partner
-weight: 3
-layout: partner
-type: partner
-navbar: true
-footer: false
-aliases:
-  - /network/
-description: Our collaboration with projects is built on trust, openness, and mutual respect. An overview of our approach and the areas of work we support.
+description: Our collaboration with projects is built on trust, openness, and
+  mutual respect. An overview of our approach and the areas of work we support.
 areas_title: Areas of work we support
 areas:
   - Democratic participation
@@ -15,9 +9,18 @@ areas:
   - Intercultural exchange and connection
   - A free and open internet
   - A just digital transformation
+  - Climate Justice
+  - Gender Equality
 cta_text: Do you have a project that we can help with?
 cta_title: Get in touch today
 cta_button: Contact us
+weight: 3
+navbar: true
+footer: false
+layout: partner
+type: partner
+aliases:
+  - /network/
 ---
 Our collaboration with projects is built on trust, openness, and mutual respect. This also means being thoughtful about how we communicate our partnerships publicly. Rather than featuring individual projects on our website, we focus on our overall approach and the areas of work we support.
 
