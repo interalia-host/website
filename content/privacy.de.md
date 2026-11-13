@@ -22,11 +22,23 @@ einer Kennung wie einem Namen, zu einer Kennnummer, zu Standortdaten, zu einer O
 
 **Logfiles**
 
-Wir erheben und speichern keine personenbezogenen Daten im Zuge Ihres Besuchs auf unserer Website. Ungeachtet dessen registriert der Webserver unseres Hosters jedoch automatisch die Zugriffe auf die Webseiten und insbesondere Ihre IP-Adresse. Darüber hinaus erstellt unser Hoster zur Aufrechterhaltung der Systemsicherheit sogenannte Logfiles. Diese Informationen bleiben für uns anonym. Ein Rückschluss auf eine Person ist daher nicht möglich. Die Logfiles enthalten folgende Informationen: IP-Adresse, Datum des Zugriffs, URL, abgerufene Inhalte, übertragene Informationen. Unser Hosting-Anbieter ist die netcup GmbH mit Sitz in der Daimlerstrasse 25, 76185 Karlsruhe, Deutschland.
+Wir erheben und speichern keine personenbezogenen Daten im Zuge Ihres Besuchs auf unserer Website. Ungeachtet dessen registriert der Webserver unseres Hosters jedoch automatisch die Zugriffe auf die Webseiten und insbesondere Ihre IP-Adresse. Darüber hinaus erstellt unser Hoster zur Aufrechterhaltung der Systemsicherheit sogenannte Logfiles. Diese Informationen bleiben für uns anonym. Ein Rückschluss auf eine Person ist daher nicht möglich. Die Logfiles enthalten folgende Informationen: IP-Adresse, Datum des Zugriffs, URL, abgerufene Inhalte, übertragene Informationen. Unsere Website wird bei GitHub Pages gehostet, einem Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Daten werden daher auch in den USA verarbeitet. Die Datenschutzerklärung von GitHub können Sie [hier](https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement) einsehen.
+
+**Schriftarten**
+
+Die auf dieser Website verwendeten Schriftarten werden zusammen mit der Website selbst ausgeliefert (lokal eingebunden). Beim Besuch unserer Website wird keine Verbindung zu externen Schriftanbietern wie Google Fonts hergestellt.
+
+**Spracheinstellung**
+
+Wenn Sie über die Sprachauswahl eine Sprache wählen, wird Ihre Auswahl im lokalen Speicher Ihres Browsers gespeichert, damit sich die Website beim nächsten Aufruf der Startseite in dieser Sprache öffnet. Diese Information verbleibt auf Ihrem Gerät, wird nicht an uns übermittelt und kann jederzeit über die Einstellungen Ihres Browsers gelöscht werden. Wir verwenden keine Cookies und keine Tracking- oder Analyse-Tools.
+
+**Teilen-Schaltflächen**
+
+Die Teilen-Schaltflächen unter unseren Artikeln (LinkedIn und Mastodon) sind einfache Links. Beim Aufruf einer Seite werden keine Daten an diese Dienste übertragen. Erst wenn Sie auf eine Schaltfläche klicken, werden Sie zu LinkedIn bzw. für Mastodon zum Dienst mastodonshare.com weitergeleitet, die Ihre Daten dann nach ihren eigenen Datenschutzbestimmungen verarbeiten. Die Schaltflächen „Email“ und „Link kopieren“ kontaktieren keinen externen Dienst.
 
 **Newsletter**
 
-Wenn Sie den auf der Webseite angebotenen Newsletter empfangen möchten, benötigen wir von Ihnen eine Email-Adresse sowie Informationen, die uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen Email-Adresse sind und mit dem Empfang des Newsletters einverstanden sind (Bestätigungsmail). Wir verwenden diese Daten ausschließlich für den Versand der angeforderten Informationen und geben sie nicht an Dritte weiter. Wir verwenden Buttondown für den Versand von Newslettern. Anbieter ist Buttondown, LLC, 2917 W Grace St. Richmond VA, 23221 United States.
+Wenn Sie den auf der Webseite angebotenen Newsletter empfangen möchten, benötigen wir von Ihnen eine Email-Adresse sowie Informationen, die uns die Überprüfung gestatten, dass Sie der Inhaber der angegebenen Email-Adresse sind und mit dem Empfang des Newsletters einverstanden sind (Bestätigungsmail). Wir verwenden diese Daten ausschließlich für den Versand der angeforderten Informationen und geben sie nicht an Dritte weiter. Wir verwenden Buttondown für den Versand von Newslettern. Anbieter ist Buttondown, LLC, 2917 W Grace St. Richmond VA, 23221 United States. Wenn Sie das Anmeldeformular für den Newsletter absenden, wird Ihre E-Mail-Adresse direkt aus Ihrem Browser an Buttondown übermittelt; dabei werden Daten in die USA übertragen.
 
 Die Rechtsgrundlage für die Datenverarbeitung ist Art. 6 Abs.. 1 lit. a) GDPR. Der Empfänger der Daten ist Buttondown, LLC. Die im Rahmen Ihrer Einwilligung zum Zwecke des Newsletters von uns gespeicherten Daten werden von uns bis zu Ihrer Abmeldung vom Newsletter gespeichert und nach Ihrer Abmeldung vom Newsletter von unseren Servern sowie von den Servern der Buttondown, LLC gelöscht.
 

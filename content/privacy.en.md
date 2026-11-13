@@ -19,13 +19,25 @@ According to the GDPR, personal data means “any information relating to an ide
 
 **Logfiles**
 
-We do not collect and store any personal data in the course of your visit to our website. Notwithstanding the above basic facts, however, the web server of our hoster automatically registers accesses to the websites and in particular your IP address. In addition, our hoster creates so-called log files to maintain system security. This information remains anonymous for us. It is therefore not possible to draw conclusions about a person. The log files contain the following information: IP-address, date of access, URL, contents accessed, transmitted information.
+We do not collect and store any personal data in the course of your visit to our website. Notwithstanding the above basic facts, however, the web server of our hoster automatically registers accesses to the websites and in particular your IP address. In addition, our hoster creates so-called log files to maintain system security. This information remains anonymous for us. It is therefore not possible to draw conclusions about a person. The log files contain the following information: IP-address, date of access, URL, contents accessed, transmitted information. Our website is hosted by GitHub Pages, a service of GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States. Data is therefore also processed in the United States. You can find GitHub's privacy statement [here](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+
+**Fonts**
+
+The fonts used on this website are delivered together with the website itself (self-hosted). No connection is made to external font providers such as Google Fonts when you visit our website.
+
+**Language preference**
+
+If you choose a language using the language switcher, your choice is saved in your browser's local storage, so that the website opens in that language the next time you visit its start page. This information stays on your device, is not transmitted to us, and you can delete it at any time in your browser settings. We do not use cookies or any tracking or analytics tools.
+
+**Share buttons**
+
+The share buttons below our articles (LinkedIn and Mastodon) are simple links. No data is transmitted to these services when you load a page. Only when you click a button are you taken to LinkedIn or, for Mastodon, to the service mastodonshare.com, which then process your data according to their own privacy policies. The "Email" and "Copy link" buttons do not contact any external service.
 
 **Newsletter**
 
 If you would like to receive the newsletter offered on the website, we require an email address from you as well as information from our verification that you are the owner the specified email address and agree to receive the newsletter (confirmation email). We use this data exclusively for sending the requested information and do not pass it on to third parties.
 
-We use [buttondown](https://buttondown.com/legal/privacy) for sending newsletters. The provider is Buttondown, LLC, 2917 W Grace St. Richmond VA, 23221 United States.
+We use [buttondown](https://buttondown.com/legal/privacy) for sending newsletters. The provider is Buttondown, LLC, 2917 W Grace St. Richmond VA, 23221 United States. When you submit the newsletter sign-up form, your email address is sent directly from your browser to Buttondown; this involves a transfer of data to the United States.
 
 The legal basis for the data processing is Art. 6 para. 1 lit. a) GDPR. The recipient of the data is Buttondown, LLC. The data stored by us as part of your consent for the purpose of the newsletter will be stored by us until you unsubscribe from the newsletter and will be deleted from our servers as well as from the servers of Buttondown, LLC after you unsubscribe from the newsletter.
 
