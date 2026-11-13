@@ -1,0 +1,2 @@
+{{- $minutes := math.Max 1 (math.Ceil (div (float .WordCount) 200)) | int -}}
+<span class="reading-time">{{ $minutes }} {{ i18n "strings.min_read" }}</span>

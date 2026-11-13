@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en-us" dir="ltr" itemscope itemtype="http://schema.org/WebPage">
-
-<head>
-    {{ partial "head.html" . }}
-</head>
-
-<body class="flex min-h-screen flex-col bg-gray-50">
-    <a class="sr-only focus:not-sr-only" href="#content">Skip to content</a>
-
-    {{ partial "nav.html" . }}
-
-    <main id="content" class="grid grow items-center px-8 py-16">
-        <section class="container mx-auto max-w-7xl text-center">
-            <img src="/media/images/404.svg" alt="{{ i18n "strings.404_alt" }}" class="mx-auto my-8 w-1/2">
-            <p>{{ i18n "strings.sorry_not_found" }}</p>
-            <p><a class="underline hover:no-underline" href="/">{{ i18n "strings.return_homepage" }}</a></p>
-        </section>
-    </main>
-
-    {{ partial "footer.html" . }}
-    {{ partial "javascript.html" . }}
-</body>
-</html>
+{{ define "main" }}
+<section class="grid min-h-[60vh] place-items-center px-8 py-16">
+    <div class="mx-auto max-w-xl text-center">
+        <img src="{{ "media/images/404.svg" | relURL }}" alt="{{ i18n "strings.404_alt" }}" class="mx-auto mb-8 w-64" loading="lazy" decoding="async">
+        <h1 class="text-6xl font-bold text-gray-900">404</h1>
+        <p class="mt-4 text-xl text-gray-600">{{ i18n "strings.sorry_not_found" }}</p>
+        <a href="{{ .Site.Home.Permalink }}" 
+           class="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-white transition hover:bg-cocoa focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            {{ i18n "strings.return_homepage" }}
+        </a>
+    </div>
+</section>
+{{ end }}

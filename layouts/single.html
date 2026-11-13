@@ -1,0 +1,56 @@
+{{ define "main" }}
+{{- $isArticle := eq .Section "reports" -}}
+<section class="container mx-auto max-w-4xl px-8 py-8">
+    <article class="prose prose-lg mx-auto w-full prose-p:text-gray-700 prose-headings:text-gray-900 prose-a:text-ink prose-a:underline hover:prose-a:no-underline prose-strong:text-gray-900 prose-blockquote:border-l-ink prose-blockquote:text-gray-600">
+
+        {{/* Article Header */}}
+        <header class="mb-8 not-prose">
+            <h1 class="text-3xl font-bold text-gray-900 md:text-4xl lg:text-5xl">{{ .Title }}</h1>
+
+            {{/* Meta info for articles: year only, no full date */}}
+            {{ if $isArticle }}
+            <div class="mt-4 flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                {{ if not .Date.IsZero }}
+                <time datetime="{{ .Date.Format "2006" }}">{{ .Date.Year }}</time>
+                <span aria-hidden="true">·</span>
+                {{ end }}
+                {{ with .Params.author }}
+                <span>{{ . }}</span>
+                <span aria-hidden="true">·</span>
+                {{ end }}
+                {{ partial "reading-time.html" . }}
+            </div>
+            {{ end }}
+
+            {{/* Featured image */}}
+            {{ with .Params.image }}
+            <figure class="mt-8">
+                {{ partial "img.html" (dict "src" . "alt" "" "class" "h-auto w-full rounded-xl" "sizes" "(min-width: 896px) 832px, 100vw" "loading" "eager" "fetchpriority" "high") }}
+            </figure>
+            {{ end }}
+
+            {{/* Description */}}
+            {{ with .Params.description }}
+            <p class="mt-6 text-lg text-gray-600">{{ . }}</p>
+            {{ end }}
+        </header>
+
+        {{/* Table of Contents */}}
+        {{ partial "toc.html" . }}
+
+        {{/* Article Content */}}
+        {{ .Content }}
+    </article>
+
+    {{ if $isArticle }}
+    {{/* These are OUTSIDE the prose container to avoid style leaks */}}
+    <div class="mx-auto mt-12 max-w-none border-t border-gray-200 pt-8">
+        {{ partial "share-buttons.html" . }}
+    </div>
+
+    {{ partial "newsletter-cta.html" . }}
+
+    {{ partial "related-posts.html" . }}
+    {{ end }}
+</section>
+{{ end }}

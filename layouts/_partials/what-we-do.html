@@ -1,0 +1,23 @@
+<section class="lg:py-16 py-8 px-8 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-10">
+        {{ $dataFile := printf "what-we-do.%s" .Lang }}
+        {{ $data := index hugo.Data $dataFile }}
+
+        <div class="grid place-items-start md:col-span-5">
+            <h2 class="text-3xl md:text-5xl text-gray-900">{{ $data.title }}</h2>
+            <p class="mt-4 text-gray-700">{{ $data.subtitle }}</p>
+            {{ partial "img.html" (dict "src" ($data.image | default "/media/images/what-we-do-flower.png") "alt" "" "class" "mx-auto mt-10 h-auto w-full max-w-3xs" "sizes" "256px" "widths" (slice 300 600)) }}
+        </div>
+
+        <div class="hidden md:block md:col-span-1"></div>
+
+        <div class="space-y-8 md:col-span-6">
+            {{ range $data.items }}
+            <div>
+                <h3 class="text-2xl font-bold mb-2">{{ .title }}</h3>
+                <p class="text-gray-700">{{ .description }}</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
+<header>
+    <section class="relative lg:py-36 py-16 flex items-center justify-center px-8 md:px-12">
+      <div class="md:max-w-5xl text-center relative z-10">
+        {{ $dataFile := printf "hero.%s" .Lang }}
+        {{ $data := index hugo.Data $dataFile }}
+        <h1 class="text-5xl md:text-[90px] text-gray-900 leading-tight">
+          {{ $data.title | safeHTML }}
+        </h1>
+    
+        <p class="mt-4 font-serif text-xl text-gray-700">
+          {{ $data.subtitle | safeHTML }}
+        </p>
+    
+        <!-- CTA Buttons -->
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+          <a href="mailto:{{ $contactEmail }}"
+             class="px-6 py-3 bg-ink hover:bg-cocoa text-white rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 transition"
+>
+            {{ $data.primary_button | default (i18n "strings.contact_us") }}
+          </a>
+          <a href="{{ "about/" | relLangURL }}" 
+             class="px-6 py-3 bg-blush-light hover:bg-blush text-gray-800 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 transition"
+>
+            {{ $data.secondary_button | default (i18n "strings.our_mission") }}
+          </a>
+        </div>
+      </div>
+    </section>
+</header>

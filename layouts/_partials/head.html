@@ -1,0 +1,44 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{{/* SEO Meta Tags */}}
+<meta name="author" content="{{ if .Params.author }}{{ .Params.author }}{{ else }}{{ .Site.Params.contact.name | default "interalia gGmbH" }}{{ end }}">
+{{ with .Site.Params.keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
+<meta name="robots" content="{{ if hugo.IsProduction }}index, follow{{ else }}noindex, nofollow{{ end }}">
+<meta name="theme-color" content="#FCFCF0">
+<meta name="color-scheme" content="light">
+
+{{/* Preloading Fonts */}}
+<link rel="preload" href="{{ "fonts/platypi/platypi-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="{{ "fonts/dmsans/dm-sans-latin-wght-normal.woff2" | absURL }}" as="font" type="font/woff2" crossorigin="anonymous">
+
+{{/* Title */}}
+{{ block "title" . }}
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ with (index hugo.Data (printf "hero.%s" .Lang)).title | default .Site.Params.description }} — {{ . | plainify | htmlUnescape }}{{ end }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+{{ end }}
+
+{{/* CSS */}}
+{{- /* Tailwind CSS, compiled by Hugo itself (css.TailwindCSS runs the Tailwind CLI from node_modules).
+     Sources to scan are declared with @source in assets/tailwind.css. */ -}}
+{{ $css := resources.Get "tailwind.css" | css.TailwindCSS (dict "minify" (not hugo.IsDevelopment)) | resources.Copy "style.css" }}
+{{ if hugo.IsProduction }}
+  {{ $css = $css | resources.Fingerprint "sha256" }}
+{{ end }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- /* Unfingerprinted copy for the CMS live preview (static/admin/preview-templates.js).
+     Published next to style.css so its relative font URLs resolve. */}}
+{{- if .IsHome }}{{ $_ := (resources.Get "tailwind.css" | css.TailwindCSS (dict "minify" true) | resources.Copy "preview.css").RelPermalink }}{{ end }}
+
+{{/* Favicons */}}
+{{- partial "favicons.html" . }}
+
+{{/* RSS Feed */}}
+{{ with .OutputFormats.Get "rss" -}}
+{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+{{/* Search & social sharing */}}
+{{ partial "seo.html" . }}
+
+{{/* JSON-LD Structured Data */}}
+{{ partial "jsonld.html" . }}

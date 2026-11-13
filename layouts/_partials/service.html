@@ -1,0 +1,23 @@
+<section class="lg:py-16 py-8 px-8 md:px-12">
+    <div class="max-w-5xl mx-auto">
+      <div class="relative bg-sage p-8 md:p-12 rounded-2xl">
+        {{ $dataFile := printf "service-card.%s" .Lang }}
+        {{ $data := index hugo.Data $dataFile }}
+        <div class="absolute inset-0 bg-no-repeat bg-contain opacity-10 lg:opacity-100" style="background-image: url('{{ partial "img-src.html" (dict "src" ($data.image | default "/media/images/service-leaf.png") "width" 900) }}');"></div>
+        <div class="relative z-10 lg:ms-65">
+          <h2 class="text-4xl md:text-5xl text-gray-900">{{ $data.title }}</h2>
+          <div class="mt-4 space-y-4 text-gray-800">
+            {{ $data.subtitle | markdownify }}
+          </div>
+  
+          <div class="mt-6 flex justify-end">
+            <a href="{{ "service/" | relLangURL }}" 
+               class="px-6 py-3 bg-blush-light hover:bg-blush text-gray-800 rounded-full text-lg focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 transition"
+               aria-label="{{ $data.label }}">
+               {{ $data.button }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>

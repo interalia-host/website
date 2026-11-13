@@ -1,0 +1,6 @@
+{{- /* Returns the people in data/<set>/ for the given language, e.g. (dict "set" "team" "lang" "de") */ -}}
+{{- $people := slice -}}
+{{- range $k, $v := index hugo.Data .set -}}
+  {{- if hasSuffix $k (print "." $.lang) }}{{ $people = $people | append $v }}{{ end -}}
+{{- end -}}
+{{- return $people -}}

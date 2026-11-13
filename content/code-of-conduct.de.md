@@ -1,4 +1,5 @@
 ---
+layout: single
 title: Code of Conduct
 navbar: false
 footer: true

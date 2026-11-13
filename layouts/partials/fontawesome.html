@@ -1,6 +1,0 @@
-{{ $fname:= print "assets/icons/" . ".svg" }}
-{{- $svg := readFile $fname -}}
-{{- $commentStrippedSvg := replaceRE "<!--[^>]*-->" "" $svg -}}
-{{- $svgWithSize := replaceRE `<svg([^>]*)>` `<svg$1 class='w-6 h-6'>` $commentStrippedSvg -}}
-{{- $filledPathSvg := replace $svgWithSize "<path" "<path fill='currentColor' aria-hidden='true'" -}}
-{{ $filledPathSvg | safeHTML }}

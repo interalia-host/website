@@ -1,0 +1,17 @@
+{{- /*
+  {{< figure src="/media/uploads/x.png" alt="…" caption="…" link="…" class="…" >}}
+  Overrides Hugo's built-in figure shortcode so images are optimised automatically.
+*/ -}}
+{{- $alt := .Get "alt" | default (.Get "caption" | markdownify | plainify) | default "" -}}
+<figure class="my-6 {{ .Get "class" }}">
+  {{- with .Get "link" }}<a href="{{ . }}"{{ with $.Get "target" }} target="{{ . }}"{{ end }}{{ with $.Get "rel" }} rel="{{ . }}"{{ end }}>{{ end -}}
+  {{ partial "img.html" (dict "src" (.Get "src") "alt" $alt "class" "mx-auto h-auto rounded-lg" "sizes" "(min-width: 896px) 832px, 100vw") }}
+  {{- if .Get "link" }}</a>{{ end -}}
+  {{- if or (.Get "title") (.Get "caption") (.Get "attr") }}
+  <figcaption class="mt-2 text-center text-sm text-gray-600">
+    {{- with .Get "title" }}<strong>{{ . }}</strong> {{ end -}}
+    {{- .Get "caption" | markdownify -}}
+    {{- with .Get "attr" }} — {{ with $.Get "attrlink" }}<a href="{{ . }}">{{ end }}{{ $.Get "attr" | markdownify }}{{ if $.Get "attrlink" }}</a>{{ end }}{{ end -}}
+  </figcaption>
+  {{- end }}
+</figure>

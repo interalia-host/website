@@ -1,0 +1,29 @@
+# Weekly update PRs for pinned GitHub Actions (including the SHA-pinned deploy
+# and comment actions) and npm dev dependencies. Each PR gets its own preview.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      actions:
+        patterns: ['*']
+    commit-message:
+      prefix: 'CI'
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    groups:
+      tailwind:
+        patterns: ['tailwindcss', '@tailwindcss/*', 'prettier-plugin-tailwindcss']
+      dev-tools:
+        patterns: ['*']
+        exclude-patterns: ['tailwindcss', '@tailwindcss/*', 'prettier-plugin-tailwindcss']
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'Deps'

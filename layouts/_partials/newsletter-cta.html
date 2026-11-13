@@ -1,0 +1,11 @@
+<aside class="my-8 rounded-2xl bg-blush p-8">
+  <div class="mx-auto max-w-xl text-center">
+    <h2 class="text-2xl font-bold text-gray-900">{{ i18n "strings.newsletter_cta_title" | default "Stay updated" }}</h2>
+    <p class="mt-2 text-gray-700">{{ i18n "strings.newsletter_cta_text" | default "Subscribe to our newsletter to receive the latest news and updates from interalia." }}</p>
+    
+    {{ partial "newsletter-form.html" (dict "variant" "card" "id" "newsletter-email-cta") }}
+    
+    <p class="mt-3 text-xs text-gray-600">{{ i18n "strings.newsletter_privacy" | default "We respect your privacy. Unsubscribe at any time." }}</p>
+  </div>
+</aside>
+

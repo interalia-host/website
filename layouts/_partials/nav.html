@@ -1,0 +1,75 @@
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
+{{- $currentURL := .RelPermalink -}}
+{{- $navPages := sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" -}}
+{{- $page := . -}}
+
+{{- define "_partials/nav-languages" -}}
+  {{- if hugo.IsMultilingual }}
+  <ul class="flex items-center gap-4" aria-label="{{ i18n "strings.language" }}" role="list">
+    {{- range .AllTranslations }}
+    <li>
+      <a href="{{ .Permalink }}" lang="{{ .Lang }}" hreflang="{{ .Lang }}"
+         onclick="try { localStorage.setItem('lang', '{{ .Lang }}') } catch (e) {}"
+         class="rounded py-3 text-sm font-medium transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink {{ if eq .Lang $.Lang }}text-zinc-900{{ else }}text-zinc-500 hover:text-zinc-700{{ end }}"
+         {{ if eq .Lang $.Lang }}aria-current="true"{{ end }}>
+        <span aria-hidden="true">{{ upper .Lang }}</span>
+        <span class="sr-only">{{ .Language.Label }}</span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
+{{- end -}}
+
+<div x-data="{ open: false }" @keydown.escape.window="if (open) { open = false; $refs.toggle.focus() }" class="bg-cream">
+  <div class="relative mx-auto flex items-center justify-around">
+    <button type="button" x-ref="toggle" @click="open = !open"
+            :aria-expanded="open.toString()" aria-expanded="false" aria-controls="mobile-menu"
+            class="absolute left-8 rounded text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-ink lg:hidden">
+      <span class="sr-only">{{ i18n "strings.toggle_menu" }}</span>
+      <span x-show="!open" class="text-3xl" aria-hidden="true">☰</span>
+      <span x-show="open" x-cloak class="text-3xl" aria-hidden="true">✕</span>
+    </button>
+
+    <a href="{{ .Site.Home.Permalink }}" class="rounded p-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink">
+      <img src="{{ "media/logos/interalia-horizontal-logo.svg" | absURL }}" alt="{{ i18n "strings.interalia" }}" class="h-12 w-auto" width="160" height="48" loading="eager" decoding="async">
+    </a>
+
+    <nav class="hidden items-center space-x-8 lg:flex" aria-label="{{ i18n "strings.footer_primary_nav" }}">
+      {{ range $navPages }}
+        {{- $navURL := .RelPermalink -}}
+        {{- $isActive := or (eq $currentURL $navURL) (and (ne $navURL "/") (hasPrefix $currentURL $navURL)) -}}
+        <a href="{{ .Permalink }}"
+           class="relative rounded py-3 lowercase focus:outline-none focus-visible:ring-2 focus-visible:ring-ink{{ if $isActive }} font-semibold{{ end }}"
+           {{ if $isActive }}aria-current="page"{{ end }}>
+          {{ .Title }}
+          {{ if $isActive }}<span class="absolute bottom-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-ink" aria-hidden="true"></span>{{ end }}
+        </a>
+      {{ end }}
+
+      {{ partial "nav-languages" $page }}
+
+      <a href="mailto:{{ $contactEmail }}"
+         class="flex items-center rounded-full bg-ink px-5 py-2 text-white transition hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-cream">
+        {{ i18n "strings.contact_us" }}
+      </a>
+    </nav>
+  </div>
+
+  <div x-show="open" x-cloak x-transition id="mobile-menu" class="lg:hidden">
+    <nav class="flex flex-col space-y-2 px-8 py-4" aria-label="{{ i18n "strings.footer_primary_nav" }}">
+      {{ range $navPages }}
+        {{- $navURL := .RelPermalink -}}
+        {{- $isActive := or (eq $currentURL $navURL) (and (ne $navURL "/") (hasPrefix $currentURL $navURL)) -}}
+        <a href="{{ .Permalink }}"
+           class="flex items-center gap-2 rounded py-2 font-sans lowercase focus:outline-none focus-visible:ring-2 focus-visible:ring-ink{{ if $isActive }} font-semibold{{ end }}"
+           {{ if $isActive }}aria-current="page"{{ end }}>
+          {{ if $isActive }}<span class="h-2 w-2 rounded-full bg-ink" aria-hidden="true"></span>{{ end }}
+          {{ .Title }}
+        </a>
+      {{ end }}
+      <a href="mailto:{{ $contactEmail }}" class="block rounded py-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ink">{{ i18n "strings.contact_us" }}</a>
+      {{ partial "nav-languages" $page }}
+    </nav>
+  </div>
+</div>

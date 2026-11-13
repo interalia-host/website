@@ -1,8 +1,8 @@
-+++
-weight = 2
-title = "Services"
-layout = "service"
-type = "service"
-navbar = true
-footer = false
-+++
+---
+title: Services
+weight: 2
+layout: service
+type: service
+navbar: true
+footer: false
+---

@@ -1,0 +1,38 @@
+{{- $contactEmail := (index .Site.Params.contact.emails 0).address | default "hello@interalia.host" -}}
+{{- $intro := index hugo.Data (printf "team-intro.%s" .Lang) -}}
+{{- $lang := .Lang -}}
+
+<!-- The change we want to see -->
+<section class="relative mt-16 lg:mt-24" aria-labelledby="team-intro-title">
+  {{ partial "curve.html" (dict "fill" "fill-blush" "shape" "right") }}
+  <div class="bg-blush px-8 pb-16 md:px-12 lg:pb-24">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 id="team-intro-title" class="text-4xl md:text-6xl">{{ $intro.title }}</h2>
+      <p class="mx-auto mt-4 mb-10 text-lg">{{ $intro.text }}</p>
+      <a href="mailto:{{ $contactEmail }}"
+         class="inline-flex rounded-full bg-ink px-6 py-3 text-lg text-white transition hover:bg-cocoa focus:outline-none focus-visible:ring-2 focus-visible:ring-ink focus-visible:ring-offset-2 focus-visible:ring-offset-blush">
+        {{ $intro.button | default (i18n "strings.contact_us") }}
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Team and advisory council -->
+<section class="relative bg-blush" aria-labelledby="team-title">
+  {{ partial "curve.html" (dict "fill" "fill-maroon" "shape" "left") }}
+  <div class="bg-maroon px-8 pb-20 text-white md:px-12 lg:pb-28">
+    <h2 id="team-title" class="text-center text-3xl">{{ i18n "strings.our_team" }}</h2>
+    <div class="mx-auto mt-12 grid max-w-4xl grid-cols-1 gap-12 sm:grid-cols-2">
+      {{ range sort (partial "team-members.html" (dict "set" "team" "lang" $lang)) "order" }}
+        {{ partial "person-card.html" . }}
+      {{ end }}
+    </div>
+
+    <h2 class="mt-20 text-center text-3xl">{{ i18n "strings.advisory_council" }}</h2>
+    <div class="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-3">
+      {{ range sort (partial "team-members.html" (dict "set" "board" "lang" $lang)) "order" }}
+        {{ partial "person-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>

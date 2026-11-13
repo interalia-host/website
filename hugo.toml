@@ -2,8 +2,9 @@ title = "interalia"
 baseURL = "https://interalia.host"
 
 defaultContentLanguage = "en"
-languageCode = "en-us"
+locale = "en-US"
 defaultContentLanguageInSubdir = true
+disableDefaultLanguageRedirect = true
 
 rssLimit = 50
 
@@ -16,7 +17,7 @@ publishDir   = "public"
 buildDrafts  = false
 buildFuture  = false
 buildExpired = false
-canonifyURLs = true
+canonifyURLs = false
 
 enableRobotsTXT = true
 enableGitInfo   = false
@@ -25,6 +26,8 @@ enableMissingTranslationPlaceholders = true
 disableRSS     = false
 disableSitemap = false
 disable404     = false
+# No categories/tags are used, so don't build empty taxonomy pages
+disableKinds   = ["taxonomy", "term"]
 disableHugoGeneratorInject = true
 
 pluralizeListTitles = false
@@ -42,8 +45,6 @@ summaryLength = 70
 [outputs]
   home = ["HTML", "RSS"]
   section = ["HTML", "RSS"]
-  taxonomy = ["HTML"]
-  term = ["HTML"]
 
 [markup]
   [markup.goldmark]
@@ -56,24 +57,51 @@ summaryLength = 70
       startLevel = 2
       endLevel = 4
 
-[taxonomies]
-  category = "categories"
-  tag = "tags"
+# Articles live in content/reports/ but have no overview page of their own:
+# they are listed on the Resources page, so don't render an empty /reports/ page.
+[[cascade]]
+  [cascade.build]
+    render = "never"
+    list = "always"
+  [cascade.target]
+    path = "/reports"
+    kind = "section"
+
+# Expose uploaded media to Hugo Pipes so images can be resized and converted
+# to WebP at build time (see layouts/_partials/img.html). The originals are
+# still published unchanged via the static mount.
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static/media"
+    target = "assets/media"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[imaging]
+  resampleFilter = "Lanczos"
+  [imaging.webp]
+    quality = 82
+    hint = "picture"
+
 
 
 [languages]
   [languages.en]
-    languageName = "English"
+    label = "English"
+    locale = "en-US"
     weight = 1
   [languages.en.params]
-    languageName = "English"
     direction = "ltr"
 
   [languages.de]
-    languageName = "Deutsch"
+    label = "Deutsch"
+    locale = "de-DE"
     weight = 2
   [languages.de.params]
-    languageName = "Deutsch"
     direction = "ltr"
 
 [privacy]
@@ -91,3 +119,15 @@ summaryLength = 70
   [privacy.youtube]
     disable = false
     privacyEnhanced = true
+
+# Rebuild the Tailwind CSS when a file it scans for classes changes
+# (see @source in assets/tailwind.css); Hugo caches it otherwise.
+[build]
+  [[build.cachebusters]]
+    source = '(layouts|content|data)[\\/].*|preview-templates\.js$'
+    target = 'css'
+
+# Allow Hugo to run the Tailwind CLI (css.TailwindCSS in layouts/_partials/head.html);
+# the other entries are Hugo's defaults.
+[security.exec]
+  allow = ['^(dart-)?sass$', '^go$', '^git$', '^node$', '^postcss$', '^tailwindcss$']

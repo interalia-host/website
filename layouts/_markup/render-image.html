@@ -1,0 +1,7 @@
+{{- /* Markdown images: ![alt](src "caption") — resized and converted to WebP automatically */ -}}
+<figure class="my-6">
+  {{ partial "img.html" (dict "src" .Destination "alt" .Text "class" "mx-auto h-auto rounded-lg" "sizes" "(min-width: 896px) 832px, 100vw") }}
+  {{- with .Title }}
+  <figcaption class="mt-2 text-center text-sm text-gray-600">{{ . }}</figcaption>
+  {{- end }}
+</figure>

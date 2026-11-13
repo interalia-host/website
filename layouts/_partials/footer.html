@@ -1,0 +1,43 @@
+<footer class="relative bg-cream py-16" role="contentinfo">
+    <div class="container mx-auto flex flex-col items-start justify-between space-y-6 px-8 md:flex-row md:space-y-0">
+        
+        <section class="flex flex-col items-start">
+            <a href="{{ .Site.Home.Permalink }}" aria-label="{{ i18n "strings.return_homepage" }}">
+                <img class="h-16 w-auto" src="{{ "media/logos/interalia-icon-logo.svg" | absURL }}" alt="" width="64" height="64" loading="lazy" decoding="async">
+            </a>
+
+            <h2 id="newsletter-signup" class="mt-10 text-2xl">{{ i18n "strings.join_newsletter" }}</h2>
+            {{ partial "newsletter-form.html" (dict "variant" "footer" "id" "newsletter-email" "labelledby" "newsletter-signup") }}
+        </section>
+
+        <section aria-labelledby="footer-social-links" class="flex flex-row space-y-4 space-x-20 lg:w-auto w-full lg:pt-0 pt-10">
+
+            <nav aria-labelledby="footer-primary-menu" class="">
+                <h2 id="footer-primary-menu" class="sr-only">{{ i18n "strings.footer_primary_nav" }}</h2>
+                <ul class="grid grid-flow-row space-y-4 font-light">
+                    {{ range sort (where .Site.RegularPages "Params.navbar" true) "Params.weight" "asc" }}
+                        <li><a href="{{ .RelPermalink }}" class="lowercase hover:underline">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+
+            <h2 id="footer-social-links" class="sr-only">{{ i18n "strings.footer_social_legal" }}</h2>
+
+            <nav aria-labelledby="footer-secondary-menu">
+                <h2 id="footer-secondary-menu" class="sr-only">{{ i18n "strings.footer_secondary_nav" }}</h2>
+                <ul class="grid grid-flow-row space-y-4 font-light">
+                    {{ range sort (where .Site.RegularPages "Params.footer" true) "Params.weight" "asc" }}
+                        <li><a href="{{ .RelPermalink }}" class="lowercase hover:underline">{{ .Title }}</a></li>
+                    {{ end }}
+                {{- with .Site.Params.social }}
+                {{- range . }}
+                    <li><a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="lowercase hover:underline">
+                        {{ .name }}<span class="sr-only"> ({{ i18n "strings.opens_new_tab" }})</span>
+                    </a></li>
+                {{- end }}
+                {{- end -}}                
+                </ul>
+            </nav>
+        </section>
+    </div>
+</footer>

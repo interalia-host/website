@@ -1,4 +1,10 @@
-name: PR Preview
+name: PR preview
+
+# Builds every pull request (including Decap CMS editorial-workflow drafts) to
+# https://interalia.host/pr-preview/pr-<number>/ by publishing it into
+# gh-pages/pr-preview/, posts the link as a PR comment and as a
+# "deploy/preview" commit status (used by the CMS "View preview" button),
+# and removes the preview when the PR is closed.
 
 on:
   pull_request:
@@ -7,31 +13,45 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  statuses: write
 
-concurrency: preview-${{ github.ref }}
+concurrency:
+  group: preview-${{ github.event.number }}
+  cancel-in-progress: false
+
+env:
+  PREVIEW_DIR: pr-preview/pr-${{ github.event.number }}
+  PREVIEW_URL: https://interalia.host/pr-preview/pr-${{ github.event.number }}/
 
 jobs:
   build-preview:
-    if: github.event.action != 'closed'
-    runs-on: ubuntu-latest
+    # Forks and Dependabot only get a read-only token, so they can't publish a
+    # preview; they get the build-check job below instead.
+    if: >-
+      github.event.action != 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-26.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
 
       - name: Install Node dependencies
         run: npm ci
 
       - name: Cache Hugo
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
-          path: /tmp/hugo_cache
-          key: ${{ runner.os }}-hugo-pr-${{ github.event.number }}-${{ hashFiles('**/*.html', '**/*.md') }}
+          path: |
+            /tmp/hugo_cache
+            resources/_gen
+          key: ${{ runner.os }}-hugo-pr-${{ github.event.number }}-${{ hashFiles('layouts/**', 'content/**', 'static/media/**', 'hugo.toml') }}
           restore-keys: |
             ${{ runner.os }}-hugo-pr-${{ github.event.number }}-
             ${{ runner.os }}-hugo-
@@ -39,36 +59,100 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.154.3'
+          hugo-version: '0.169.0'
           extended: true
 
-      - name: Build Tailwind CSS
-        run: npm run css:build
-
       - name: Build Hugo site
-        run: hugo --minify --baseURL "https://interalia-host.github.io/website/pr-preview/pr-${{ github.event.number }}/"
+        run: hugo --minify --baseURL "$PREVIEW_URL"
         env:
           HUGO_CACHEDIR: /tmp/hugo_cache
+          HUGO_ENVIRONMENT: preview
+          HUGO_PARAMS_PREVIEWPR: ${{ github.event.number }}
 
-      - name: Deploy PR Preview
-        uses: rossjrw/pr-preview-action@v1
+      - name: Publish preview to gh-pages
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
         with:
-          source-dir: ./public/
-          preview-branch: gh-pages
-          umbrella-dir: pr-preview
-          action: auto
+          branch: gh-pages
+          folder: public
+          target-folder: ${{ env.PREVIEW_DIR }}
+          clean: true
+          force: false
+          attempt-limit: 5
+          commit-message: "Preview PR #${{ github.event.number }} (${{ github.event.pull_request.head.sha }})"
 
-  cleanup:
-    if: github.event.action == 'closed'
-    runs-on: ubuntu-latest
+      - name: Set deploy/preview commit status
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}" \
+            -f state=success \
+            -f context=deploy/preview \
+            -f description="Preview published (live about a minute after this check)" \
+            -f target_url="$PREVIEW_URL"
+
+      - name: Comment preview link
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          header: pr-preview
+          message: |
+            **Preview:** ${{ env.PREVIEW_URL }}
+            Built from ${{ github.event.pull_request.head.sha }}. GitHub Pages usually publishes it within a minute or two.
+
+  remove-preview:
+    if: >-
+      github.event.action == 'closed' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Create empty folder
+        run: mkdir -p empty
+
+      - name: Remove preview from gh-pages
+        uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
+        with:
+          branch: gh-pages
+          folder: empty
+          target-folder: ${{ env.PREVIEW_DIR }}
+          clean: true
+          force: false
+          attempt-limit: 5
+          commit-message: "Remove preview for PR #${{ github.event.number }}"
+
+      - name: Update preview comment
+        uses: marocchino/sticky-pull-request-comment@5770ad5eb8f42dd2c4f34da00c94c5381e49af88 # v3.0.5
+        with:
+          header: pr-preview
+          message: |
+            Preview removed because the pull request was closed.
+
+  build-check:
+    # Build without publishing for PRs that can't get a preview.
+    if: >-
+      github.event.action != 'closed' &&
+      (github.event.pull_request.head.repo.full_name != github.repository ||
+       github.actor == 'dependabot[bot]')
+    runs-on: ubuntu-26.04
+    permissions:
+      contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Cleanup PR Preview
-        uses: rossjrw/pr-preview-action@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v7
         with:
-          source-dir: ./public/
-          preview-branch: gh-pages
-          umbrella-dir: pr-preview
-          action: remove
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: '0.169.0'
+          extended: true
+
+      - name: Build site
+        run: npm run build

@@ -1,0 +1,4 @@
+{{- /* {{< image src="/media/uploads/x.png" alt="…" position="…" >}} — optimised automatically */ -}}
+{{- with .Get "src" -}}
+{{ partial "img.html" (dict "src" . "alt" ($.Get "alt" | plainify) "class" (printf "h-auto %s" ($.Get "position" | default "left")) "sizes" "(min-width: 896px) 832px, 100vw") }}
+{{- end -}}
