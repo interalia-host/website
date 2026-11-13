@@ -1,8 +1,19 @@
+# Decap CMS configuration — https://decapcms.org/docs/configuration-options/
+#
+# Sidebar order = order of the collections below. Group headings and icons
+# are added in static/admin/index.html (keyed by each collection's `name`),
+# so keep the two in sync when adding a collection.
+
 locale: "en"
-logo_url: ./cms-logo.svg
+logo:
+  src: cms-logo.svg
 
 site_url: https://interalia.host
 display_url: https://interalia.host
+# "View preview" on drafts uses the deploy/preview commit status that
+# .github/workflows/preview.yml sets on each PR; "View live" uses site_url.
+# Both append the preview_path of the entry.
+show_preview_links: true
 
 backend:
   name: github
@@ -11,22 +22,29 @@ backend:
   site_domain: interalia.host
   use_graphql: true
   squash_merges: true
+  preview_context: deploy/preview
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Delete “{{path}}”"
 
+# Run `npm run cms` locally to edit files on disk without logging in.
 local_backend: true
 
 publish_mode: editorial_workflow
 media_folder: static/media/uploads
 public_folder: /media/uploads
+# Image and file fields limit uploads to 10 MB (media_library.config.max_file_size).
+# Images are optimised at build time, so originals only need to be good quality, not small.
 
+# English and German are edited side by side.
+# Files are stored as <name>.en.<ext> and <name>.de.<ext>.
 i18n:
-  # Required and can be one of multiple_folders, multiple_files or single_file
-  # multiple_folders - persists files in `<folder>/<locale>/<slug>.<extension>`
-  # multiple_files - persists files in `<folder>/<slug>.<locale>.<extension>`
-  # single_file - persists a single file in `<folder>/<slug>.<extension>`
   structure: multiple_files
-
-  # Required - a list of locales to show in the editor UI
   locales: ["en", "de"]
+  default_locale: "en"
 
 slug:
   encoding: "ascii"
@@ -34,480 +52,634 @@ slug:
   sanitize_replacement: "-"
 
 collections:
-  - name: "settings"
-    label: "Site Settings"
-    description: "Manage general website settings."
-    files:
-      - name: "site"
-        label: "Site Metadata"
-        file: "config/_default/params.yml"
-        format: "yml"
-        fields:
-          - { label: "Site Description", name: "description", widget: "string", hint: "Description used in the page head and when sharing." }
-          - { label: "Keywords", name: "keywords", widget: "string", required: false, hint: "Comma-separated list of keywords." }
-          - label: "Sharing image"
-            name: "images"
-            widget: "list"
-            field:
-              label: "Image Path"
-              name: "image"
-              widget: "image"
-              media_library:
-                config:
-                  multiple: false
-          - label: "Favicon Colors"
-            name: "favicon"
-            widget: "object"
-            fields:
-              - label: "Mask Color"
-                name: "color.mask"
-                widget: "color"
-                default: "#ED1B34"
-                required: false
-              - label: "MS Application Color"
-                name: "color.msapplication"
-                widget: "color"
-                default: "#ED1B34"
-                required: false
-          - label: "Social Media Links"
-            name: "social"
-            widget: "list"
-            fields:
-              - { label: "Platform", name: "name", widget: "string", hint: "FontAwesome brand name." }
-              - { label: "URL", name: "url", widget: "string" }
-          - label: "Contact Information"
-            name: "contact"
-            widget: "object"
-            fields:
-              - { label: "Organization name", name: "name", widget: "string" }
-              - { label: "Address", name: "address", widget: "string" }
-              - { label: "City, State, ZIP", name: "city_state_zip", widget: "string" }
-              - label: "Emails"
-                name: "emails"
-                widget: "list"
-                fields:
-                  - { label: "Email Address", name: "address", widget: "string" }
-                  - { label: "Label", name: "label", widget: "string" }
-              - label: "Phone"
-                name: "phone"
-                widget: "object"
-                fields:
-                  - { label: "Phone Number", name: "number", widget: "string" }
-                  - { label: "Label", name: "label", widget: "string" }
 
-  - name: "i18n"
-    label: "Translations"
-    label_singular: "Translation File"
-    description: "Edit all user-facing strings for localization."
-    files:
-      - name: "en"
-        label: "English Strings"
-        file: "i18n/en.yaml"
-        format: "yaml"
-        fields:
-          - label: "Strings"
-            name: "strings"
-            widget: "list"
-            summary: "{{fields.id}}: {{fields.translation}}"
-            fields:
-              - { label: "Key", name: "id", widget: "string" }
-              - { label: "Translation", name: "translation", widget: "string" }
-      - name: "de"
-        label: "German Strings"
-        file: "i18n/de.yaml"
-        format: "yaml"
-        fields:
-          - label: "Strings"
-            name: "strings"
-            widget: "list"
-            summary: "{{fields.id}}: {{fields.translation}}"
-            fields:
-              - { label: "Key", name: "id", widget: "string" }
-              - { label: "Translation", name: "translation", widget: "string" }
+# ──────────────────────────── Pages ────────────────────────────
 
-  - name: "page"
-    label: "Single Pages"
-    label_singular: "Single Page"
-    folder: "content"
-    description: "Manage content for single pages. Edit both English and Deutsch side by side."
-    create: true
-    delete: true
-    i18n: true
-    locales: ["en", "de"]
+- name: home
+  label: Homepage
+  description: The sections of the homepage, from top to bottom.
+  files:
+  - name: hero-en
+    label: 1 · Hero (top banner) — English
+    file: data/hero.en.yml
+    preview_path: en/
+    format: yml
     fields:
-      - { name: "title", label: "Title", widget: "string", i18n: true, hint: "Page title." }
-      - { name: "weight", label: "Order", widget: "number", required: false, i18n: duplicate, hint: "Order in navigation." }
-      - { name: "cover", label: "Cover Image", widget: "image", required: false, hint: "Main image for the page." }
-      - { name: "navbar", label: "Show in Top Navigation?", widget: "boolean", default: false, required: false, i18n: duplicate }
-      - { name: "footer", label: "Show in Footer Navigation?", widget: "boolean", default: false, required: false, i18n: duplicate }
-      - { name: "description", label: "Description", widget: "markdown", required: false, i18n: true, hint: "Short summary for SEO and sharing." }
-      - { name: "body", label: "Body", widget: "markdown", required: false, i18n: true, hint: "Main content of the page." }
-
-  - name: "blog-posts"
-    label: "Blog Posts"
-    label_singular: "Blog Post"
-    folder: "content/reports"
-    description: "Manage blog posts and research articles. Edit both English and Deutsch side by side."
-    create: true
-    delete: true
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{slug}}"
-    extension: "md"
-    format: "frontmatter"
-    filter:
-      exclude: "^_index\\..*\\.md$"
+    - {name: title, label: Headline, widget: string, hint: 'To make a word italic and thin, wrap it like this: <span class=''italic font-thin''>word</span>'}
+    - {name: subtitle, label: Text below the headline, widget: text}
+    - {name: primary_button, label: Contact button label, widget: string, hint: Opens an email to the contact address from Site settings.}
+    - {name: secondary_button, label: About button label, widget: string, hint: Links to the About page.}
+  - name: hero-de
+    label: 1 · Hero (top banner) — Deutsch
+    file: data/hero.de.yml
+    preview_path: de/
+    format: yml
     fields:
-      - { name: "title", label: "Title", widget: "string", i18n: true, hint: "Post title." }
-      - { name: "date", label: "Date", widget: "datetime", i18n: duplicate, hint: "Date of publication." }
-      - { name: "author", label: "Author", widget: "string", i18n: true, required: false, hint: "Author name." }
-      - { name: "type", label: "Type", widget: "string", i18n: true, required: false, default: "blog", hint: "Type of post (e.g. blog, research report)." }
-      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Main image for the post." }
-      - { name: "description", label: "Description", widget: "text", i18n: true, required: false, hint: "Short summary for SEO and sharing." }
-      - { name: "body", label: "Body", widget: "markdown", i18n: true, hint: "Main content of the post." }
-
-  - name: "reports"
-    label: "Reports"
-    label_singular: "Report"
-    folder: "data/reports"
-    description: "Manage reports for both languages. Each report is a separate file."
-    create: true
-    format: "yml"
-    extension: "yml"
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{title | slugify}}"
+    - {name: title, label: Headline, widget: string, hint: 'To make a word italic and thin, wrap it like this: <span class=''italic font-thin''>word</span>'}
+    - {name: subtitle, label: Text below the headline, widget: text}
+    - {name: primary_button, label: Contact button label, widget: string, hint: Opens an email to the contact address from Site settings.}
+    - {name: secondary_button, label: About button label, widget: string, hint: Links to the About page.}
+  - name: what-we-do-en
+    label: 2 · What we do — English
+    file: data/what-we-do.en.yml
+    preview_path: en/
+    format: yml
     fields:
-      - { name: "year", label: "Year", widget: "number", i18n: duplicate, hint: "Year of publication." }
-      - { name: "title", label: "Title", widget: "string", i18n: true, hint: "Title of the report." }
-      - { name: "image", label: "Cover Image", widget: "image", i18n: duplicate, required: false, hint: "Cover image for the report." }
-      - { name: "download", label: "PDF File", widget: "file", i18n: duplicate, required: false, hint: "PDF file of the report." }
-
-  - name: "network"
-    label: "Network"
-    description: "Edit the Network page sections for both languages."
-    files:
-      - label: "Network (EN)"
-        name: "network_en"
-        file: "data/network.en.yaml"
-        fields:
-          - label: "Studios"
-            name: "studios"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image" }
-              - { label: "Link", name: "link", widget: "string", required: false }
-          - label: "Funders"
-            name: "funders"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image" }
-              - { label: "Link", name: "link", widget: "string", required: false }
-          - label: "Collaborators"
-            name: "collaborators"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image", required: false }
-              - { label: "Link", name: "link", widget: "string", required: false }
-      - label: "Network (DE)"
-        name: "network_de"
-        file: "data/network.de.yaml"
-        fields:
-          - label: "Studios"
-            name: "studios"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image" }
-              - { label: "Link", name: "link", widget: "string", required: false }
-          - label: "Funders"
-            name: "funders"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image" }
-              - { label: "Link", name: "link", widget: "string", required: false }
-          - label: "Collaborators"
-            name: "collaborators"
-            widget: "list"
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Logo Image", name: "logo", widget: "image", required: false }
-              - { label: "Link", name: "link", widget: "string", required: false }
-
-  - name: "team"
-    label: "Team Members"
-    label_singular: "Team Member"
-    folder: "data/team"
-    description: "Edit team members for both languages. Each team member is a separate file."
-    create: true
-    format: "yml"
-    extension: "yml"
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{name | slugify}}"
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - label: Items
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+  - name: what-we-do-de
+    label: 2 · What we do — Deutsch
+    file: data/what-we-do.de.yml
+    preview_path: de/
+    format: yml
     fields:
-      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
-      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the team member." }
-      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
-      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
-      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
-      - label: "Social Links"
-        name: "social"
-        widget: "list"
-        required: false
-        i18n: true
-        fields:
-          - { label: "Platform", name: "platform", widget: "string", hint: "e.g. LinkedIn, Twitter, Mastodon" }
-          - { label: "URL", name: "url", widget: "string", hint: "Full profile URL" }
-          - { label: "Icon", name: "icon", widget: "string", hint: "FontAwesome icon name, e.g. linkedin, twitter, mastodon" }
-      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
-
-  - name: "board"
-    label: "Board Members"
-    label_singular: "Board Member"
-    folder: "data/board"
-    description: "Edit board members for both languages. Each board member is a separate file."
-    create: true
-    format: "yml"
-    extension: "yml"
-    i18n: true
-    locales: ["en", "de"]
-    slug: "{{name | slugify}}"
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - label: Items
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+  - name: methodology-en
+    label: 3 · How we work — English
+    file: data/methodology.en.yml
+    preview_path: en/
+    format: yml
     fields:
-      - { name: "order", label: "Order", widget: "number", i18n: duplicate, hint: "Order for display/sorting." }
-      - { name: "name", label: "Name", widget: "string", i18n: duplicate, hint: "Full name of the board member." }
-      - { name: "pronoun", label: "Pronoun", widget: "string", i18n: true, required: false, hint: "Pronouns (e.g. she/her, they/them, er/sie, etc.)." }
-      - { name: "bio", label: "Bio", widget: "text", i18n: true, hint: "Short biography." }
-      - { name: "role", label: "Role", widget: "string", i18n: true, hint: "Role or title." }
-      - label: "Social Links"
-        name: "social"
-        widget: "list"
-        required: false
-        i18n: true
-        fields:
-          - { label: "Platform", name: "platform", widget: "string", hint: "e.g. LinkedIn, Twitter, Mastodon" }
-          - { label: "URL", name: "url", widget: "string", hint: "Full profile URL" }
-          - { label: "Icon", name: "icon", widget: "string", hint: "FontAwesome icon name, e.g. linkedin, twitter, mastodon" }
-      - { name: "image", label: "Image", widget: "image", i18n: duplicate, required: false, hint: "Profile photo." }
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - label: Values
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      hint: Shown as cards; the colours alternate automatically.
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+  - name: methodology-de
+    label: 3 · How we work — Deutsch
+    file: data/methodology.de.yml
+    preview_path: de/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - label: Values
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      hint: Shown as cards; the colours alternate automatically.
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+  - name: service-card-en
+    label: 4 · Services teaser — English
+    file: data/service-card.en.yml
+    preview_path: en/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - name: subtitle
+      label: Text
+      widget: markdown
+      minimal: true
+      buttons:
+      - bold
+      - italic
+      - link
+      editor_components: []
+      hint: Leave an empty line to start a new paragraph.
+    - {name: button, label: Button label, widget: string, hint: Links to the Services page.}
+    - {name: label, label: Button description for screen readers, widget: string}
+    - {name: image, label: Background illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown behind the text (faded on small screens). PNG with a transparent background, about 1000 px wide. Max 10 MB.'}
+  - name: service-card-de
+    label: 4 · Services teaser — Deutsch
+    file: data/service-card.de.yml
+    preview_path: de/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - name: subtitle
+      label: Text
+      widget: markdown
+      minimal: true
+      buttons:
+      - bold
+      - italic
+      - link
+      editor_components: []
+      hint: Leave an empty line to start a new paragraph.
+    - {name: button, label: Button label, widget: string, hint: Links to the Services page.}
+    - {name: label, label: Button description for screen readers, widget: string}
+    - {name: image, label: Background illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown behind the text (faded on small screens). PNG with a transparent background, about 1000 px wide. Max 10 MB.'}
 
-  - name: "hero"
-    label: "Hero Section"
-    label_singular: "Hero Section"
-    files:
-      - name: "hero-en"
-        label: "Hero (English)"
-        file: "data/hero.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "subtitle", label: "Subtitle", widget: "text" }
-      - name: "hero-de"
-        label: "Hero (Deutsch)"
-        file: "data/hero.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "subtitle", label: "Untertitel", widget: "text" }
+- name: about
+  label: About page
+  description: The sections of the About page, from top to bottom. Team and Advisory council members are managed under People.
+  files:
+  - name: about-intro-en
+    label: 1 · Intro — English
+    file: data/about-intro.en.yml
+    preview_path: en/about/
+    format: yml
+    fields:
+    - {name: title, label: Headline, widget: string}
+    - {name: text, label: Text, widget: text}
+  - name: about-intro-de
+    label: 1 · Intro — Deutsch
+    file: data/about-intro.de.yml
+    preview_path: de/about/
+    format: yml
+    fields:
+    - {name: title, label: Headline, widget: string}
+    - {name: text, label: Text, widget: text}
+  - name: about-mission-en
+    label: 2 · Our mission — English
+    file: data/about-mission.en.yml
+    preview_path: en/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: text, label: Text, widget: text}
+    - {name: image, label: Background illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown behind the text (faded on small screens). PNG with a transparent background, about 1000 px wide. Max 10 MB.'}
+  - name: about-mission-de
+    label: 2 · Our mission — Deutsch
+    file: data/about-mission.de.yml
+    preview_path: de/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: text, label: Text, widget: text}
+    - {name: image, label: Background illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown behind the text (faded on small screens). PNG with a transparent background, about 1000 px wide. Max 10 MB.'}
+  - name: who-we-work-with-en
+    label: 3 · Who we work with — English
+    file: data/who-we-work-with.en.yml
+    preview_path: en/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - label: Groups
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text, required: false}
+  - name: who-we-work-with-de
+    label: 3 · Who we work with — Deutsch
+    file: data/who-we-work-with.de.yml
+    preview_path: de/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text, required: false}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - label: Groups
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text, required: false}
+  - name: team-intro-en
+    label: 4 · The change we want to see — English
+    file: data/team-intro.en.yml
+    preview_path: en/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: text, label: Text, widget: text}
+    - {name: button, label: Contact button label, widget: string}
+  - name: team-intro-de
+    label: 4 · The change we want to see — Deutsch
+    file: data/team-intro.de.yml
+    preview_path: de/about/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: text, label: Text, widget: text}
+    - {name: button, label: Contact button label, widget: string}
 
-  - name: "about-mission"
-    label: "About Mission Section"
-    label_singular: "About Mission"
-    files:
-      - name: "about-mission-en"
-        label: "About Mission (English)"
-        file: "data/about-mission.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "text", label: "Text", widget: "text" }
-      - name: "about-mission-de"
-        label: "About Mission (Deutsch)"
-        file: "data/about-mission.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "text", label: "Text", widget: "text" }
+- name: services-page
+  label: Services page
+  description: The list of services. The contact form below it uses texts from Interface text.
+  files:
+  - name: our-service-en
+    label: Services — English
+    file: data/our-service.en.yml
+    preview_path: en/service/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - {name: additional, label: Heading for on-request services, widget: string, required: false}
+    - label: Services
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: request, label: 'Only on request?', widget: boolean, required: false, default: false, hint: On-request services are listed in the second block.}
+  - name: our-service-de
+    label: Services — Deutsch
+    file: data/our-service.de.yml
+    preview_path: de/service/
+    format: yml
+    fields:
+    - {name: title, label: Heading, widget: string}
+    - {name: subtitle, label: Intro text, widget: text}
+    - {name: image, label: Illustration, widget: image, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PNG with a transparent background works best, about 1000 px wide. Larger files are fine: images are resized and converted to WebP automatically. Max 10 MB.'}
+    - {name: additional, label: Heading for on-request services, widget: string, required: false}
+    - label: Services
+      name: items
+      widget: list
+      summary: '{{fields.title}}'
+      fields:
+      - {name: title, label: Title, widget: string}
+      - {name: description, label: Description, widget: text}
+      - {name: request, label: 'Only on request?', widget: boolean, required: false, default: false, hint: On-request services are listed in the second block.}
 
-  - name: "our-service"
-    label: "Our Service Section"
-    label_singular: "Our Service Section"
-    files:
-      - name: "our-service-en"
-        label: "Our Service (English)"
-        file: "data/our-service.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "subtitle", label: "Subtitle", widget: "text" }
-          - { name: "additional", label: "Additional", widget: "text", required: false }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "description", label: "Description", widget: "text" }
-              - { name: "request", label: "Request", widget: "boolean", required: false }
-      - name: "our-service-de"
-        label: "Our Service (Deutsch)"
-        file: "data/our-service.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "subtitle", label: "Untertitel", widget: "text" }
-          - { name: "additional", label: "Zusätzlich", widget: "text", required: false }
-          - label: "Elemente"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Titel", widget: "string" }
-              - { name: "description", label: "Beschreibung", widget: "text" }
-              - { name: "request", label: "Anfrage", widget: "boolean", required: false }
+- name: partner
+  label: Partner page
+  preview_path: 'en/partner/'
+  label_singular: Partner page
+  description: All texts of the Partner page, English and Deutsch side by side.
+  folder: content
+  filter: {field: layout, value: partner}
+  create: false
+  delete: false
+  i18n: true
+  extension: md
+  format: frontmatter
+  summary: '{{title}}'
+  fields:
+  - {name: title, label: Page title, widget: string, i18n: true, hint: Also used in the menu.}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+  - {name: body, label: Text, widget: markdown, i18n: true, hint: The first paragraph is shown large as the intro; the following paragraphs appear on the coloured curve.}
+  - {name: areas_title, label: 'Areas of work: heading', widget: string, required: false, i18n: true}
+  - label: Areas of work
+    name: areas
+    widget: list
+    required: false
+    collapsed: false
+    i18n: true
+    field: {name: area, label: Area, widget: string}
+  - {name: cta_text, label: 'Contact band: small text', widget: string, required: false, i18n: true}
+  - {name: cta_title, label: 'Contact band: heading', widget: string, required: false, i18n: true}
+  - {name: cta_button, label: 'Contact band: button label', widget: string, required: false, i18n: true}
+  - {name: weight, label: Position in menu, widget: number, value_type: int, required: false, i18n: duplicate}
+  - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false, i18n: duplicate}
+  - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false, i18n: duplicate}
+  - {name: layout, widget: hidden, default: partner, i18n: duplicate}
+  - {name: type, widget: hidden, default: partner, i18n: duplicate}
+  - {name: aliases, widget: hidden, i18n: duplicate}
 
-  - name: "service-card"
-    label: "Service Card Section"
-    label_singular: "Service Card Section"
-    files:
-      - name: "service-card-en"
-        label: "Service Card (English)"
-        file: "data/service-card.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "subtitle", label: "Subtitle", widget: "text" }
-          - { name: "button", label: "Button", widget: "string" }
-          - { name: "label", label: "Label", widget: "string" }
-          - { name: "link", label: "Link", widget: "string" }
-          - { name: "description", label: "Description", widget: "text" }
-      - name: "service-card-de"
-        label: "Service Card (Deutsch)"
-        file: "data/service-card.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "subtitle", label: "Untertitel", widget: "text" }
-          - { name: "button", label: "Button", widget: "string" }
-          - { name: "label", label: "Label", widget: "string" }
-          - { name: "link", label: "Link", widget: "string" }
-          - { name: "description", label: "Beschreibung", widget: "text" }
+- name: page-settings
+  label: Page titles & menu
+  description: Titles, SEO summaries and menu position of the main pages. Their content is edited in the page collections above.
+  editor: {preview: false}
+  files:
+  - name: about-page-en
+    label: About — English
+    file: content/about.en.md
+    preview_path: en/about/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
+  - name: about-page-de
+    label: About — Deutsch
+    file: content/about.de.md
+    preview_path: de/about/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
+  - name: services-page-en
+    label: Services — English
+    file: content/service.en.md
+    preview_path: en/service/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
+  - name: services-page-de
+    label: Services — Deutsch
+    file: content/service.de.md
+    preview_path: de/service/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
+  - name: resources-page-en
+    label: Resources — English
+    file: content/resources.en.md
+    preview_path: en/resources/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
+  - name: resources-page-de
+    label: Resources — Deutsch
+    file: content/resources.de.md
+    preview_path: de/resources/
+    format: frontmatter
+    fields:
+    - {name: title, label: Page title, widget: string, hint: Also used in the menu.}
+    - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+    - {name: weight, label: Position in menu, widget: number, value_type: int, required: false}
+    - {name: navbar, label: 'Show in top menu?', widget: boolean, required: false}
+    - {name: footer, label: 'Show in footer menu?', widget: boolean, required: false}
+    - {name: layout, widget: hidden}
+    - {name: type, widget: hidden, required: false}
 
-  - name: "services"
-    label: "Services"
-    label_singular: "Service"
-    files:
-      - name: "service-en"
-        label: "Services (English)"
-        file: "data/service-card.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "description", label: "Description", widget: "text" }
-          - { name: "icon", label: "Icon", widget: "string", required: false }
-      - name: "service-de"
-        label: "Services (Deutsch)"
-        file: "data/service-card.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "description", label: "Beschreibung", widget: "text" }
-          - { name: "icon", label: "Icon", widget: "string", required: false }
+- name: page
+  label: Other pages
+  preview_path: 'en/{{slug}}/'
+  label_singular: Page
+  description: Text pages such as Imprint, Privacy and Code of Conduct.
+  folder: content
+  filter: {field: layout, value: single}
+  create: true
+  delete: true
+  i18n: true
+  summary: '{{title}}'
+  fields:
+  - {name: title, label: Title, widget: string, i18n: true}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, required: false, i18n: true, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+  - {name: body, label: Text, widget: markdown, required: false, i18n: true}
+  - {name: weight, label: Position in menu, widget: number, value_type: int, required: false, i18n: duplicate}
+  - {name: navbar, label: 'Show in top menu?', widget: boolean, default: false, required: false, i18n: duplicate}
+  - {name: footer, label: 'Show in footer menu?', widget: boolean, default: true, required: false, i18n: duplicate}
+  - {name: layout, widget: hidden, default: single, i18n: duplicate}
 
-  - name: "what-we-do"
-    label: "What We Do"
-    label_singular: "What We Do"
-    files:
-      - name: "what-we-do-en"
-        label: "What We Do (English)"
-        file: "data/what-we-do.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - { name: "subtitle", label: "Subtitle", widget: "text", required: false }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "description", label: "Description", widget: "text" }
-              - { name: "image", label: "Image", widget: "image", required: false }
-      - name: "what-we-do-de"
-        label: "Was wir tun (Deutsch)"
-        file: "data/what-we-do.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - { name: "subtitle", label: "Untertitel", widget: "text", required: false }
-          - label: "Elemente"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Titel", widget: "string" }
-              - { name: "description", label: "Beschreibung", widget: "text" }
-              - { name: "image", label: "Bild", widget: "image", required: false }
+# ───────────────────── Articles & reports ─────────────────────
 
-  - name: "methodology"
-    label: "Methodology"
-    label_singular: "Methodology"
-    files:
-      - name: "methodology-en"
-        label: "Methodology (English)"
-        file: "data/methodology.en.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Title", widget: "string", hint: "Section title." }
-          - { name: "subtitle", label: "Subtitle", widget: "text", required: false, hint: "Section subtitle." }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Title", widget: "string" }
-              - { name: "description", label: "Description", widget: "text" }
-              - { name: "image", label: "Image", widget: "image", required: false }
-      - name: "methodology-de"
-        label: "Methodology (Deutsch)"
-        file: "data/methodology.de.yml"
-        format: "yml"
-        fields:
-          - { name: "title", label: "Titel", widget: "string", hint: "Abschnittstitel." }
-          - { name: "subtitle", label: "Untertitel", widget: "text", required: false, hint: "Abschnittsuntertitel." }
-          - label: "Elemente"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "title", label: "Titel", widget: "string" }
-              - { name: "description", label: "Beschreibung", widget: "text" }
-              - { name: "image", label: "Bild", widget: "image", required: false }
+- name: blog-posts
+  label: Articles
+  preview_path: 'en/reports/{{slug}}/'
+  label_singular: Article
+  description: Articles listed on the Resources page.
+  folder: content/reports
+  create: true
+  delete: true
+  i18n: true
+  slug: '{{slug}}'
+  extension: md
+  format: frontmatter
+  summary: '{{title}} ({{year}})'
+  sortable_fields:
+  - {field: date, default_sort: desc}
+  - title
+  fields:
+  - {name: title, label: Title, widget: string, i18n: true, hint: 'Also used for the web address (e.g. "Annual report 2026" becomes /reports/annual-report-2026/).'}
+  - {name: date, label: Publication date, widget: datetime, default: '{{now}}', i18n: duplicate, hint: 'Defaults to now. Only the year is shown on the site; the full date sorts articles (newest first). A future date keeps the article hidden until that date.'}
+  - {name: author, label: Author, widget: string, i18n: true, required: false}
+  - {name: image, label: Cover image, widget: image, i18n: duplicate, required: true, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Required. Shown on the article page, in the Resources list and when the article is shared. Landscape, at least 1600×900 px (16:9); keep important content in the centre. Resized and converted automatically. Max 10 MB.'}
+  - {name: description, label: Short summary (SEO and sharing), widget: text, i18n: true, required: false, pattern: ['^[\s\S]{0,160}$', 'Keep it to 160 characters or fewer: search engines and social media cut off longer summaries.'], hint: 'Up to 160 characters.'}
+  - {name: body, label: Text, widget: markdown, i18n: true, hint: 'Use "Heading 2" for sections; long articles get a table of contents automatically.'}
+  - {name: faq, label: Show as FAQ in search engines, widget: boolean, default: false, required: false, i18n: duplicate, hint: 'Turn on for question-and-answer articles: every "Heading 2" that ends with a question mark, with the text below it, is marked up as an FAQ.'}
 
-  - name: "who-we-work-with"
-    label: "Who We Work With"
-    label_singular: "Who We Work With"
-    files:
-      - name: "who-we-work-with-en"
-        label: "Who We Work With (English)"
-        file: "data/who-we-work-with.en.yml"
-        format: "yml"
+- name: reports
+  label: Reports
+  preview_path: 'en/resources/'
+  label_singular: Report
+  description: Downloadable reports (PDF) listed on the Resources page.
+  folder: data/reports
+  create: true
+  delete: true
+  i18n: true
+  extension: yml
+  format: yml
+  slug: '{{slug}}'
+  summary: '{{title}} ({{year}})'
+  fields:
+  - {name: title, label: Title, widget: string, i18n: true}
+  - {name: year, label: Year, widget: number, value_type: int, min: 2000, max: 2100, i18n: duplicate}
+  - {name: image, label: Cover image, widget: image, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'Shown on the report card on the Resources page (cropped to a wide strip). Landscape, about 1200×800 px. Max 10 MB.'}
+  - {name: download, label: PDF file, widget: file, i18n: duplicate, required: false, choose_url: false, media_library: {config: {max_file_size: 10485760}}, hint: 'PDF, max 10 MB. Use a short file name without spaces, e.g. annual-report-2026.pdf.'}
+
+# ─────────────────────────── People ───────────────────────────
+
+- name: team
+  label: Team
+  preview_path: 'en/about/'
+  label_singular: Team member
+  description: Core team members shown on the About page.
+  folder: data/team
+  create: true
+  delete: true
+  i18n: true
+  extension: yml
+  format: yml
+  slug: '{{name}}'
+  identifier_field: name
+  summary: '{{order}} · {{name}} — {{role}}'
+  sortable_fields:
+  - order
+  - name
+  fields:
+  - {name: name, label: Name, widget: string, i18n: duplicate}
+  - {name: order, label: Order, widget: number, value_type: int, i18n: duplicate, hint: Lower numbers are shown first.}
+  - {name: role, label: Role, widget: string, i18n: true}
+  - {name: pronoun, label: Pronouns, widget: string, i18n: true, required: false, hint: 'e.g. she/her, they/them, sie/ihr'}
+  - {name: bio, label: Bio, widget: text, i18n: true}
+  - label: Links
+    name: social
+    widget: list
+    required: false
+    i18n: true
+    summary: '{{fields.platform}}'
+    fields:
+    - {label: Label, name: platform, widget: string, i18n: duplicate, hint: 'e.g. LinkedIn, Website'}
+    - {label: URL, name: url, widget: string, i18n: duplicate, pattern: ['^(https?://|mailto:)\S+$', 'Enter a full link starting with https:// (or mailto: for an email address).']}
+    - label: Icon
+      name: icon
+      i18n: duplicate
+      widget: select
+      default: brands/linkedin
+      options:
+      - {label: LinkedIn, value: brands/linkedin}
+      - {label: Mastodon, value: brands/mastodon}
+      - {label: Bluesky, value: brands/bluesky}
+      - {label: X (Twitter), value: brands/x-twitter}
+      - {label: Instagram, value: brands/instagram}
+      - {label: GitHub, value: brands/github}
+      - {label: Website, value: solid/globe}
+      - {label: Email, value: solid/envelope}
+
+- name: board
+  label: Advisory council
+  preview_path: 'en/about/'
+  label_singular: Advisory council member
+  description: Advisory council members shown on the About page.
+  folder: data/board
+  create: true
+  delete: true
+  i18n: true
+  extension: yml
+  format: yml
+  slug: '{{name}}'
+  identifier_field: name
+  summary: '{{order}} · {{name}} — {{role}}'
+  sortable_fields:
+  - order
+  - name
+  fields:
+  - {name: name, label: Name, widget: string, i18n: duplicate}
+  - {name: order, label: Order, widget: number, value_type: int, i18n: duplicate, hint: Lower numbers are shown first.}
+  - {name: role, label: Role, widget: string, i18n: true}
+  - {name: pronoun, label: Pronouns, widget: string, i18n: true, required: false, hint: 'e.g. she/her, they/them, sie/ihr'}
+  - {name: bio, label: Bio, widget: text, i18n: true}
+  - label: Links
+    name: social
+    widget: list
+    required: false
+    i18n: true
+    summary: '{{fields.platform}}'
+    fields:
+    - {label: Label, name: platform, widget: string, i18n: duplicate, hint: 'e.g. LinkedIn, Website'}
+    - {label: URL, name: url, widget: string, i18n: duplicate, pattern: ['^(https?://|mailto:)\S+$', 'Enter a full link starting with https:// (or mailto: for an email address).']}
+    - label: Icon
+      name: icon
+      i18n: duplicate
+      widget: select
+      default: brands/linkedin
+      options:
+      - {label: LinkedIn, value: brands/linkedin}
+      - {label: Mastodon, value: brands/mastodon}
+      - {label: Bluesky, value: brands/bluesky}
+      - {label: X (Twitter), value: brands/x-twitter}
+      - {label: Instagram, value: brands/instagram}
+      - {label: GitHub, value: brands/github}
+      - {label: Website, value: solid/globe}
+      - {label: Email, value: solid/envelope}
+
+# ────────────────────────── Settings ──────────────────────────
+
+- name: settings
+  label: Site settings
+  preview_path: 'en/'
+  description: Contact details, social links and sharing defaults.
+  editor: {preview: false}
+  files:
+  - name: site
+    label: Site settings
+    file: config/_default/params.yml
+    format: yml
+    fields:
+    - {label: Site description, name: description, widget: string, hint: 'Used in search results and when sharing, if a page has no summary of its own.'}
+    - {label: Keywords, name: keywords, widget: string, required: false, hint: Comma-separated list of keywords.}
+    - label: Homepage sharing image
+      name: images
+      widget: list
+      required: false
+      max: 1
+      hint: 'Optional. Every page already gets an automatic sharing card with its title, and articles use their cover image. Upload an image here only to replace the homepage card; it is cropped to 1200×630.'
+      field: {label: Image, name: image, widget: image, choose_url: false, media_library: {config: {max_file_size: 10485760}}}
+    - label: Social media links
+      name: social
+      widget: list
+      hint: Shown in the footer.
+      summary: '{{fields.name}}'
+      fields:
+      - {label: Name, name: name, widget: string, hint: e.g. linkedin}
+      - {label: URL, name: url, widget: string, pattern: ['^https?://\S+$', 'Enter a full link starting with https://.']}
+    - label: Contact information
+      name: contact
+      widget: object
+      fields:
+      - {label: Organisation name, name: name, widget: string}
+      - {label: Street address, name: address, widget: string}
+      - {label: 'Postcode, city, country', name: city_state_zip, widget: string}
+      - label: Emails
+        name: emails
+        widget: list
+        hint: The first address is used for all contact buttons and the contact form.
+        summary: '{{fields.address}}'
         fields:
-          - { name: "title", label: "Title", widget: "string" }
-          - label: "Items"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "name", label: "Name", widget: "string" }
-              - { name: "description", label: "Description", widget: "text", required: false }
-              - { name: "logo", label: "Logo", widget: "image", required: false }
-      - name: "who-we-work-with-de"
-        label: "Mit wem wir arbeiten (Deutsch)"
-        file: "data/who-we-work-with.de.yml"
-        format: "yml"
+        - {label: Email address, name: address, widget: string, pattern: ['^[^@\s]+@[^@\s]+\.[^@\s]+$', 'Enter a valid email address, e.g. hello@interalia.host.']}
+        - {label: Label, name: label, widget: string}
+      - label: Phone
+        name: phone
+        widget: object
         fields:
-          - { name: "title", label: "Titel", widget: "string" }
-          - label: "Elemente"
-            name: "items"
-            widget: "list"
-            fields:
-              - { name: "name", label: "Name", widget: "string" }
-              - { name: "description", label: "Beschreibung", widget: "text", required: false }
-              - { name: "logo", label: "Logo", widget: "image", required: false }
+        - {label: Phone number, name: number, widget: string, pattern: ['^\+?[0-9 ()/-]{6,}$', 'Use digits, spaces and an optional leading +, e.g. +49 155 63208494.']}
+        - {label: Label, name: label, widget: string}
+
+- name: i18n
+  label: Interface text
+  preview_path: 'en/'
+  description: 'Small texts used across the site: menu, buttons, form labels, accessibility labels. Only change the translation, never the key.'
+  editor: {preview: false}
+  files:
+  - name: en
+    label: English
+    file: i18n/en.yaml
+    format: yaml
+    fields:
+    - label: Texts
+      name: strings
+      widget: list
+      allow_add: false
+      collapsed: true
+      summary: '{{fields.translation}}  ·  {{fields.id}}'
+      fields:
+      - {label: Key (do not change), name: id, widget: string, hint: Used by the website templates to find this text.}
+      - {label: Text, name: translation, widget: text}
+  - name: de
+    label: Deutsch
+    file: i18n/de.yaml
+    format: yaml
+    fields:
+    - label: Texts
+      name: strings
+      widget: list
+      allow_add: false
+      collapsed: true
+      summary: '{{fields.translation}}  ·  {{fields.id}}'
+      fields:
+      - {label: Key (do not change), name: id, widget: string, hint: Used by the website templates to find this text.}
+      - {label: Text, name: translation, widget: text}
