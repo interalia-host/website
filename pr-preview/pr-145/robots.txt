@@ -1,4 +1,0 @@
-User-agent: *
-Disallow: /
-
-Sitemap: https://interalia.host/pr-preview/pr-145/sitemap.xml
